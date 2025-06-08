@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MAPA Garden - Nakshatra Van</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Georgia&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -64,33 +64,29 @@
     header .logo {
       font-size: 1.5em;
       font-weight: bold;
-      color: #fff;
     }
 
     header nav ul {
       display: flex;
       list-style: none;
       gap: 1.5em;
+      margin: 0;
+      padding: 0;
     }
 
     header nav ul li a {
       text-decoration: none;
       color: #fff;
+      font-weight: 500;
     }
 
     .parallax {
-      background: url('background2.png') no-repeat center center fixed;
-      background-size: cover;
+      background: linear-gradient(to bottom right, #d8b4e2, #e6d5f7);
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      position: relative;
-    }
-
-    #hero h1, #hero p, #hero .btn {
-      z-index: 2;
-      position: relative;
+      text-align: center;
     }
 
     #hero h1 {
@@ -107,11 +103,9 @@
 
     .text-box {
       background: rgba(0, 0, 0, 0.6);
-      color: #fff;
       padding: 2em;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      text-align: center;
+      color: #fff;
     }
 
     .btn {
@@ -120,26 +114,39 @@
       padding: 0.8em 2em;
       border-radius: 50px;
       text-decoration: none;
+      display: inline-block;
+      margin-top: 1em;
       animation: pulse 1.5s infinite;
-      font-family: 'Georgia', serif;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
     }
 
     section {
       padding: 3em 2em;
     }
 
-    #about {
+    #about, #plants, #contact {
       background: #fff;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin: 2em auto;
+      max-width: 1000px;
       border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
     }
 
     .feature-grid {
       display: flex;
       gap: 1.5em;
-      justify-content: center;
       flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 2em;
     }
 
     .feature-card {
@@ -149,8 +156,7 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      width: 100%;
-      max-width: 250px;
+      width: 250px;
     }
 
     .feature-card:hover {
@@ -159,44 +165,15 @@
     }
 
     .feature-card i {
-      color: #a79cda;
       font-size: 3em;
-    }
-
-    .feature-card h3 {
-      color: #3e2a47;
-    }
-
-    .feature-card p {
-      color: #5e4f63;
-    }
-
-    #plants {
-      background: #f1e6f1;
-      color: #3e2a47;
-      text-align: center;
-      padding: 3em 2em;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-    }
-
-    #plants h2 {
-      font-size: 2.5em;
-      color: #2a1a34;
-    }
-
-    #plants p {
-      font-size: 1.5em;
-      color: #5e4f63;
+      color: #a79cda;
     }
 
     .modal {
       display: none;
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       background: rgba(0, 0, 0, 0.7);
       justify-content: center;
       align-items: center;
@@ -208,51 +185,40 @@
       border-radius: 10px;
       width: 90%;
       max-width: 400px;
+      position: relative;
       text-align: center;
     }
 
     .close-btn {
       position: absolute;
       top: 10px;
-      right: 10px;
+      right: 15px;
       font-size: 1.5em;
-      cursor: pointer;
       color: #333;
+      cursor: pointer;
     }
 
-    @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.1);
-      }
-    }
-
-    footer.credits {
-      background-color: #e6e6fa;
-      color: #3e2a47;
+    footer {
+      background: #c1a3d1;
+      color: white;
       text-align: center;
-      padding: 1.5em 1em;
-      font-family: 'Georgia', serif;
+      padding: 1em 2em;
       font-size: 0.95em;
-      border-top: 2px solid #d8bfd8;
-      margin-top: 3em;
-      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
     }
 
-    footer.credits p {
-      margin: 0.4em 0;
+    footer a {
+      color: #fff;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <!-- Intro animation -->
+  <!-- Intro Screen -->
   <div id="intro-screen">
-    <div class="intro-text">Original Website sacntioned by NMPB, AYUSH ministry</div>
+    <div class="intro-text">Original Website sanctioned by NMPB, Ayush Ministry</div>
   </div>
 
-  <!-- Main website content -->
+  <!-- Main Content -->
   <div id="main-content" style="display: none;">
     <header>
       <div class="logo">
@@ -262,28 +228,93 @@
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#plants">Plants</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
 
-    <!-- Add your sections here like #about, #plants etc. -->
+    <section class="parallax" id="hero">
+      <div class="text-box">
+        <h1>Welcome to Nakshatra Van</h1>
+        <p>Explore the magical world of medicinal & aromatic plants</p>
+        <a href="#plants" class="btn">Explore Now</a>
+      </div>
+    </section>
 
-    <!-- Footer Section -->
-    <footer class="credits">
-      <p>© 2025 Ananya Ajay Mourya. All rights reserved.</p>
-      <p>Developed as part of a project at <strong>Government College of Pharmacy,Amravati</strong></p>
-      <p>Under the guidance of <strong>Dr. Sharada L. Deore and Bhushan A. Baviskar</strong></p>
+    <section id="about">
+      <h2>About Nakshatra Van</h2>
+      <p>This garden connects nature with the cosmos, featuring plants associated with celestial constellations in Indian tradition.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <i class="fas fa-leaf"></i>
+          <h3>Medicinal Plants</h3>
+          <p>Learn about healing herbs used in Ayurveda and modern medicine.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-tree"></i>
+          <h3>Spiritual Connection</h3>
+          <p>Each plant has significance aligned with ancient Indian astrology.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-palette"></i>
+          <h3>Lavender Design</h3>
+          <p>Soothe your senses with our calming lavender-themed layout.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="plants">
+      <h2>Featured Plants</h2>
+      <p>Click on a plant to learn more about its medicinal properties.</p>
+      <div class="feature-grid">
+        <div class="feature-card" onclick="showModal('Tulsi - The Elixir of Life')">
+          <i class="fas fa-spa"></i>
+          <h3>Tulsi</h3>
+          <p>Known as the Queen of Herbs</p>
+        </div>
+        <div class="feature-card" onclick="showModal('Ashwagandha - Indian Ginseng')">
+          <i class="fas fa-seedling"></i>
+          <h3>Ashwagandha</h3>
+          <p>Boosts energy and relieves stress</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Email: <a href="mailto:mapagarden@example.com">mapagarden@example.com</a></p>
+      <p>Phone: +91 12345 67890</p>
+    </section>
+
+    <footer>
+      <p>© 2025 MAPA Garden | Designed with 🌿 by Ananya Ajay Mourya</p> <p><b>Guided by Dr. Sharada L. Deore and Dr. Bhushan A. Baviskar</b></p>
     </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="plantModal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <p id="modal-text">Plant details here...</p>
+      </div>
+    </div>
   </div>
 
   <script>
-    // Show main content after intro
     window.addEventListener('load', () => {
       setTimeout(() => {
-        document.getElementById('main-content').style.display = 'block';
         document.getElementById('intro-screen').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
       }, 3500);
     });
+
+    function showModal(info) {
+      document.getElementById('modal-text').textContent = info;
+      document.getElementById('plantModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('plantModal').style.display = 'none';
+    }
   </script>
 </body>
 </html>
