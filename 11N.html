@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Butea monosperma (Flame of the Forest)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #E6E6FA, #D8BFD8);
+      color: #4b382a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      background-attachment: fixed;
+    }
+
+    header {
+      background: linear-gradient(135deg, #C3AED6, #B69AD1);
+      color: #ffffff;
+      padding: 30px 20px;
+      text-align: center;
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8em;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      background: rgba(255, 250, 255, 0.9);
+      backdrop-filter: blur(5px);
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      border: 1px solid #e3d4f1;
+      position: relative;
+    }
+
+    .language-selector {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .language-selector button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      background-color: #C3AED6;
+      color: #4b382a;
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .language-selector button:hover {
+      background-color: #B69AD1;
+      color: #ffffff;
+      transform: scale(1.1);
+    }
+
+    .plant-image {
+      width: 200px;
+      height: 200px;
+      margin-left: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      object-fit: cover;
+    }
+
+    .plant-image img {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+    }
+
+    .plant-image img:hover {
+      transform: scale(1.2);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    h2 {
+      color: #7e5ba6;
+      font-family: 'Poppins', sans-serif;
+      font-size: 2em;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    ul {
+      padding-left: 20px;
+      list-style-type: square;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px 10px;
+      background: linear-gradient(135deg, #C3AED6, #D8BFD8);
+      color: #ffffff;
+      border-top: 5px solid #a06db3;
+      width: 100%;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    .content-wrapper > .content-section {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Butea monosperma (Flame of the Forest)</h1>
+  </header>
+
+  <div class="container">
+    <div class="language-selector">
+      <button onclick="changeLanguage('en')">English</button>
+      <button onclick="changeLanguage('hi')">हिंदी</button>
+      <button onclick="changeLanguage('mr')">मराठी</button>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content-section" id="content">
+        <!-- Dynamic Content Will Load Here -->
+      </div>
+      <div class="plant-image">
+        <img src="6R.png" alt="Butea monosperma Plant">
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Medicinal Plants Information - MAPA Garden
+  </footer>
+
+  <script>
+    const plantData = {
+      en: {
+        title: "Butea monosperma",
+        vernacularName: "Flame of the Forest",
+        biologicalSource: "Flowers, bark, and seeds of Butea monosperma (family: Fabaceae).",
+        geographicalSource: "Native to India, Sri Lanka, and Southeast Asia.",
+        chemicalClass: "Contains flavonoids, alkaloids, and glycosides.",
+        pharmacologicalUses: [
+          "Used to treat skin diseases and wounds.",
+          "Acts as an anti-inflammatory and analgesic.",
+          "Helps in reducing blood sugar and controlling diabetes."
+        ],
+        ayurvedicPreparations: [
+          "Butea Powder",
+          "Butea Leaf Extract",
+          "Butea Decoction"
+        ],
+        description: "Butea monosperma, commonly known as Flame of the Forest, is a tree known for its bright orange flowers and its medicinal applications.",
+        therapeuticUses: [
+          "Used for treating wounds and skin infections.",
+          "Effective for treating arthritis and joint pain."
+        ],
+        precautions: [
+          "Overuse may lead to gastrointestinal discomfort.",
+          "Consult a physician before using medicinally."
+        ]
+      },
+      hi: {
+        title: "बूटीया मोनोस्पर्मा",
+        vernacularName: "आग के पेड़",
+        biologicalSource: "बूटीया मोनोस्पर्मा के फूल, छाल और बीज।",
+        geographicalSource: "भारत, श्रीलंका और दक्षिण-पूर्व एशिया में पाया जाता है।",
+        chemicalClass: "फ्लेवोनॉयड्स, अल्कलॉइड्स और ग्लाइकोसाइड्स।",
+        pharmacologicalUses: [
+          "त्वचा रोगों और घावों के इलाज में उपयोगी।",
+          "सूजन रोधी और दर्द निवारक के रूप में कार्य करता है।",
+          "रक्त शर्करा को कम करने में सहायक और मधुमेह नियंत्रित करने में मदद करता है।"
+        ],
+        ayurvedicPreparations: [
+          "बूटीया पाउडर",
+          "बूटीया पत्ते का अर्क",
+          "बूटीया का काढ़ा"
+        ],
+        description: "बूटीया मोनोस्पर्मा, जिसे आग के पेड़ के नाम से भी जाना जाता है, अपनी चमकदार नारंगी रंग के फूलों और औषधीय उपयोग के लिए जाना जाता है।",
+        therapeuticUses: [
+          "घावों और त्वचा संक्रमणों के उपचार में उपयोगी।",
+          "गठिया और जोड़ दर्द के इलाज में प्रभावी।"
+        ],
+        precautions: [
+          "अत्यधिक उपयोग से पेट में परेशानी हो सकती है।",
+          "औषधीय उपयोग से पहले डॉक्टर से परामर्श लें।"
+        ]
+      },
+      mr: {
+        title: "बुटीया मोनोस्पर्मा",
+        vernacularName: "आगीचं झाड",
+        biologicalSource: "बुटीया मोनोस्पर्मा चे फुलं, साल आणि बीजे.",
+        geographicalSource: "भारत, श्रीलंका आणि दक्षिण-पूर्व आशियामध्ये आढळते.",
+        chemicalClass: "फ्लेवोनॉयड्स, अल्कलॉइड्स आणि ग्लायकोसाइड्स.",
+        pharmacologicalUses: [
+          "त्वचारोग आणि जखमा उपचारासाठी उपयुक्त.",
+          "दाहक-विरोधी आणि वेदना निवारक म्हणून कार्य करते.",
+          "रक्तातील साखरेचे प्रमाण कमी करण्यासाठी आणि मधुमेह नियंत्रित करण्यासाठी मदत करते."
+        ],
+        ayurvedicPreparations: [
+          "बुटीया पावडर",
+          "बुटीया पत्तीचा अर्क",
+          "बुटीया काढा"
+        ],
+        description: "बुटीया मोनोस्पर्मा, ज्याला आगचं झाड म्हणून ओळखले जाते, त्याच्या तेजस्वी नारिंगी रंगाच्या फुलांसाठी आणि औषधीय उपयोगांसाठी प्रसिद्ध आहे.",
+        therapeuticUses: [
+          "जखमा आणि त्वचा संसर्गांमध्ये उपयोगी.",
+          "अस्थि आणि सांधेदुखीच्या उपचारांमध्ये प्रभावी."
+        ],
+        precautions: [
+          "अत्याधिक वापरामुळे पचन समस्यांचा सामना करावा लागू शकतो.",
+          "औषधीय वापरासाठी डॉक्टरांचा सल्ला घ्या."
+        ]
+      }
+    };
+
+    function changeLanguage(lang) {
+      const data = plantData[lang];
+      const contentDiv = document.getElementById('content');
+
+      contentDiv.innerHTML = `
+        <h2>${data.title} (${data.vernacularName})</h2>
+        <p><strong>Biological Source:</strong> ${data.biologicalSource}</p>
+        <p><strong>Geographical Source:</strong> ${data.geographicalSource}</p>
+        <p><strong>Chemical Class:</strong> ${data.chemicalClass}</p>
+        <h3>Pharmacological Uses:</h3>
+        <ul>
+          ${data.pharmacologicalUses.map(use => `<li>${use}</li>`).join('')}
+        </ul>
+        <h3>Ayurvedic Preparations:</h3>
+        <ul>
+          ${data.ayurvedicPreparations.map(preparation => `<li>${preparation}</li>`).join('')}
+        </ul>
+        <p>${data.description}</p>
+        <h3>Therapeutic Uses:</h3>
+        <ul>
+          ${data.therapeuticUses.map(use => `<li>${use}</li>`).join('')}
+        </ul>
+        <h3>Precautions:</h3>
+        <ul>
+          ${data.precautions.map(prevention => `<li>${prevention}</li>`).join('')}
+        </ul>
+      `;
+    }
+
+    window.onload = () => changeLanguage('en');
+  </script>
+</body>
+</html>

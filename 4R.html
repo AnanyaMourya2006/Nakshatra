@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aquilaria agallocha & Bambusa arundinacea</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #E6E6FA, #D8BFD8);
+      color: #4b382a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      background-attachment: fixed;
+    }
+
+    header {
+      background: linear-gradient(135deg, #C3AED6, #B69AD1);
+      color: #ffffff;
+      padding: 30px 20px;
+      text-align: center;
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8em;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 25px;
+      background: rgba(255, 250, 255, 0.9);
+      backdrop-filter: blur(5px);
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      border: 1px solid #e3d4f1;
+      display: flex;
+      gap: 30px;
+    }
+
+    .column {
+      flex: 1;
+      padding: 20px;
+      border-radius: 10px;
+      background: rgba(245, 245, 255, 0.8);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .column img {
+      width: 150px;
+      height: 150px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      color: #7e5ba6;
+      font-family: 'Poppins', sans-serif;
+      font-size: 2em;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    ul {
+      padding-left: 20px;
+      list-style-type: square;
+    }
+
+    .language-selector {
+      margin: 15px;
+      text-align: center;
+    }
+
+    .language-selector button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      background-color: #C3AED6;
+      color: #4b382a;
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .language-selector button:hover {
+      background-color: #B69AD1;
+      color: #ffffff;
+      transform: scale(1.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px 10px;
+      background: linear-gradient(135deg, #C3AED6, #D8BFD8);
+      color: #ffffff;
+      border-top: 5px solid #a06db3;
+      width: 100%;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Aquilaria agallocha & Bambusa arundinacea</h1>
+  </header>
+
+  <div class="language-selector">
+    <button onclick="changeLanguage('en')">English</button>
+    <button onclick="changeLanguage('hi')">हिंदी</button>
+    <button onclick="changeLanguage('mr')">मराठी</button>
+  </div>
+
+  <div class="container">
+    <div class="column" id="aquilaria">
+      <img src="4R.png" alt="Aquilaria agallocha">
+      <h2>Aquilaria agallocha</h2>
+      <div id="aquilaria-content"></div>
+    </div>
+
+    <div class="column" id="bambusa">
+      <img src="4Rr.png" alt="Bambusa arundinacea">
+      <h2>Bambusa arundinacea</h2>
+      <div id="bambusa-content"></div>
+    </div>
+  </div>
+
+  <footer>
+    Medicinal Plants Information - MAPA Garden
+  </footer>
+
+  <script>
+    const plantData = {
+      en: {
+        aquilaria: {
+          vernacularName: "Agarwood",
+          biologicalSource: "Heartwood of Aquilaria agallocha (family: Thymelaeaceae).",
+          geographicalSource: "Native to Southeast Asia.",
+          chemicalClass: "Contains sesquiterpenes.",
+          pharmacologicalUses: ["Used for calming and incense production.", "Anti-inflammatory properties."],
+          ayurvedicPreparations: ["Agarwood Oil", "Agarwood Powder"],
+          therapeuticUses: ["Aids in stress relief and spiritual practices.", "Used in skin care and respiratory health."],
+          precautions: ["Use sparingly due to its rarity."]
+        },
+        bambusa: {
+          vernacularName: "Bamboo",
+          biologicalSource: "Culms of Bambusa arundinacea (family: Poaceae).",
+          geographicalSource: "Widespread in tropical Asia.",
+          chemicalClass: "Rich in silica and flavonoids.",
+          pharmacologicalUses: ["Supports joint health and acts as a diuretic.", "Anti-inflammatory properties."],
+          ayurvedicPreparations: ["Bamboo Shoot Extract"],
+          therapeuticUses: ["Enhances bone strength and detoxification.", "Used in skin care and respiratory health."],
+          precautions: ["Shoots should be properly cooked to remove toxins."]
+        }
+      },
+      hi: {
+        aquilaria: {
+          vernacularName: "अगरवुड",
+          biologicalSource: "अगरवुड के दिल की लकड़ी (परिवार: थायमेलासी)।",
+          geographicalSource: "दक्षिण पूर्व एशिया का मूल निवासी।",
+          chemicalClass: "सेसक्वीटरपीन होता है।",
+          pharmacologicalUses: ["शांत करने और धूप के उत्पादन में उपयोगी।", "सूजनरोधी गुण।"],
+          ayurvedicPreparations: ["अगरवुड तेल", "अगरवुड पाउडर"],
+          therapeuticUses: ["तनाव राहत और आध्यात्मिक प्रक्रियाओं में मदद करता है।", "त्वचा और श्वसन स्वास्थ्य में उपयोगी।"],
+          precautions: ["दुर्लभता के कारण कम मात्रा में उपयोग करें।"]
+        },
+        bambusa: {
+          vernacularName: "बांस",
+          biologicalSource: "बांस की पत्तियां (परिवार: पोएसी)।",
+          geographicalSource: "उष्णकटिबंधीय एशिया में व्यापक रूप से पाया जाता है।",
+          chemicalClass: "सिलिका और फ्लेवोनॉयड्स।",
+          pharmacologicalUses: ["संधि स्वास्थ्य को समर्थन देता है।", "सूजनरोधी गुण।"],
+          ayurvedicPreparations: ["बांस का अर्क"],
+          therapeuticUses: ["हड्डियों की मजबूती बढ़ाता है।", "डिटॉक्सिफिकेशन में मदद करता है।"],
+          precautions: ["अंकुर पकाने से पहले विषैले तत्व हटा दें।"]
+        }
+      },
+      mr: {
+        aquilaria: {
+          vernacularName: "अगरवुड",
+          biologicalSource: "अगरवुडचे हृदयकाष्ठ (कुटुंब: थायमेलासी).",
+          geographicalSource: "आग्नेय आशिया.",
+          chemicalClass: "सेसक्वीटरपीन आहेत.",
+          pharmacologicalUses: ["शांतता आणणारे.", "संधिवात विरोधी गुणधर्म."],
+          ayurvedicPreparations: ["अगरवुड तेल", "अगरवुड पावडर"],
+          therapeuticUses: ["तणाव कमी करतो.", "त्वचा आणि श्वसनासाठी उपयुक्त."],
+          precautions: ["दुर्मिळतेमुळे कमी प्रमाणात वापर करा."]
+        },
+        bambusa: {
+          vernacularName: "बांबू",
+          biologicalSource: "बांबू अंकुर (कुटुंब: पोएसी).",
+          geographicalSource: "उष्णकटिबंधीय आशियात सर्वत्र आढळते.",
+          chemicalClass: "सिलिका आणि फ्लॅव्होनॉयड्स.",
+          pharmacologicalUses: ["सांध्यांच्या आरोग्यास समर्थन.", "सूज विरोधी गुणधर्म."],
+          ayurvedicPreparations: ["बांबू अर्क"],
+          therapeuticUses: ["हाडे मजबूत करते.", "डिटॉक्सिफिकेशनसाठी उपयुक्त."],
+          precautions: ["अंकुर शिजवून खा."]
+        }
+      }
+    };
+
+    function changeLanguage(lang) {
+      const aquilariaData = plantData[lang].aquilaria;
+      const bambusaData = plantData[lang].bambusa;
+
+      document.getElementById("aquilaria-content").innerHTML = `
+        <p><strong>Vernacular Name:</strong> ${aquilariaData.vernacularName}</p>
+        <p><strong>Biological Source:</strong> ${aquilariaData.biologicalSource}</p>
+        <p><strong>Geographical Source:</strong> ${aquilariaData.geographicalSource}</p>
+        <p><strong>Chemical Class:</strong> ${aquilariaData.chemicalClass}</p>
+        <h3>Pharmacological Uses:</h3>
+        <ul>${aquilariaData.pharmacologicalUses.map(use => `<li>${use}</li>`).join('')}</ul>
+        <h3>Ayurvedic Preparations:</h3>
+        <ul>${aquilariaData.ayurvedicPreparations.map(prep => `<li>${prep}</li>`).join('')}</ul>
+        <h3>Therapeutic Uses:</h3>
+        <ul>${aquilariaData.therapeuticUses.map(use => `<li>${use}</li>`).join('')}</ul>
+        <h3>Precautions:</h3>
+        <ul>${aquilariaData.precautions.map(precaution => `<li>${precaution}</li>`).join('')}</ul>
+      `;
+
+      document.getElementById("bambusa-content").innerHTML = `
+        <p><strong>Vernacular Name:</strong> ${bambusaData.vernacularName}</p>
+        <p><strong>Biological Source:</strong> ${bambusaData.biologicalSource}</p>
+        <p><strong>Geographical Source:</strong> ${bambusaData.geographicalSource}</p>
+        <p><strong>Chemical Class:</strong> ${bambusaData.chemicalClass}</p>
+        <h3>Pharmacological Uses:</h3>
+        <ul>${bambusaData.pharmacologicalUses.map(use => `<li>${use}</li>`).join('')}</ul>
+        <h3>Ayurvedic Preparations:</h3>
+        <ul>${bambusaData.ayurvedicPreparations.map(prep => `<li>${prep}</li>`).join('')}</ul>
+        <h3>Therapeutic Uses:</h3>
+        <ul>${bambusaData.therapeuticUses.map(use => `<li>${use}</li>`).join('')}</ul>
+        <h3>Precautions:</h3>
+        <ul>${bambusaData.precautions.map(precaution => `<li>${precaution}</li>`).join('')}</ul>
+      `;
+    }
+
+    window.onload = () => changeLanguage('en');
+  </script>
+</body>
+</html>

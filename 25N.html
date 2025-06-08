@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mangifera indica</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #E6E6FA, #D8BFD8);
+      color: #4b382a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      background-attachment: fixed;
+    }
+
+    header {
+      background: linear-gradient(135deg, #C3AED6, #B69AD1);
+      color: #ffffff;
+      padding: 30px 20px;
+      text-align: center;
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8em;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      background: rgba(255, 250, 255, 0.9);
+      backdrop-filter: blur(5px);
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      border: 1px solid #e3d4f1;
+      position: relative;
+    }
+
+    .language-selector {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .language-selector button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      background-color: #C3AED6;
+      color: #4b382a;
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .language-selector button:hover {
+      background-color: #B69AD1;
+      color: #ffffff;
+      transform: scale(1.1);
+    }
+
+    .plant-image {
+      width: 200px;
+      height: 200px;
+      margin-left: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      object-fit: cover;
+    }
+
+    .plant-image img {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+    }
+
+    .plant-image img:hover {
+      transform: scale(1.2);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    h2 {
+      color: #7e5ba6;
+      font-family: 'Poppins', sans-serif;
+      font-size: 2em;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    ul {
+      padding-left: 20px;
+      list-style-type: square;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px 10px;
+      background: linear-gradient(135deg, #C3AED6, #D8BFD8);
+      color: #ffffff;
+      border-top: 5px solid #a06db3;
+      width: 100%;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    .content-wrapper > .content-section {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mangifera indica</h1>
+  </header>
+
+  <div class="container">
+    <div class="language-selector">
+      <button onclick="changeLanguage('en')">English</button>
+      <button onclick="changeLanguage('hi')">हिंदी</button>
+      <button onclick="changeLanguage('mr')">मराठी</button>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content-section" id="content">
+        <!-- Dynamic Content Will Load Here -->
+      </div>
+      <div class="plant-image">
+        <img src="mangifera_indica.jpg" alt="Mangifera indica Plant">
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Medicinal Plants Information - MAPA Garden
+  </footer>
+
+  <script>
+    const plantData = {
+      en: {
+        title: "Mangifera indica",
+        vernacularName: "Mango Tree",
+        biologicalSource: "Fruits, leaves, and bark of Mangifera indica (family: Anacardiaceae).",
+        geographicalSource: "Native to South Asia, widely cultivated in tropical and subtropical regions worldwide.",
+        chemicalClass: "Contains flavonoids, phenolic compounds, and tannins.",
+        pharmacologicalUses: [
+          "Used as an antioxidant and anti-inflammatory agent.",
+          "Treats diarrhea and dysentery.",
+          "Promotes skin health and wound healing."
+        ],
+        ayurvedicPreparations: [
+          "Mango Bark Decoction",
+          "Mango Leaf Powder",
+          "Mango Seed Oil"
+        ],
+        description: "Mangifera indica, commonly known as the mango tree, is revered for its delicious fruits and numerous medicinal properties in traditional medicine.",
+        therapeuticUses: [
+          "Improves digestion and immunity.",
+          "Helps manage blood sugar levels.",
+          "Supports skin rejuvenation and wound healing."
+        ],
+        precautions: [
+          "Avoid overconsumption of unripe fruits.",
+          "Consult a physician before use if allergic to mango."
+        ]
+      },
+      hi: {
+        title: "आम",
+        vernacularName: "आम का पेड़",
+        biologicalSource: "आम के फल, पत्ते और छाल (परिवार: अनाकार्डियासी)।",
+        geographicalSource: "दक्षिण एशिया का मूल निवासी, उष्णकटिबंधीय और उपोष्णकटिबंधीय क्षेत्रों में व्यापक रूप से उगाया जाता है।",
+        chemicalClass: "फ्लेवोनॉयड्स, फिनोलिक यौगिक, और टैनिन्स।",
+        pharmacologicalUses: [
+          "एंटीऑक्सिडेंट और सूजन-रोधी एजेंट के रूप में उपयोगी।",
+          "दस्त और पेचिश का इलाज करता है।",
+          "त्वचा के स्वास्थ्य और घाव भरने को बढ़ावा देता है।"
+        ],
+        ayurvedicPreparations: [
+          "आम की छाल का काढ़ा",
+          "आम की पत्ती का चूर्ण",
+          "आम के बीज का तेल"
+        ],
+        description: "आम का पेड़, जिसे आम के नाम से जाना जाता है, अपने स्वादिष्ट फलों और पारंपरिक चिकित्सा में कई औषधीय गुणों के लिए प्रसिद्ध है।",
+        therapeuticUses: [
+          "पाचन और प्रतिरक्षा में सुधार करता है।",
+          "रक्त शर्करा के स्तर को प्रबंधित करने में मदद करता है।",
+          "त्वचा के पुनर्जीवन और घाव भरने में सहायता करता है।"
+        ],
+        precautions: [
+          "कच्चे फलों के अधिक सेवन से बचें।",
+          "यदि आम से एलर्जी है, तो उपयोग से पहले डॉक्टर से परामर्श करें।"
+        ]
+      },
+      mr: {
+        title: "आंबा",
+        vernacularName: "आंब्याचे झाड",
+        biologicalSource: "आंब्याचे फळ, पाने आणि साल (कुटुंब: अनाकार्डियासी).",
+        geographicalSource: "दक्षिण आशियाचा मूळ निवासी, उष्णकटिबंधीय आणि उपोष्णकटिबंधीय प्रदेशांमध्ये मोठ्या प्रमाणावर लागवड केली जाते.",
+        chemicalClass: "फ्लॅव्होनॉयड्स, फिनोलिक संयुगे, आणि टॅनिन्स.",
+        pharmacologicalUses: [
+          "एंटीऑक्सिडेंट आणि सूज विरोधी एजंट म्हणून उपयुक्त.",
+          "दस्त आणि प्रवाहाच्या उपचारांमध्ये प्रभावी.",
+          "त्वचेचे आरोग्य आणि जखम भरून काढण्यास प्रोत्साहन देते."
+        ],
+        ayurvedicPreparations: [
+          "आंब्याच्या सालीचा काढा",
+          "आंब्याच्या पानांचे चूर्ण",
+          "आंब्याच्या बियांचे तेल"
+        ],
+        description: "आंबा, ज्याला आंब्याचे झाड म्हणून ओळखले जाते, त्याच्या चवदार फळांसाठी आणि पारंपरिक औषधांमध्ये अनेक औषधी गुणधर्मांसाठी ओळखले जाते.",
+        therapeuticUses: [
+          "पचन आणि प्रतिकारशक्ती सुधारते.",
+          "रक्तातील साखरेची पातळी व्यवस्थापित करण्यात मदत करते.",
+          "त्वचेच्या पुनरुज्जीवनास आणि जखम भरून काढण्यास मदत करते."
+        ],
+        precautions: [
+          "कच्च्या फळांचे अति सेवन टाळा.",
+          "आंब्याला ऍलर्जी असल्यास, वापरण्यापूर्वी डॉक्टरांचा सल्ला घ्या."
+        ]
+      }
+    };
+
+    function changeLanguage(lang) {
+      const data = plantData[lang];
+      const contentDiv = document.getElementById('content');
+
+      contentDiv.innerHTML = `
+        <h2>${data.title} (${data.vernacularName})</h2>
+        <p><strong>Biological Source:</strong> ${data.biologicalSource}</p>
+        <p><strong>Geographical Source:</strong> ${data.geographicalSource}</p>
+        <p><strong>Chemical Class:</strong> ${data.chemicalClass}</p>
+        <h3>Pharmacological Uses:</h3>
+        <ul>
+          ${data.pharmacologicalUses.map(use => `<li>${use}</li>`).join('')}
+        </ul>
+        <h3>Ayurvedic Preparations:</h3>
+        <ul>
+          ${data.ayurvedicPreparations.map(preparation => `<li>${preparation}</li>`).join('')}
+        </ul>
+        <p>${data.description}</p>
+        <h3>Therapeutic Uses:</h3>
+        <ul>
+          ${data.therapeuticUses.map(use => `<li>${use}</li>`).join('')}
+        </ul>
+        <h3>Precautions:</h3>
+        <ul>
+          ${data.precautions.map(prevention => `<li>${prevention}</li>`).join('')}
+        </ul>
+      `;
+    }
+
+    window.onload = () => changeLanguage('en');
+  </script>
+</body>
+</html>

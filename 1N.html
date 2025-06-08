@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Strychnos nux-vomica (Kuchala)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Crimson Pro', serif;
+      background: linear-gradient(to right, #e6e6fa, #f3e5f5);
+      color: #4b306a;
+      line-height: 1.7;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: rgba(102, 51, 153, 0.8);
+      color: #f5f0fa;
+      text-align: center;
+      padding: 2rem;
+      border-bottom: 4px double #cba0e3;
+    }
+
+    header h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.8rem;
+      margin: 0;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 3px #4b306a;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.92);
+      border: 2px solid #d6b3f0;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(102, 51, 153, 0.2);
+      animation: fadeIn 2s ease;
+    }
+
+    .language-selector {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .language-selector button {
+      font-family: 'Cinzel', serif;
+      padding: 10px 20px;
+      margin: 0 8px;
+      border: 1px solid #9966cc;
+      background-color: #e3d1f7;
+      color: #4b306a;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .language-selector button:hover {
+      background-color: #d1b3f0;
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    .plant-image {
+      width: 220px;
+      border: 2px solid #b891d6;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 4px 6px 12px rgba(123, 63, 160, 0.3);
+    }
+
+    .plant-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.6rem;
+      color: #5c4080;
+      border-bottom: 2px solid #c29de3;
+      padding-bottom: 4px;
+      margin-top: 2rem;
+    }
+
+    ul {
+      margin-top: 0.5rem;
+      padding-left: 1.2rem;
+    }
+
+    footer {
+      background-color: rgba(102, 51, 153, 0.9);
+      color: #f0e6f7;
+      text-align: center;
+      padding: 1rem;
+      font-size: 14px;
+      border-top: 4px double #cba0e3;
+      font-family: 'Cinzel', serif;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Strychnos nux-vomica (Kuchala)</h1>
+  </header>
+
+  <div class="container">
+    <div class="language-selector">
+      <button onclick="changeLanguage('en')">English</button>
+      <button onclick="changeLanguage('hi')">हिंदी</button>
+      <button onclick="changeLanguage('mr')">मराठी</button>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content-section" id="content">
+        <!-- Dynamic content loads here -->
+      </div>
+      <div class="plant-image">
+        <img src="1.jpeg" alt="Strychnos nux-vomica Plant">
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    MAPA Virtual Herbal Garden © Ancient Knowledge Revival
+  </footer>
+
+  <script>
+    const plantData = {
+      en: {
+        title: "Strychnos nux-vomica",
+        vernacularName: "Kuchala",
+        biologicalSource: "Strychnos nux-vomica belongs to the family Loganiaceae.",
+        geographicalSource: "Native to India and Southeast Asia. Found in deciduous and semi-evergreen forests.",
+        chemicalClass: "Alkaloids, primarily Strychnine.",
+        pharmacologicalUses: [
+          "Used in debility, paralysis, dyspepsia, dysentery, and chronic rheumatism.",
+          "Also for colic, malarial fever, and hysteria.",
+          "Caution: Highly toxic and can cause convulsions."
+        ],
+        ayurvedicPreparations: [
+          "Kuchala Churna",
+          "Kuchala Taila",
+          "Kuchala Ghrita",
+          "Kuchala Rasayana"
+        ],
+        description: "This sacred plant, though perilous, was purified and employed with deep reverence in ancient Ayurvedic formulations.",
+        therapeuticUses: [
+          "Nervine tonic for nervous disorders.",
+          "Stimulant for hypotension."
+        ],
+        precautions: [
+          "Use under strict supervision.",
+          "Can cause seizures if misused."
+        ]
+      },
+      hi: {
+        title: "स्ट्राइच्नोस नक्स-वोमिका",
+        vernacularName: "कुचला",
+        biologicalSource: "यह पौधा लॉगानिएसी कुल से संबंधित है।",
+        geographicalSource: "भारत और दक्षिण-पूर्व एशिया का मूल निवासी, पतझड़ी और अर्ध-सदाबहार वनों में पाया जाता है।",
+        chemicalClass: "मुख्यतः स्ट्राइच्निन अल्कलॉइड्स।",
+        pharmacologicalUses: [
+          "कमजोरी, लकवा, अपच, पेचिश, और पुराने गठिया में उपयोगी।",
+          "कोलिक, मलेरियल बुखार और हिस्टीरिया में भी प्रयुक्त।",
+          "सावधानी: अधिक मात्रा में सेवन से झटके आ सकते हैं।"
+        ],
+        ayurvedicPreparations: [
+          "कुचला चूर्ण",
+          "कुचला तैल",
+          "कुचला घृत",
+          "कुचला रसायन"
+        ],
+        description: "यह पवित्र परंतु विषैला पौधा प्राचीन आयुर्वेद में विशेष विधियों से शुद्ध कर उपयोग किया जाता था।",
+        therapeuticUses: [
+          "तंत्रिका संबंधी रोगों में टॉनिक के रूप में।",
+          "निम्न रक्तचाप में उत्तेजक।"
+        ],
+        precautions: [
+          "सिर्फ विशेषज्ञ की निगरानी में सेवन करें।",
+          "गलत उपयोग से दौरे पड़ सकते हैं।"
+        ]
+      },
+      mr: {
+        title: "स्ट्रायच्नोस नक्स-वॉमिका",
+        vernacularName: "कुचला",
+        biologicalSource: "हे वनस्पती लॉगानिएसी कुलातील आहे.",
+        geographicalSource: "भारत आणि आग्नेय आशियात आढळणारी, पानगळ होणाऱ्या व अर्ध-सदाहरित जंगलांमध्ये आढळते.",
+        chemicalClass: "मुख्यतः स्ट्रायच्निन अल्कलॉइड्स.",
+        pharmacologicalUses: [
+          "अशक्तपणा, पक्षाघात, अपचन, आमांश, जुनाट संधिवात यामध्ये उपयोगी.",
+          "कोलिक, मलेरिया ताप, हिस्टीरिया मध्येही वापरले जाते.",
+          "सावधगिरी: विषारी असते व चुकीच्या वापराने फिट्स येऊ शकतात."
+        ],
+        ayurvedicPreparations: [
+          "कुचला चूर्ण",
+          "कुचला तेल",
+          "कुचला घृत",
+          "कुचला रसायन"
+        ],
+        description: "या विषारी वनस्पतीचा शुद्धीकरण करून प्राचीन आयुर्वेदात पूजनीय प्रकारे उपयोग करण्यात येत असे.",
+        therapeuticUses: [
+          "मज्जासंस्थेच्या विकारांमध्ये टॉनिक.",
+          "निम्न रक्तदाबात उत्तेजक."
+        ],
+        precautions: [
+          "फक्त वैद्यकीय देखरेखीखाली वापरावे.",
+          "अयोग्य वापराने झटके येऊ शकतात."
+        ]
+      }
+    };
+
+    function changeLanguage(lang) {
+      const data = plantData[lang];
+      const contentDiv = document.getElementById("content");
+
+      contentDiv.innerHTML = `
+        <h2>${data.title}</h2>
+        <p><strong>Vernacular Name:</strong> ${data.vernacularName}</p>
+        <p><strong>Biological Source:</strong> ${data.biologicalSource}</p>
+        <p><strong>Geographical Source:</strong> ${data.geographicalSource}</p>
+        <p><strong>Chemical Class:</strong> ${data.chemicalClass}</p>
+        <h2>Pharmacological Uses</h2>
+        <ul>${data.pharmacologicalUses.map(use => `<li>${use}</li>`).join('')}</ul>
+        <h2>Ayurvedic Preparations</h2>
+        <ul>${data.ayurvedicPreparations.map(prep => `<li>${prep}</li>`).join('')}</ul>
+        <h2>Description</h2>
+        <p>${data.description}</p>
+        <h2>Therapeutic Uses</h2>
+        <ul>${data.therapeuticUses.map(use => `<li>${use}</li>`).join('')}</ul>
+        <h2>Precautions</h2>
+        <ul>${data.precautions.map(item => `<li>${item}</li>`).join('')}</ul>
+      `;
+    }
+
+    // Load English by default
+    window.onload = () => changeLanguage('en');
+  </script>
+</body>
+</html>

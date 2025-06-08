@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Plant List</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #d4f7d4, #97e097);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      color: #2e7d32;
+      margin: 0;
+      text-shadow: 1px 1px 2px #ffffff;
+    }
+
+    .search-bar {
+      margin-bottom: 20px;
+      width: 100%; 
+      max-width: 600px;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+      border: 2px solid #388e3c;
+      border-radius: 5px;
+    }
+
+    .category {
+      margin-bottom: 20px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .category-title {
+      font-size: 1.8em;
+      color: #2e7d32;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 2px #ffffff;
+    }
+
+    .plant-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      width: 100%;
+    }
+
+    .plant-card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transform: scale(1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .plant-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .plant-info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    .plant-name {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin: 10px 0;
+      color: #388e3c;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #757575;
+      text-align: center;
+    }
+
+    .kayavan {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2em;
+      }
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const searchInput = document.getElementById("searchInput");
+      const plantCards = document.querySelectorAll(".plant-card");
+
+      searchInput.addEventListener("input", () => {
+        const filter = searchInput.value.toLowerCase();
+        plantCards.forEach(card => {
+          const plantName = card.querySelector(".plant-name").textContent.toLowerCase();
+          if (plantName.includes(filter)) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Plant Encyclopedia</h1>
+  </header>
+
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search for a plant...">
+  </div>
+
+  <section class="category">
+    <div class="category-title">RASHI VAN </div>
+    <div class="plant-list">
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Mangifera indica</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Calotropis gigantea</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Calamus rotang</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Bombax ceiba</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Terminalia arjuna, Feronia elephantum</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Jasminum auriculatum</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Butea monosperma</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Mesua ferrea</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Aquilaria agallocha, Bambusa arundinaceae</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Syzygium cumini</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Phyllantus emblica</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Strychnos nuxvomica</div></div></div>
+    </div>
+  </section>
+
+  <section class="category">
+    <div class="category-title">NAKSHATRA VAN</div>
+    <div class="plant-list">
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Strychnos nuxvomica</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Phyllantus emblica</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Ficus racemosa</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Syzygium cumini</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Acacia chundra</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Aquilaria agallocha</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Bambusa arundinaceae</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Ficus religiosa</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Mesua ferrea</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Ficus benghalensis</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Butea monosperma</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Elaeocarpus ganitrus</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Spondias pinnata</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Aegle marmelos</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Terminalia arjuna</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Feronia elephantum</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Mimusops elengi</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Bombax ceiba</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Cassia fistula</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Calamus rotang</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Aitocarpus heterophyllus</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Calotropis gigantea</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Prosopis spicigera</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Mitragyna purvifolia</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Mangifera indica</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Azadirachta indica</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Madhuca longifolia</div></div></div>
+    </div>
+  </section>
+
+
+
+  <section class="category">
+    <div class="category-title">ENTRANCE </div>
+    <div class="plant-list">
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Tinospora cordifolia (Guduchi)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Coccus nucifera (Coconut) </div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Bambusa vulgaris (Bamboo)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Adhatoda vasica (Vasaka) </div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Vitex negundo (Nirgudi)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Ocimum sanctum (Holy basil)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Bryophyllum pinnatum (Pan futi)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Cassia fistula (Amaltas)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Adansonia digitata (Gorakh chinch)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Argyreia speciosa (Elephant creeper)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Enretia laevis (Ajan Vruksha)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Terminalia arjuna (Arjun tree)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Tabebulia argentea (Silver Trumpet tree)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Sterculia vrens (Gum karaya)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Mimusops elengi (Spanish cherry)</div></div></div>
+    </div>
+  </section>
+
+  <section class="category">
+    <div class="category-title">HAKIM KENDRA </div>
+    <div class="plant-list">
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Azadirachta indica A. Juss(Neem)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Terminalia bellirica (Beleric myrobal)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Carissa carandus (Natal Plum)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Manilkara zapota (Chickoo)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Bauhinia variegata (Kanchan)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Aloe barbadensis miller (Aloevera)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Cymbopogon citratus (Lemon grass)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Tamarindus indica L.(Imli)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Citrus limon L. Burm. (Lemon)</div></div></div>
+    </div>
+  </section>
+
+   <section class="category">
+    <div class="category-title">YOGI KENDRA </div>
+    <div class="plant-list">
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Phyllantus emblica (Amla)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Cymbopogon citratus (Lemon grass) </div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Azadirachta indica A. Juss (Neem)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Ocimum tenuiflorum (Tulsi)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Tamarindus indica L. (Imli)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Saraca indica (Ashok)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Permna integrifolia (Arni)</div></div></div>
+    </div>
+  </section>
+
+ <section class="category">
+    <div class="category-title">VAIDU KENDRA </div>
+    <div class="plant-list">
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Cordia dichotoma (Lasoda)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Madhuca longifolia (Mahua)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Pterocarpus marsupium (Bija sal)</div></div></div>
+     </div>
+  </section>
+
+  <section class="category">
+    <div class="category-title">VAITHIYAR KENDRA </div>
+    <div class="plant-list">
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Cordia dichotoma (Indian Cherry)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Adenanthera pavonina (Chandan)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Millingtonia hortensis (Indian cork tree)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Vinca rosea (Sadafuli) </div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Pyrus pyrifolia</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Feronia elephantum</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Crateva religiosa</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Musa acuminatacolla (Banana)</div></div></div>
+     </div>
+  </section>
+
+  <section class="category">
+    <div class="category-title">KAYA-VAN LEFT SIDE </div>
+    <div class="plant-list">
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Alpinia galanga (Kulinjan)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Coix locryma jobi (Vaijanti)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Cyperus scariosus (Nagarmetha)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Rauwolfia serpentina (Sarpgandha)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Mentha arvensis (Mint Japanese)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Abutilon indicum (Indian mallow)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Costus pictus (Insulin Plant)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Kaempferia galanga (Aromatic ginger)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Ocimum Kilimandscharium (Camphor basil)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Psoralea corylifolia (Bavchi)</div></div></div>
+     </div>
+  </section>
+
+ <section class="category">
+    <div class="category-title">KAYA-VAN RIGHT SIDE </div>
+    <div class="plant-list">
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Elettaria cardamomum (Elaichi)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Mimosa pudica (Sleepy plant)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Piper nigrum (Black pepper)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Pandanus amaryllifolius (Annapoorna leaves)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Andrographis paniculata (Green chiretta)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Asparagus racemosus (Asparagus)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Acorus calamus (Sweet flag)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Eclipta alba (Bhringraj)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Plumbago zeylanica (Doctor's brush)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Curcuma cassia (Black Turmeric)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Osimum gratissimum (Clove basil)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Origanum majorana (Maarwa)</div></div></div>
+      <div class="plant-card"><div class="plant-info"><div class="plant-name">Chrysopogon zizanioides (Vetiveria)</div></div></div>
+     </div>
+  </section>
+
+</body>
+</html>

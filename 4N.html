@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syzygium cumini (Jamun)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    /* General Styling */
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #E6E6FA, #D8BFD8);
+      color: #4b382a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      background-attachment: fixed;
+    }
+
+    header {
+      background: linear-gradient(135deg, #C3AED6, #B69AD1);
+      color: #ffffff;
+      padding: 30px 20px;
+      text-align: center;
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8em;
+      margin: 0;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      background: rgba(255, 250, 255, 0.9);
+      backdrop-filter: blur(5px);
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      border: 1px solid #e3d4f1;
+      position: relative;
+    }
+
+    .language-selector {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .language-selector button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      background-color: #C3AED6;
+      color: #4b382a;
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .language-selector button:hover {
+      background-color: #B69AD1;
+      color: #ffffff;
+      transform: scale(1.1);
+    }
+
+    .plant-image {
+      width: 200px;
+      height: 200px;
+      margin-left: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      object-fit: cover;
+    }
+
+    .plant-image img {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+    }
+
+    .plant-image img:hover {
+      transform: scale(1.2);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    h2 {
+      color: #7e5ba6;
+      font-family: 'Poppins', sans-serif;
+      font-size: 2em;
+      margin-bottom: 15px;
+      text-align: center;
+      animation: fadeInUp 1s ease;
+    }
+
+    ul {
+      padding-left: 20px;
+      list-style-type: square;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px 10px;
+      background: linear-gradient(135deg, #C3AED6, #D8BFD8);
+      color: #ffffff;
+      border-top: 5px solid #a06db3;
+      width: 100%;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    .content-wrapper > .content-section {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Syzygium cumini (Jamun)</h1>
+  </header>
+
+  <div class="container">
+    <div class="language-selector">
+      <button onclick="changeLanguage('en')">English</button>
+      <button onclick="changeLanguage('hi')">हिंदी</button>
+      <button onclick="changeLanguage('mr')">मराठी</button>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content-section" id="content">
+        <!-- Dynamic Content Will Load Here -->
+      </div>
+      <div class="plant-image">
+        <img src="3R.png" alt="Syzygium cumini Plant">
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Medicinal Plants Information - MAPA Garden
+  </footer>
+
+  <script>
+    const plantData = {
+      en: {
+        title: "Syzygium cumini",
+        vernacularName: "Jamun",
+        biologicalSource: "Syzygium cumini (family: Myrtaceae), including seeds, leaves, and fruits.",
+        geographicalSource: "Native to India and Southeast Asia; widely found in tropical and subtropical regions.",
+        chemicalClass: "Anthocyanins, Tannins, and Flavonoids.",
+        pharmacologicalUses: [
+          "Reduces blood sugar levels.",
+          "Helps in treating diarrhea and dysentery.",
+          "Used as an antioxidant and anti-inflammatory agent."
+        ],
+        ayurvedicPreparations: [
+          "Jamun Seed Powder",
+          "Jamun Juice",
+          "Jamun Oil"
+        ],
+        description: "Syzygium cumini, also known as Jamun, is a tropical fruit tree known for its medicinal properties, particularly in diabetes management.",
+        therapeuticUses: [
+          "Beneficial for digestive and urinary disorders.",
+          "Helps in improving skin and oral health."
+        ],
+        precautions: [
+          "Excessive consumption may lead to constipation.",
+          "Consult a physician before using for medicinal purposes."
+        ]
+      },
+      hi: {
+        title: "जामुन",
+        vernacularName: "जामुन",
+        biologicalSource: "सिज़ीगियम क्यूमिनी (परिवार: मर्टेसी), जिसमें बीज, पत्तियां और फल शामिल हैं।",
+        geographicalSource: "भारत और दक्षिण-पूर्व एशिया में मूल; उष्णकटिबंधीय क्षेत्रों में पाया जाता है।",
+        chemicalClass: "एंथोसाइनिन्स, टैनिन्स, और फ्लेवोनॉयड्स।",
+        pharmacologicalUses: [
+          "रक्त शर्करा के स्तर को कम करता है।",
+          "दस्त और पेचिश के इलाज में सहायक।",
+          "एंटीऑक्सीडेंट और सूजन रोधी गुण।"
+        ],
+        ayurvedicPreparations: [
+          "जामुन बीज पाउडर",
+          "जामुन रस",
+          "जामुन तेल"
+        ],
+        description: "जामुन के नाम से प्रसिद्ध, यह पेड़ अपनी औषधीय विशेषताओं के लिए जाना जाता है। विशेष रूप से मधुमेह के उपचार में उपयोगी।",
+        therapeuticUses: [
+          "पाचन और मूत्र विकारों के लिए फायदेमंद।",
+          "त्वचा और मुख स्वास्थ्य में सुधार करता है।"
+        ],
+        precautions: [
+          "अत्यधिक सेवन से कब्ज हो सकता है।",
+          "चिकित्सक की सलाह से सेवन करें।"
+        ]
+      },
+      mr: {
+        title: "जांभूळ",
+        vernacularName: "जांभूळ",
+        biologicalSource: "सिज़ीगियम क्यूमिनी (कुटुंब: मर्टेसी), ज्यात बिया, पाने आणि फळे समाविष्ट आहेत.",
+        geographicalSource: "भारत आणि आग्नेय आशियाचा मूळ; उष्णकटिबंधीय भागात आढळतो.",
+        chemicalClass: "अँथोसाइनिन्स, टॅनिन्स, आणि फ्लेवोनॉयड्स.",
+        pharmacologicalUses: [
+          "रक्तातील साखर कमी करण्यात मदत करते.",
+          "अतिसार आणि पेचिशच्या उपचारांसाठी उपयुक्त.",
+          "ऑक्सिडेशनविरोधी आणि दाहकविरोधी गुणधर्म असलेला."
+        ],
+        ayurvedicPreparations: [
+          "जांभूळ बियांचा चूर्ण",
+          "जांभूळ रस",
+          "जांभूळ तेल"
+        ],
+        description: "जांभूळ हा औषधी झाड आहे ज्याचा उपयोग विशेषतः मधुमेह व्यवस्थापनासाठी होतो.",
+        therapeuticUses: [
+          "पचन आणि मूत्र विकारांसाठी उपयुक्त.",
+          "त्वचा आणि मुख आरोग्यास सुधारते."
+        ],
+        precautions: [
+          "अत्यधिक सेवनामुळे बद्धकोष्ठता होऊ शकते.",
+          "वैद्यकीय सल्ल्याशिवाय वापर करू नका."
+        ]
+      }
+    };
+
+    function changeLanguage(lang) {
+      const data = plantData[lang];
+      const contentDiv = document.getElementById('content');
+
+      contentDiv.innerHTML = `
+        <h2>${data.title} (${data.vernacularName})</h2>
+        <p><strong>Biological Source:</strong> ${data.biologicalSource}</p>
+        <p><strong>Geographical Source:</strong> ${data.geographicalSource}</p>
+        <p><strong>Chemical Class:</strong> ${data.chemicalClass}</p>
+        <h3>Pharmacological Uses:</h3>
+        <ul>
+          ${data.pharmacologicalUses.map(use => `<li>${use}</li>`).join('')}
+        </ul>
+        <h3>Ayurvedic Preparations:</h3>
+        <ul>
+          ${data.ayurvedicPreparations.map(preparation => `<li>${preparation}</li>`).join('')}
+        </ul>
+        <p>${data.description}</p>
+        <h3>Therapeutic Uses:</h3>
+        <ul>
+          ${data.therapeuticUses.map(use => `<li>${use}</li>`).join('')}
+        </ul>
+        <h3>Precautions:</h3>
+        <ul>
+          ${data.precautions.map(prevention => `<li>${prevention}</li>`).join('')}
+        </ul>
+      `;
+    }
+
+    window.onload = () => changeLanguage('en');
+  </script>
+</body>
+</html>

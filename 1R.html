@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strychnos nux-vomica (Kuchala)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    /* General Styling */
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #E6E6FA, #D8BFD8); /* Lavender matte gradient */
+      color: #4b382a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      background-attachment: fixed;
+    }
+
+    header {
+      background: linear-gradient(135deg, #C3AED6, #B69AD1);
+      color: #ffffff;
+      padding: 30px 20px;
+      text-align: center;
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8em;
+      margin: 0;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      background: rgba(255, 250, 255, 0.9); /* Light translucent background */
+      backdrop-filter: blur(5px);
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      border: 1px solid #e3d4f1;
+      position: relative;
+    }
+
+    .language-selector {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .language-selector button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      background-color: #C3AED6; /* Lavender button */
+      color: #4b382a;
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .language-selector button:hover {
+      background-color: #B69AD1;
+      color: #ffffff;
+      transform: scale(1.1);
+    }
+
+    .plant-image {
+      width: 200px;
+      height: 200px;
+      margin-left: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      object-fit: cover;
+    }
+
+    .plant-image img {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+    }
+
+    .plant-image img:hover {
+      transform: scale(1.2); /* Enlarge on hover */
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    h2 {
+      color: #7e5ba6;
+      font-family: 'Poppins', sans-serif;
+      font-size: 2em;
+      margin-bottom: 15px;
+      text-align: center;
+      animation: fadeInUp 1s ease;
+    }
+
+    ul {
+      padding-left: 20px;
+      list-style-type: square;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px 10px;
+      background: linear-gradient(135deg, #C3AED6, #D8BFD8);
+      color: #ffffff;
+      border-top: 5px solid #a06db3;
+      width: 100%;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    .content-wrapper > .content-section {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Strychnos nux-vomica (Kuchala)</h1>
+  </header>
+
+  <div class="container">
+    <div class="language-selector">
+      <button onclick="changeLanguage('en')">English</button>
+      <button onclick="changeLanguage('hi')">हिंदी</button>
+      <button onclick="changeLanguage('mr')">मराठी</button>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content-section" id="content">
+        <!-- Dynamic Content Will Load Here -->
+      </div>
+      <div class="plant-image">
+        <img src="1R.png" alt="Strychnos nux-vomica Plant">
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Medicinal Plants Information - MAPA Garden
+  </footer>
+
+  <script>
+    const plantData = {
+      en: {
+        title: "Strychnos nux-vomica",
+        vernacularName: "Kuchala",
+        biologicalSource: "Strychnos nux-vomica belongs to the family Loganiaceae.",
+        geographicalSource: "Native to India and Southeast Asia. Found in deciduous and semi-evergreen forests from plains to 1400m. Common in India, Sri Lanka, Myanmar, Thailand, Indo-China, and Malaysia.",
+        chemicalClass: "Alkaloids, primarily Strychnine.",
+        pharmacologicalUses: [
+          "Treating debility, paralysis, dyspepsia, dysentery, and chronic rheumatism.",
+          "Helps with colic, malarial fever, and hysteria.",
+          "Highly toxic; can cause convulsions and paralysis."
+        ],
+        ayurvedicPreparations: [
+          "Kuchala Churna",
+          "Kuchala Taila",
+          "Kuchala Ghrita",
+          "Kuchala Rasayana"
+        ],
+        description: "Strychnos nux-vomica is a medium-sized tree native to India and Southeast Asia, used in Ayurvedic medicine despite its toxicity.",
+        therapeuticUses: [
+          "Nervine tonic for treating nervous disorders.",
+          "Works as a stimulant for low blood pressure."
+        ],
+        precautions: [
+          "Highly toxic; use with caution.",
+          "Can cause side effects like seizures if taken improperly."
+        ]
+      },
+      hi: {
+        title: "स्ट्राइच्नोस नक्स-वोमिका",
+        vernacularName: "कुचला",
+        biologicalSource: "स्ट्राइच्नोस नक्स-वोमिका लॉगानिएसी परिवार से संबंधित है।",
+        geographicalSource: "यह भारत और दक्षिण-पूर्व एशिया का मूल निवासी है। यह पर्णपाती और अर्ध-सदाबहार जंगलों में पाया जाता है।",
+        chemicalClass: "क्षाराभ (अल्कलॉइड्स), मुख्यतः स्ट्राइच्निन।",
+        pharmacologicalUses: [
+          "कमजोरी, लकवा, अपच, पेचिश और पुरानी गठिया का इलाज।",
+          "मलेरिया बुखार और हिस्टीरिया में मदद करता है।",
+          "अत्यधिक विषैला; झटके और लकवा पैदा कर सकता है।"
+        ],
+        ayurvedicPreparations: [
+          "कुचला चूर्ण",
+          "कुचला तेल",
+          "कुचला घृत",
+          "कुचला रसायन"
+        ],
+        description: "स्ट्राइच्नोस नक्स-वोमिका भारतीय और दक्षिण-एशियाई चिकित्सा में विषैला होने के बावजूद इस्तेमाल किया जाता है।",
+        therapeuticUses: [
+          "तंत्रिका विकारों के लिए तंत्रिका टॉनिक।",
+          "कमजोरी के लिए उत्तेजक।"
+        ],
+        precautions: [
+          "यह अत्यधिक विषैला है, सावधानी से उपयोग करें।",
+          "गलत उपयोग से साइड इफेक्ट्स हो सकते हैं।"
+        ]
+      },
+      mr: {
+        title: "स्ट्रायच्नोस नक्स-वोमिका",
+        vernacularName: "कुचला",
+        biologicalSource: "स्ट्रायच्नोस नक्स-वोमिका हे लॉगानिएसी कुटुंबातील आहे.",
+        geographicalSource: "भारत आणि दक्षिण-पूर्व आशियात आढळतो. पर्णपाती आणि अर्ध-सदाबहार जंगलांमध्ये आढळते.",
+        chemicalClass: "अल्कलॉइड्स, मुख्यतः स्ट्रायच्निन.",
+        pharmacologicalUses: [
+          "कमजोरी, पक्षाघात, अपचन, अतिसार आणि पुरातन संधिवाताचा उपचार.",
+          "मलेरिया ताप आणि हिस्टीरिया मध्ये उपयोगी.",
+          "अत्यंत विषारी; झटके आणि पक्षाघात निर्माण करू शकतो."
+        ],
+        ayurvedicPreparations: [
+          "कुचला चूर्ण",
+          "कुचला तेल",
+          "कुचला घृत",
+          "कुचला रसायन"
+        ],
+        description: "स्ट्रायच्नोस नक्स-वोमिका आयुर्वेदिक औषधांमध्ये विषारी असतानाही वापरला जातो.",
+        therapeuticUses: [
+          "तंत्रिका विकारांसाठी तंत्रिका टॉनिक.",
+          "कमजोरीसाठी उत्तेजक."
+        ],
+        precautions: [
+          "अत्यंत विषारी आहे; काळजीपूर्वक वापर करा.",
+          "चुकिच्या वापरामुळे साइड इफेक्ट्स होऊ शकतात."
+        ]
+      }
+    };
+
+    function changeLanguage(lang) {
+      const data = plantData[lang];
+      const contentDiv = document.getElementById('content');
+
+      contentDiv.innerHTML = `
+        <h2>${data.title} (${data.vernacularName})</h2>
+        <p><strong>Biological Source:</strong> ${data.biologicalSource}</p>
+        <p><strong>Geographical Source:</strong> ${data.geographicalSource}</p>
+        <p><strong>Chemical Class:</strong> ${data.chemicalClass}</p>
+        <h3>Pharmacological Uses:</h3>
+        <ul>
+          ${data.pharmacologicalUses.map(use => `<li>${use}</li>`).join('')}
+        </ul>
+        <h3>Ayurvedic Preparations:</h3>
+        <ul>
+          ${data.ayurvedicPreparations.map(preparation => `<li>${preparation}</li>`).join('')}
+        </ul>
+        <p>${data.description}</p>
+        <h3>Therapeutic Uses:</h3>
+        <ul>
+          ${data.therapeuticUses.map(use => `<li>${use}</li>`).join('')}
+        </ul>
+        <h3>Precautions:</h3>
+        <ul>
+          ${data.precautions.map(prevention => `<li>${prevention}</li>`).join('')}
+        </ul>
+      `;
+    }
+
+    window.onload = () => changeLanguage('en');
+  </script>
+</body>
+</html>
+
+

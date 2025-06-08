@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Great Healers of History</title>
+  <style>
+    /* General Styling */
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: #faf5ff; /* Light lavender */
+      color: #4B0082; /* Deep lavender */
+      overflow-x: hidden; /* Prevent horizontal scroll */
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #6a5acd; /* Lavender purple */
+      margin-bottom: 1em;
+    }
+
+    p {
+      line-height: 1.8em;
+      text-align: justify;
+      color: #4B0082;
+    }
+
+    section {
+      padding: 4em 2em;
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      justify-content: center;
+    }
+
+    /* Individual Card Styles */
+    .card {
+      width: 300px;
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0px 4px 15px rgba(106, 90, 205, 0.3);
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s;
+      box-sizing: border-box;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 6px 20px rgba(106, 90, 205, 0.5);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1.5em;
+    }
+
+    .card-content h3 {
+      margin: 0;
+      color: #4B0082;
+    }
+
+    .more-info {
+      display: none;
+      margin-top: 1em;
+      background-color: #f4f2f8;
+      padding: 1em;
+      border-radius: 8px;
+      font-size: 1em;
+      color: #4B0082;
+      box-shadow: 0px 2px 10px rgba(106, 90, 205, 0.2);
+      opacity: 0;
+      max-height: 0;
+      transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+      overflow: hidden;
+    }
+
+    .more-info.show {
+      display: block;
+      opacity: 1;
+      max-height: 200px; /* Adjust to your content */
+    }
+
+    /* Scroll Animations */
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    [data-animate].animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Floating Animation */
+    .floating {
+      animation: float 3s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    /* Moving Background Animation */
+    .animated-bg {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      right: 0;
+      height: 300px;
+      background: linear-gradient(90deg, rgba(106, 90, 205, 0.5) 25%, rgba(255, 255, 255, 0) 75%);
+      animation: moveBg 5s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes moveBg {
+      from {
+        background-position: -200px 0;
+      }
+      to {
+        background-position: 100% 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section>
+    <h1>Great Healers of History</h1>
+    <div class="animated-bg"></div>
+
+    <div class="card-container">
+      <!-- Charaka Card -->
+      <div class="card floating" data-animate onclick="toggleInfo('charaka-info')">
+        <img src="charaka.jpg" alt="Charaka">
+        <div class="card-content">
+          <h3>Charaka</h3>
+          <p>Known as a pioneer of Ayurveda, Charaka emphasized holistic healing through balance in Vata, Pitta, and Kapha doshas.</p>
+        </div>
+        <div class="more-info" id="charaka-info">
+          <p>Charaka’s contribution to the development of Ayurvedic medicine is monumental. His work, the *Charaka Samhita*, is a detailed and comprehensive treatise on health, disease, and treatment methods. He introduced many revolutionary concepts in medicine, including the importance of personalized treatments based on an individual’s dosha type, and the use of herbal medicines.</p>
+        </div>
+      </div>
+
+      <!-- Agastya Card -->
+      <div class="card floating" data-animate onclick="toggleInfo('agastya-info')">
+        <img src="agastya.jpg" alt="Agastya">
+        <div class="card-content">
+          <h3>Agastya</h3>
+          <p>Agastya was a revered sage and founder of Siddha medicine, focusing on herbal remedies and spiritual wellness.</p>
+        </div>
+        <div class="more-info" id="agastya-info">
+          <p>Agastya is considered one of the most important figures in the Siddha tradition of medicine. He was believed to have written many texts on healing herbs and their uses, many of which remain central to modern-day practices in South India. His contributions were not only medicinal but also spiritual, with an emphasis on maintaining the balance between mind, body, and spirit.</p>
+        </div>
+      </div>
+
+      <!-- Avicenna Card -->
+      <div class="card floating" data-animate onclick="toggleInfo('avicenna-info')">
+        <img src="avicenna.jpg" alt="Avicenna">
+        <div class="card-content">
+          <h3>Avicenna</h3>
+          <p>Avicenna’s *The Canon of Medicine* shaped medical practice for centuries in both Islamic and European cultures.</p>
+        </div>
+        <div class="more-info" id="avicenna-info">
+          <p>Avicenna, known as Ibn Sina in the Arab world, was a Persian polymath whose *Canon of Medicine* became the standard medical textbook in Europe and the Middle East for many centuries. His work included a detailed understanding of anatomy, physiology, pharmacology, and treatment of diseases. He also made advancements in surgery and was a pioneer in the use of scientific methods in medicine.</p>
+        </div>
+      </div>
+
+      <!-- Samuel Hahnemann Card -->
+      <div class="card floating" data-animate onclick="toggleInfo('hahnemann-info')">
+        <img src="samuel.jpg" alt="Samuel Hahnemann">
+        <div class="card-content">
+          <h3>Samuel Hahnemann</h3>
+          <p>The founder of Homeopathy, Samuel introduced the principle of "like cures like" in modern medicine.</p>
+        </div>
+        <div class="more-info" id="hahnemann-info">
+          <p>Samuel Hahnemann revolutionized medical treatment with the development of homeopathy, based on the concept that "like cures like." This approach involves using highly diluted substances to treat various ailments. Although controversial, homeopathy has gained widespread acceptance and is still used by millions of people worldwide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Great Healers of History - All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // Function to toggle additional information on click
+    function toggleInfo(infoId) {
+      const infoElement = document.getElementById(infoId);
+      if (infoElement.classList.contains('show')) {
+        infoElement.classList.remove('show');
+      } else {
+        // Close other open cards
+        const allInfoElements = document.querySelectorAll('.more-info');
+        allInfoElements.forEach(el => el.classList.remove('show'));
+        // Open the clicked card
+        infoElement.classList.add('show');
+      }
+    }
+
+    // Scroll Animation
+    const animateElements = document.querySelectorAll("[data-animate]");
+
+    const scrollHandler = () => {
+      animateElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          el.classList.add("animate");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", scrollHandler);
+    scrollHandler(); // Trigger animations on page load
+  </script>
+</body>
+</html>

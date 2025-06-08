@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spondias pinnata (Indian Hog Plum)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #E6E6FA, #D8BFD8);
+      color: #4b382a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      background-attachment: fixed;
+    }
+
+    header {
+      background: linear-gradient(135deg, #C3AED6, #B69AD1);
+      color: #ffffff;
+      padding: 30px 20px;
+      text-align: center;
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8em;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      background: rgba(255, 250, 255, 0.9);
+      backdrop-filter: blur(5px);
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      border: 1px solid #e3d4f1;
+      position: relative;
+    }
+
+    .language-selector {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .language-selector button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      background-color: #C3AED6;
+      color: #4b382a;
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .language-selector button:hover {
+      background-color: #B69AD1;
+      color: #ffffff;
+      transform: scale(1.1);
+    }
+
+    .plant-image {
+      width: 200px;
+      height: 200px;
+      margin-left: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      object-fit: cover;
+    }
+
+    .plant-image img {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+    }
+
+    .plant-image img:hover {
+      transform: scale(1.2);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    h2 {
+      color: #7e5ba6;
+      font-family: 'Poppins', sans-serif;
+      font-size: 2em;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    ul {
+      padding-left: 20px;
+      list-style-type: square;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px 10px;
+      background: linear-gradient(135deg, #C3AED6, #D8BFD8);
+      color: #ffffff;
+      border-top: 5px solid #a06db3;
+      width: 100%;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    .content-wrapper > .content-section {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Spondias pinnata (Indian Hog Plum)</h1>
+  </header>
+
+  <div class="container">
+    <div class="language-selector">
+      <button onclick="changeLanguage('en')">English</button>
+      <button onclick="changeLanguage('hi')">हिंदी</button>
+      <button onclick="changeLanguage('mr')">मराठी</button>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="content-section" id="content">
+        <!-- Dynamic Content Will Load Here -->
+      </div>
+      <div class="plant-image">
+        <img src="spondias_pinnata.jpg" alt="Spondias pinnata Plant">
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Medicinal Plants Information - MAPA Garden
+  </footer>
+
+  <script>
+    const plantData = {
+      en: {
+        title: "Spondias pinnata",
+        vernacularName: "Indian Hog Plum",
+        biologicalSource: "Fruits and leaves of Spondias pinnata (family: Anacardiaceae).",
+        geographicalSource: "Native to tropical and subtropical regions of Asia, especially in India and Southeast Asia.",
+        chemicalClass: "Contains Tannins, Flavonoids, and Organic Acids.",
+        pharmacologicalUses: [
+          "Used to treat dysentery and diarrhea.",
+          "Helps in controlling blood sugar levels.",
+          "Acts as an anti-inflammatory and aids in digestion."
+        ],
+        ayurvedicPreparations: [
+          "Hog Plum Syrup",
+          "Hog Plum Powder",
+          "Hog Plum Extract"
+        ],
+        description: "Spondias pinnata, known as Indian Hog Plum, is widely used in traditional medicine for its digestive, anti-inflammatory, and wound-healing properties.",
+        therapeuticUses: [
+          "Used to treat stomach disorders, including indigestion and dysentery.",
+          "Effective in treating skin conditions and wounds."
+        ],
+        precautions: [
+          "May cause gastrointestinal issues if consumed in excess.",
+          "Consult a physician for proper dosage."
+        ]
+      },
+      hi: {
+        title: "हॉग प्लम",
+        vernacularName: "हॉग प्लम",
+        biologicalSource: "हॉग प्लम के फल और पत्तियां।",
+        geographicalSource: "भारत और दक्षिण-पूर्व एशिया में पाया जाता है।",
+        chemicalClass: "टैनिन्स, फ्लेवोनॉयड्स और कार्बनिक अम्ल।",
+        pharmacologicalUses: [
+          "बवासीर और अतिसार के इलाज में उपयोगी।",
+          "रक्त शर्करा को नियंत्रित करने में सहायक।",
+          "सूजन रोधी और पाचन में सहायक।"
+        ],
+        ayurvedicPreparations: [
+          "हॉग प्लम सिरप",
+          "हॉग प्लम पाउडर",
+          "हॉग प्लम अर्क"
+        ],
+        description: "हॉग प्लम, जिसे सpondias pinnata के नाम से जाना जाता है, पारंपरिक चिकित्सा में पाचन, सूजन कम करने और घाव भरने के गुणों के लिए प्रसिद्ध है।",
+        therapeuticUses: [
+          "पेट संबंधी विकारों, जैसे अपच और अतिसार के इलाज में उपयोगी।",
+          "त्वचा रोग और घावों के उपचार में प्रभावी।"
+        ],
+        precautions: [
+          "अत्यधिक सेवन से पाचन संबंधी समस्याएं हो सकती हैं।",
+          "उचित खुराक के लिए चिकित्सक से परामर्श लें।"
+        ]
+      },
+      mr: {
+        title: "हॉग प्लम",
+        vernacularName: "हॉग प्लम",
+        biologicalSource: "हॉग प्लम चे फळं आणि पाने.",
+        geographicalSource: "भारत आणि दक्षिण-पूर्व आशियामध्ये आढळतो.",
+        chemicalClass: "टॅनिन्स, फ्लेवोनॉयड्स आणि कार्बनिक आम्ल.",
+        pharmacologicalUses: [
+          "पॅटीक आणि अतिसारच्या उपचारांसाठी उपयुक्त.",
+          "रक्तातील साखरेचे प्रमाण नियंत्रित करण्यात मदत करते.",
+          "दाहक-विरोधी आणि पचन सुधारण्यात सहायक."
+        ],
+        ayurvedicPreparations: [
+          "हॉग प्लम सिरप",
+          "हॉग प्लम पावडर",
+          "हॉग प्लम अर्क"
+        ],
+        description: "हॉग प्लम, ज्याला सpondias pinnata म्हणतात, पारंपरिक औषधांमध्ये पचन, सूजन कमी करण्याचे आणि जखम भरल्याचे गुण असलेल्या वनस्पती आहे.",
+        therapeuticUses: [
+          "पेटाच्या विकारांसाठी, जसे की पाचन खराब होणे आणि अतिसार.",
+          "त्वचेच्या विकारांमध्ये आणि जखम भरताना मदत करते."
+        ],
+        precautions: [
+          "अत्याधिक वापरामुळे पचन समस्यांचा सामना करावा लागू शकतो.",
+          "डॉक्टरांचा सल्ला घेऊन योग्य डोस वापरा."
+        ]
+      }
+    };
+
+    function changeLanguage(lang) {
+      const data = plantData[lang];
+      const contentDiv = document.getElementById('content');
+
+      contentDiv.innerHTML = `
+        <h2>${data.title} (${data.vernacularName})</h2>
+        <p><strong>Biological Source:</strong> ${data.biologicalSource}</p>
+        <p><strong>Geographical Source:</strong> ${data.geographicalSource}</p>
+        <p><strong>Chemical Class:</strong> ${data.chemicalClass}</p>
+        <h3>Pharmacological Uses:</h3>
+        <ul>
+          ${data.pharmacologicalUses.map(use => `<li>${use}</li>`).join('')}
+        </ul>
+        <h3>Ayurvedic Preparations:</h3>
+        <ul>
+          ${data.ayurvedicPreparations.map(preparation => `<li>${preparation}</li>`).join('')}
+        </ul>
+        <p>${data.description}</p>
+        <h3>Therapeutic Uses:</h3>
+        <ul>
+          ${data.therapeuticUses.map(use => `<li>${use}</li>`).join('')}
+        </ul>
+        <h3>Precautions:</h3>
+        <ul>
+          ${data.precautions.map(prevention => `<li>${prevention}</li>`).join('')}
+        </ul>
+      `;
+    }
+
+    window.onload = () => changeLanguage('en');
+  </script>
+</body>
+</html>
+
+

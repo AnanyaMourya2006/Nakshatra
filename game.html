@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forest Adventure</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      background-color: white;
+    }
+
+    #game {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .player {
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-image: url('basket.png');
+      background-size: cover;
+    }
+
+    .score {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 1.5em;
+      color: #333;
+    }
+
+    .controls {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .button {
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .start-btn {
+      background-color: #ffd700;
+      color: black;
+    }
+
+    .pause-btn {
+      background-color: #ffa500;
+      color: black;
+    }
+
+    .diary-btn {
+      background-color: #ff4500;
+      color: white;
+    }
+
+    .game-over {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2em;
+      color: red;
+      display: none;
+    }
+
+    .flower {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: -50px;
+      background-image: url('plant.png');
+      background-size: cover;
+    }
+
+    .pesticide {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: -50px;
+      background-image: url('virus.png');
+      background-size: cover;
+    }
+
+    .fact-popup {
+      position: fixed;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: white;
+      color: black;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: none;
+    }
+
+    .diary {
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(255, 255, 255, 0.9);
+      color: black;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: none;
+      width: 60%;
+      max-height: 50%;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="game">
+    <div class="score">Plants Collected: 0</div>
+    <div class="controls">
+      <button class="button start-btn" onclick="startGame()">Start</button>
+      <button class="button pause-btn" onclick="pauseGame()">Pause</button>
+      <button class="button diary-btn" onclick="showDiary()">View Diary</button>
+    </div>
+    <div class="player" id="player"></div>
+    <div class="game-over" id="gameOver">Game Over!</div>
+  </div>
+
+  <div class="fact-popup" id="factPopup"></div>
+
+  <div class="diary" id="diary">
+    <h2>Collected Flower Facts</h2>
+    <ul id="factList"></ul>
+    <button class="button" onclick="closeDiary()">Close Diary</button>
+  </div>
+
+  <script>
+    const game = document.getElementById('game');
+    const player = document.getElementById('player');
+    const scoreElement = document.querySelector('.score');
+    const factPopup = document.getElementById('factPopup');
+    const gameOverElement = document.getElementById('gameOver');
+    const diary = document.getElementById('diary');
+    const factList = document.getElementById('factList');
+
+    let score = 0;
+    let facts = new Set();
+    let playerX = window.innerWidth / 2;
+    let gameInterval;
+    let gameActive = false;
+
+    const flowerFacts = [
+      "Acorus calamus (Sweet Flag, वच): Known for its sedative and CNS depressant properties.",
+      "Acacia catechu (Khair, खैर): Used as an astringent and in treating dysentery.",
+      "Abutilon indicum (Atibala, अतिबला): Acts as a demulcent, laxative, and diuretic.",
+      "Acacia arabica (Babul, बबूल): Possesses antimicrobial and antidiabetic properties.",
+      "Bambusa arundinacea (Bamboo, बांस): Known for its anti-inflammatory and antiulcer properties.",
+      "Bambusa vulgaris (Golden Bamboo, सुवर्ण बांस): Effective in relieving stomach issues and pain.",
+      "Azadirachta indica (Neem, नीम): Renowned for its antibacterial and anti-inflammatory uses.",
+      "Bacopa monnieri (Jal Brahmi, जल ब्रह्मी): Acts as a sedative and memory enhancer.",
+      "Bombax ceiba (Shalmali, शाल्मली): Useful for treating bladder inflammation and as a cooling agent.",
+      "Bauhinia racemosa (Aapta, आपटा): Beneficial for treating skin diseases and ulcers.",
+      "Boerhaavia diffusa (Punarnava, पुनर्नवा): Used as a diuretic and for managing liver disorders.",
+      "Calotropis gigantea (Arka, अर्क): Known for its anti-inflammatory and wound-healing properties.",
+      "Cassia fistula (Amaltas, अमलतास): Acts as a gentle laxative and purgative.",
+      "Centella asiatica (Mandukaparni, मंडूकपर्णी): Improves memory and promotes wound healing.",
+      "Curcuma longa (Haldi, हल्दी): Famous for its anti-inflammatory and antioxidant properties.",
+      "Cymbopogon citratus (Lemongrass, नींबू घास): Known for its antimicrobial and digestive benefits.",
+      "Datura metel (Dhatura, धतूरा): Used for relieving pain and as a sedative.",
+      "Emblica officinalis (Amla, आंवला): Rich in Vitamin C, it boosts immunity and digestion.",
+      "Ficus religiosa (Peepal, पीपल): Revered for its antibacterial and anti-inflammatory properties.",
+      "Hibiscus rosa-sinensis (Jasund, गुड़हल): Known for promoting hair health and as a cooling agent.",
+      "Lawsonia inermis (Mehendi, मेहंदी): Used for cooling and as an antifungal agent.",
+      "Moringa oleifera (Sahjan, सहजन): Acts as a nutrient-rich superfood and anti-inflammatory agent.",
+      "Ocimum sanctum (Tulsi, तुलसी): Revered for its adaptogenic and immunity-boosting properties.",
+      "Phyllanthus amarus (Bhui Amla, भुई आंवला): Effective for liver health and managing jaundice.",
+      "Ricinus communis (Erand, एरंड): Used as a laxative and for its anti-inflammatory effects.",
+      "Terminalia arjuna (Arjun, अर्जुन): Renowned for its cardioprotective properties.",
+      "Terminalia chebula (Haritaki, हरड़): Known for its digestive and detoxifying effects.",
+      "Tinospora cordifolia (Giloy, गिलोय): Boosts immunity and acts as an antipyretic.",
+      "Vitex negundo (Nirgundi, निर्गुंडी): Effective for reducing inflammation and pain.",
+      "Withania somnifera (Ashwagandha, अश्वगंधा): Known for its adaptogenic and stress-relieving properties.",
+    ];
+
+    function spawnObject() {
+      const type = Math.random() < 0.7 ? 'flower' : 'pesticide';
+      const obj = document.createElement('div');
+      obj.classList.add(type);
+      obj.style.left = `${Math.random() * (window.innerWidth - 50)}px`;
+      game.appendChild(obj);
+
+      obj.animate([{ top: '-50px' }, { top: '100vh' }], {
+        duration: 5000,
+        fill: 'forwards',
+        easing: 'linear',
+      });
+
+      obj.addEventListener('animationend', () => {
+        obj.remove();
+      });
+
+      checkCollision(obj, type);
+    }
+
+    function checkCollision(obj, type) {
+      const interval = setInterval(() => {
+        const objRect = obj.getBoundingClientRect();
+        const playerRect = player.getBoundingClientRect();
+
+        if (
+          objRect.bottom > playerRect.top &&
+          objRect.top < playerRect.bottom &&
+          objRect.right > playerRect.left &&
+          objRect.left < playerRect.right
+        ) {
+          clearInterval(interval);
+
+          if (type === 'flower') {
+            score++;
+            scoreElement.textContent = `Flowers Collected: ${score}`;
+            showFact();
+          } else if (type === 'pesticide') {
+            endGame();
+          }
+
+          obj.remove();
+        }
+      }, 100);
+    }
+
+    function showFact() {
+      const fact = flowerFacts[Math.floor(Math.random() * flowerFacts.length)];
+      facts.add(fact);
+
+      factPopup.textContent = fact;
+      factPopup.style.display = 'block';
+      setTimeout(() => {
+        factPopup.style.display = 'none';
+      }, 5000);
+    }
+
+    function startGame() {
+      if (gameActive) return;
+      gameActive = true;
+      gameOverElement.style.display = 'none';
+      score = 0;
+      scoreElement.textContent = `Flowers Collected: ${score}`;
+      gameInterval = setInterval(spawnObject, 3000);
+      game.addEventListener('mousemove', moveBee);
+    }
+
+    function pauseGame() {
+      clearInterval(gameInterval);
+      gameActive = false;
+      game.removeEventListener('mousemove', moveBee);
+    }
+
+    function endGame() {
+      pauseGame();
+      gameOverElement.style.display = 'block';
+    }
+
+    function showDiary() {
+      factList.innerHTML = '';
+      facts.forEach(fact => {
+        const li = document.createElement('li');
+        li.textContent = fact;
+        factList.appendChild(li);
+      });
+      diary.style.display = 'block';
+    }
+
+    function closeDiary() {
+      diary.style.display = 'none';
+    }
+
+    function moveBee(event) {
+      playerX = event.clientX - player.offsetWidth / 2;
+      player.style.left = `${playerX}px`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terminalia arjuna & Feronia elephantum</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #E6E6FA, #D8BFD8);
+      color: #4b382a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      background-attachment: fixed;
+    }
+
+    header {
+      background: linear-gradient(135deg, #C3AED6, #B69AD1);
+      color: #ffffff;
+      padding: 30px 20px;
+      text-align: center;
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8em;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 25px;
+      background: rgba(255, 250, 255, 0.9);
+      backdrop-filter: blur(5px);
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      border: 1px solid #e3d4f1;
+      display: flex;
+      gap: 30px;
+    }
+
+    .column {
+      flex: 1;
+      padding: 20px;
+      border-radius: 10px;
+      background: rgba(245, 245, 255, 0.8);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .column img {
+      width: 150px;
+      height: 150px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      color: #7e5ba6;
+      font-family: 'Poppins', sans-serif;
+      font-size: 2em;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    ul {
+      padding-left: 20px;
+      list-style-type: square;
+    }
+
+    .language-selector {
+      margin: 15px;
+      text-align: center;
+    }
+
+    .language-selector button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      background-color: #C3AED6;
+      color: #4b382a;
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .language-selector button:hover {
+      background-color: #B69AD1;
+      color: #ffffff;
+      transform: scale(1.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px 10px;
+      background: linear-gradient(135deg, #C3AED6, #D8BFD8);
+      color: #ffffff;
+      border-top: 5px solid #a06db3;
+      width: 100%;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Terminalia arjuna & Feronia elephantum</h1>
+  </header>
+
+  <div class="language-selector">
+    <button onclick="changeLanguage('en')">English</button>
+    <button onclick="changeLanguage('hi')">हिंदी</button>
+    <button onclick="changeLanguage('mr')">मराठी</button>
+  </div>
+
+  <div class="container">
+    <div class="column" id="terminalia">
+      <img src="8R.png" alt="Terminalia arjuna">
+      <h2>Terminalia arjuna</h2>
+      <div id="terminalia-content"></div>
+    </div>
+
+    <div class="column" id="feronia">
+      <img src="8Rr.png" alt="Feronia elephantum">
+      <h2>Feronia elephantum</h2>
+      <div id="feronia-content"></div>
+    </div>
+  </div>
+
+  <footer>
+    Medicinal Plants Information - MAPA Garden
+  </footer>
+
+  <script>
+    const plantData = {
+      en: {
+        terminalia: {
+          vernacularName: "Arjuna",
+          biologicalSource: "Bark of Terminalia arjuna (family: Combretaceae).",
+          geographicalSource: "Found in the Indian subcontinent.",
+          chemicalClass: "Rich in tannins, flavonoids, and triterpenoids.",
+          pharmacologicalUses: ["Supports cardiovascular health.", "Anti-inflammatory and antioxidant properties."],
+          ayurvedicPreparations: ["Arjuna Powder", "Arjuna Capsules"],
+          therapeuticUses: ["Used for heart diseases, hypertension, and cholesterol management.", "Improves skin health and heals wounds."],
+          precautions: ["Should be used under medical supervision in case of low blood pressure."]
+        },
+        feronia: {
+          vernacularName: "Wood Apple",
+          biologicalSource: "Fruit of Feronia elephantum (family: Rutaceae).",
+          geographicalSource: "Native to India and Southeast Asia.",
+          chemicalClass: "Contains alkaloids, flavonoids, and tannins.",
+          pharmacologicalUses: ["Supports digestive health.", "Anti-inflammatory and antimicrobial properties."],
+          ayurvedicPreparations: ["Wood Apple Juice", "Feronia Extract"],
+          therapeuticUses: ["Used for gastrointestinal issues, such as diarrhea and indigestion.", "Boosts immunity and improves skin condition."],
+          precautions: ["Excessive consumption may cause digestive discomfort."]
+        }
+      },
+      hi: {
+        terminalia: {
+          vernacularName: "अर्जुन",
+          biologicalSource: "टर्मिनेलिया अर्जुन की छाल (परिवार: कोम्ब्रेटेसी)।",
+          geographicalSource: "भारत उपमहाद्वीप में पाया जाता है।",
+          chemicalClass: "टैनिन, फ्लेवोनॉयड्स और ट्राईटर्पेनॉइड्स से भरपूर।",
+          pharmacologicalUses: ["हृदय स्वास्थ्य को समर्थन देता है।", "सूजनरोधी और एंटीऑक्सीडेंट गुण।"],
+          ayurvedicPreparations: ["अर्जुन पाउडर", "अर्जुन कैप्सूल"],
+          therapeuticUses: ["हृदय रोग, उच्च रक्तचाप और कोलेस्ट्रॉल प्रबंधन के लिए उपयोगी।", "त्वचा की सेहत में सुधार और घावों को ठीक करता है।"],
+          precautions: ["निम्न रक्तचाप के मामले में चिकित्सक की निगरानी में प्रयोग करें।"]
+        },
+        feronia: {
+          vernacularName: "कदम",
+          biologicalSource: "फेरोनिया एलेफंटम का फल (परिवार: रूटेसी)।",
+          geographicalSource: "भारत और दक्षिण-पूर्व एशिया का मूल निवासी।",
+          chemicalClass: "आल्कलॉइड्स, फ्लेवोनॉयड्स और टैनिन्स से भरपूर।",
+          pharmacologicalUses: ["पाचन स्वास्थ्य को समर्थन देता है।", "सूजनरोधी और एंटीमाइक्रोबियल गुण।"],
+          ayurvedicPreparations: ["कदम का रस", "फेरोनिया अर्क"],
+          therapeuticUses: ["पाचन समस्याओं, जैसे दस्त और अपच के लिए उपयोगी।", "रोग प्रतिकारक क्षमता बढ़ाता है और त्वचा की स्थिति में सुधार करता है।"],
+          precautions: ["अधिक सेवन से पाचन संबंधी समस्याएं हो सकती हैं।"]
+        }
+      },
+      mr: {
+        terminalia: {
+          vernacularName: "अर्जुन",
+          biologicalSource: "टर्मिनेलिया अर्जुन चा काठ (कुटुंब: कोम्ब्रेटेसी).",
+          geographicalSource: "भारताच्या उपमहाद्वीपात आढळते.",
+          chemicalClass: "टॅनिन्स, फ्लेवोनॉयड्स आणि ट्रायटर्पेनॉइड्स.",
+          pharmacologicalUses: ["हृदयाच्या आरोग्यास समर्थन.", "सूजनविरोधी आणि अँटीऑक्सिडंट गुणधर्म."],
+          ayurvedicPreparations: ["अर्जुन पावडर", "अर्जुन कॅप्सूल"],
+          therapeuticUses: ["हृदयविकार, उच्च रक्तदाब आणि कोलेस्ट्रॉल नियंत्रणासाठी उपयुक्त.", "त्वचेसाठी आणि जखमा बरी करण्यासाठी उपयोगी."],
+          precautions: ["निम्न रक्तदाब असलेल्या व्यक्तींनी डॉक्टरांच्या मार्गदर्शनाखाली वापरावे."]
+        },
+        feronia: {
+          vernacularName: "कदम",
+          biologicalSource: "फेरोनिया एलेफंटम चे फळ (कुटुंब: रूटेसी).",
+          geographicalSource: "भारत आणि दक्षिण-पूर्व आशिया.",
+          chemicalClass: "आल्कलॉइड्स, फ्लेवोनॉयड्स आणि टॅनिन्स.",
+          pharmacologicalUses: ["पचनासंदर्भातील आरोग्यास समर्थन.", "सूजनविरोधी आणि अँटीमायक्रोबियल गुण."],
+          ayurvedicPreparations: ["कदम रस", "फेरोनिया अर्क"],
+          therapeuticUses: ["पचनाच्या समस्या, जसे की अतिसार आणि पचवण्याचे विकार.", "रोग प्रतिकारक क्षमता वाढवतो आणि त्वचेचे आरोग्य सुधारतो."],
+          precautions: ["अत्यधिक सेवनाने पचन संबंधी अस्वस्थता होऊ शकते."]
+        }
+      }
+    };
+
+    function changeLanguage(lang) {
+      const terminaliaData = plantData[lang].terminalia;
+      const feroniaData = plantData[lang].feronia;
+
+      document.getElementById("terminalia-content").innerHTML = `
+        <p><strong>Vernacular Name:</strong> ${terminaliaData.vernacularName}</p>
+        <p><strong>Biological Source:</strong> ${terminaliaData.biologicalSource}</p>
+        <p><strong>Geographical Source:</strong> ${terminaliaData.geographicalSource}</p>
+        <p><strong>Chemical Class:</strong> ${terminaliaData.chemicalClass}</p>
+        <h3>Pharmacological Uses:</h3>
+        <ul>${terminaliaData.pharmacologicalUses.map(use => `<li>${use}</li>`).join('')}</ul>
+        <h3>Ayurvedic Preparations:</h3>
+        <ul>${terminaliaData.ayurvedicPreparations.map(prep => `<li>${prep}</li>`).join('')}</ul>
+        <h3>Therapeutic Uses:</h3>
+        <ul>${terminaliaData.therapeuticUses.map(use => `<li>${use}</li>`).join('')}</ul>
+        <h3>Precautions:</h3>
+        <ul>${terminaliaData.precautions.map(precaution => `<li>${precaution}</li>`).join('')}</ul>
+      `;
+
+      document.getElementById("feronia-content").innerHTML = `
+        <p><strong>Vernacular Name:</strong> ${feroniaData.vernacularName}</p>
+        <p><strong>Biological Source:</strong> ${feroniaData.biologicalSource}</p>
+        <p><strong>Geographical Source:</strong> ${feroniaData.geographicalSource}</p>
+        <p><strong>Chemical Class:</strong> ${feroniaData.chemicalClass}</p>
+        <h3>Pharmacological Uses:</h3>
+        <ul>${feroniaData.pharmacologicalUses.map(use => `<li>${use}</li>`).join('')}</ul>
+        <h3>Ayurvedic Preparations:</h3>
+        <ul>${feroniaData.ayurvedicPreparations.map(prep => `<li>${prep}</li>`).join('')}</ul>
+        <h3>Therapeutic Uses:</h3>
+        <ul>${feroniaData.therapeuticUses.map(use => `<li>${use}</li>`).join('')}</ul>
+        <h3>Precautions:</h3>
+        <ul>${feroniaData.precautions.map(precaution => `<li>${precaution}</li>`).join('')}</ul>
+      `;
+    }
+
+    window.onload = () => changeLanguage('en');
+  </script>
+</body>
+</html>

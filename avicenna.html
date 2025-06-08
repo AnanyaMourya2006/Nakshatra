@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avicenna - The Father of Modern Medicine</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and General Layout */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f0f0f0;
+            padding: 20px;
+            color: #333;
+        }
+
+        header {
+            background: #4e73df;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            animation: fadeIn 2s ease-in;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            animation: slideIn 1.5s ease-in;
+        }
+
+        /* Animation Effects */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Section Styling */
+        .section {
+            margin: 30px 0;
+        }
+
+        .section img {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px 0;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .section img:hover {
+            transform: scale(1.05);
+        }
+
+        .section .content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .content-text {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .content-img {
+            flex: 1;
+            min-width: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .section .content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .content-text, .content-img {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Avicenna - The Father of Modern Medicine</h1>
+    <p>An in-depth look at the life and works of the great philosopher and physician, Avicenna.</p>
+</header>
+
+<section class="section">
+    <div class="content">
+        <div class="content-text">
+            <h2>Introduction</h2>
+            <p>Avicenna, also known as Ibn Sina, was a Persian polymath who made significant contributions to medicine, philosophy, and various other sciences. His most notable work, the "Canon of Medicine," became the standard medical textbook in Europe and the Islamic world for centuries.</p>
+            <p>He is considered one of the greatest physicians of all time, and his works influenced the development of medical practices and philosophy in both the East and the West.</p>
+        </div>
+        <div class="content-img">
+            <img src="av1.png" alt="Portrait of Avicenna">
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="content">
+        <div class="content-text">
+            <h2>His Contributions to Medicine</h2>
+            <p>Avicenna's contributions to medicine include groundbreaking insights in pharmacology, surgery, and anatomy. He was among the first to write about the circulatory system, and his work laid the foundation for modern pharmacology.</p>
+            <p>His "Canon of Medicine" was an encyclopedic work that compiled knowledge from various cultures and traditions, including Greek, Roman, Persian, and Indian sources. It outlined methods of diagnosis, treatment, and prevention of diseases.</p>
+        </div>
+        <div class="content-img">
+            <img src="av2.png" alt="Avicenna Manuscript">
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="content">
+        <div class="content-text">
+            <h2>Legacy and Influence</h2>
+            <p>Avicenna's influence extends beyond medicine. His works on logic, ethics, and metaphysics significantly shaped medieval philosophy, especially in the Latin West. His ideas were central to the scholastic tradition and influenced figures such as Thomas Aquinas.</p>
+            <p>Today, Avicenna is remembered as one of the most important intellectual figures of the Islamic Golden Age and a pioneer in various fields of knowledge.</p>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

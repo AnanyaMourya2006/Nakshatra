@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze Runner Adventure</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #3a6186, #89253e);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #game-container {
+            width: 500px;
+            height: 500px;
+            background: #f4f4f4;
+            border: 5px solid #333;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .cell {
+            width: 20%;
+            height: 20%;
+            border: 1px solid #ddd;
+            position: relative;
+        }
+
+        .player {
+            width: 80%;
+            height: 80%;
+            background: #ffcc00;
+            border-radius: 50%;
+            position: absolute;
+            top: 10%;
+            left: 10%;
+        }
+
+        .star {
+            width: 60%;
+            height: 60%;
+            background: #ffd700;
+            border-radius: 50%;
+            position: absolute;
+            top: 20%;
+            left: 20%;
+            animation: sparkle 1s infinite;
+        }
+
+        @keyframes sparkle {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .trap {
+            width: 60%;
+            height: 60%;
+            background: #ff0000;
+            border-radius: 50%;
+            position: absolute;
+            top: 20%;
+            left: 20%;
+        }
+
+        #stats {
+            position: absolute;
+            bottom: -50px;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <!-- Cells of the maze -->
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell star"></div>
+        <div class="cell trap"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell player"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>
+    <div id="stats">Score: 0 | Health: 3</div>
+
+    <script>
+        const player = document.querySelector('.player');
+        const stars = document.querySelectorAll('.star');
+        const traps = document.querySelectorAll('.trap');
+        const stats = document.getElementById('stats');
+        const cells = document.querySelectorAll('.cell');
+
+        let playerPos = 17; // Start at cell 17
+        let score = 0;
+        let health = 3;
+
+        function updateStats() {
+            stats.textContent = `Score: ${score} | Health: ${health}`;
+        }
+
+        function movePlayer(newPos) {
+            if (newPos < 0 || newPos >= cells.length) return; // Out of bounds
+            if (cells[newPos].classList.contains('trap')) {
+                health -= 1;
+                if (health <= 0) {
+                    alert('Game Over! Your final score is ' + score);
+                    window.location.reload();
+                }
+            } else if (cells[newPos].classList.contains('star')) {
+                score += 10;
+                cells[newPos].classList.remove('star');
+            }
+
+            cells[playerPos].classList.remove('player');
+            playerPos = newPos;
+            cells[playerPos].appendChild(player);
+            updateStats();
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowUp') movePlayer(playerPos - 5); // Move up
+            if (e.key === 'ArrowDown') movePlayer(playerPos + 5); // Move down
+            if (e.key === 'ArrowLeft') movePlayer(playerPos - 1); // Move left
+            if (e.key === 'ArrowRight') movePlayer(playerPos + 1); // Move right
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charaka and His Teachings</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS (Animate on Scroll) CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    /* CSS Animations */
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Timeline Styles */
+    .timeline {
+      position: relative;
+      padding: 10px 0;
+    }
+    .event {
+      position: relative;
+      margin-left: 50px;
+    }
+    .event::before {
+      content: '';
+      position: absolute;
+      left: -25px;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #000;
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- Navbar or Header Section -->
+  <div class="container text-center my-5">
+    <h1>Charaka and His Teachings</h1>
+    <p>Explore the ancient wisdom of Ayurveda and Charaka's contributions to medicine</p>
+  </div>
+
+  <!-- Section with Fade-In Animation -->
+  <div class="container fade-in" data-aos="fade-up">
+    <h3>Charaka's Life</h3>
+    <p>Charaka was an ancient Indian physician who is known for his contributions to Ayurveda, particularly the Charaka Samhita, a foundational text.</p>
+  </div>
+
+  <!-- Responsive Grid for Teachings -->
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Key Teachings</h3>
+        <p>Charaka emphasized the balance of doshas, the importance of digestion, and the holistic approach to health.</p>
+      </div>
+      <div class="col-md-6">
+        <h3>Dosha Concept</h3>
+        <p>Charaka identified three doshas (Vata, Pitta, Kapha) as key factors affecting health.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Timeline Section -->
+  <div class="container my-5">
+    <h3>Timeline of Charaka's Life</h3>
+    <div class="timeline">
+      <div class="event">
+        <h4>Birth of Charaka</h4>
+        <p>Charaka is believed to have been born around 100 BCE.</p>
+      </div>
+      <div class="event">
+        <h4>Charaka Samhita</h4>
+        <p>Charaka compiled the Charaka Samhita, a key text in Ayurvedic medicine.</p>
+      </div>
+      <div class="event">
+        <h4>Legacy</h4>
+        <p>Charaka's work continues to influence modern Ayurvedic practices.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Quiz Section -->
+  <div class="container my-5">
+    <h3>Quiz: What is the focus of Charaka’s Teachings?</h3>
+    <form id="quizForm">
+      <input type="radio" name="answer" value="correct"> Balance between mind and body<br>
+      <input type="radio" name="answer" value="incorrect"> Scientific experimentation<br>
+      <input type="radio" name="answer" value="incorrect"> Use of modern pharmaceuticals<br><br>
+      <button type="button" class="btn btn-primary" onclick="checkAnswer()">Submit</button>
+    </form>
+  </div>
+
+  <!-- Footer Section -->
+  <div class="container text-center my-5">
+    <p>&copy; 2024 Charaka Teachings. All Rights Reserved.</p>
+  </div>
+
+  <!-- AOS (Animate on Scroll) JavaScript -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Bootstrap and jQuery JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Quiz JavaScript -->
+  <script>
+    AOS.init(); // Initialize AOS for animations
+
+    function checkAnswer() {
+      let answer = document.querySelector('input[name="answer"]:checked');
+      if (answer) {
+        if (answer.value === "correct") {
+          alert("Correct! Charaka’s teachings emphasized balance.");
+        } else {
+          alert("Incorrect. Try again.");
+        }
+      } else {
+        alert("Please select an answer.");
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+

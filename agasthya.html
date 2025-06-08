@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agasthya: The Sage</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(135deg, #f7f0fa, #e4d8f3);
+      overflow-x: hidden;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(to right, #5e35b1, #7e57c2);
+      color: white;
+      padding: 20px 10%;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      animation: slideIn 1.5s ease-in-out;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Main Section */
+    .main {
+      padding: 40px 10%;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .main h2 {
+      font-size: 2rem;
+      color: #5e35b1;
+      position: relative;
+    }
+
+    .main h2::after {
+      content: '';
+      width: 100px;
+      height: 3px;
+      background: #5e35b1;
+      display: block;
+      margin-top: 10px;
+    }
+
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .section img {
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.5s;
+    }
+
+    .section img:hover {
+      transform: scale(1.05);
+    }
+
+    .section-content {
+      flex: 1;
+      min-width: 300px;
+      max-width: 600px;
+    }
+
+    .section-content p {
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+
+    .quote {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #7e57c2;
+      margin-top: 20px;
+      text-align: center;
+      animation: fadeIn 2s infinite alternate;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0.5;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Footer */
+    footer {
+      background: #5e35b1;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #ffcc80;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .section {
+        flex-direction: column;
+      }
+
+      .section img {
+        max-width: 80%;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Agasthya: The Sage of Wisdom</h1>
+    <p>Discover the life, contributions, and teachings of the legendary rishi.</p>
+  </header>
+
+  <main class="main">
+    <section class="section">
+      <div class="section-content">
+        <h2>Who Was Agasthya?</h2>
+        <p>Agasthya is one of the most revered sages in Indian tradition, known for his vast knowledge and contributions to medicine, philosophy, and spirituality. He is credited with composing several hymns in the Rigveda and pioneering Ayurveda.</p>
+        <p>The sage's life is a beacon of wisdom, selflessness, and dedication to the well-being of humanity.</p>
+      </div>
+      <img src="A1.png" alt="Statue of Sage Agasthya">
+    </section>
+
+    <section class="section">
+      <img src="A2.png" alt="Ancient Vedic Scriptures">
+      <div class="section-content">
+        <h2>His Contributions</h2>
+        <p>Agasthya's works span a wide range of subjects, including linguistics, medicine, and ethics. His teachings emphasize balance in life and harmony with nature.</p>
+        <p>The sage is believed to have introduced Tamil grammar and is revered in South India as one of the progenitors of Tamil culture.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Teachings to Remember</h2>
+      <p class="quote">"Control your desires, conquer your mind, and you shall attain eternal wisdom."</p>
+      <p class="quote">"Health and harmony are the true wealth of life."</p>
+    </section>
+  </main>
+
+  
+</body>
+</html>

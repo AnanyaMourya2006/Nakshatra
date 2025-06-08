@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Image Map</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .map-wrapper {
+      max-width: 100vw;
+      overflow: hidden;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="map-wrapper">
+    <img src="MAP.png" usemap="#image-map" id="mapImage" alt="Garden Map">
+  </div>
+
+  <map name="image-map">
+    <!-- Sample coordinates: You can adjust these to match your image -->
+    <area shape="rect" data-coords="669,700,701,747" href="1N.html" alt="1N" title="Nux Vomica">
+    <area shape="rect" data-coords="620,687,652,734" href="2N.html" alt="2N" title="Nux Vomica">
+    <area shape="rect" data-coords="587,658,619,705" href="3N.html" alt="2N" title="Nux Vomica">
+    <area shape="rect" data-coords="560,621,592,668" href="4N.html" alt="2N" title="Nux Vomica">
+    <area shape="rect" data-coords="546,576,578,623" href="5N.html" alt="2N" title="Nux Vomica">
+    <area shape="rect" data-coords="536,527,568,574" href="6N.html" alt="2N" title="Nux Vomica">
+    <area shape="rect" data-coords="527,477,559,524" href="7N.html" alt="2N" title="Nux Vomica">
+    <area shape="rect" data-coords="539,428,571,475" href="8N.html" alt="2N" title="Nux Vomica">
+    <area shape="rect" data-coords="565,385,597,432" href="9N.html" alt="2N" title="Nux Vomica">
+    <area shape="rect" data-coords="626,325,658,372" href="10N.html" alt="2N" title="Nux Vomica">
+    <area shape="rect" data-coords="666,306,698,353" href="11N.html" alt="2N" title="Nux Vomica">
+    <area shape="rect" data-coords="708,292,740,339" href="12N.html" alt="2N" title="Nux Vomica">
+    <area shape="rect" data-coords="754,292,786,339" href="13N.html" alt="2N" title="Nux Vomica">
+    <area shape="rect" data-coords="803,300,835,347" href="14N.html" alt="2N" title="Nux Vomica">
+    <area shape="rect" data-coords="848,316,880,363" href="15N.html" alt="2N" title="Nux Vomica">
+    <area shape="rect" data-coords="882,342,914,389" href="16N.html" alt="2N" title="Nux Vomica">
+    <area shape="rect" data-coords="916,371,948,418" href="17N.html" alt="2N" title="Nux Vomica">
+    <area shape="rect" data-coords="939,416,971,463" href="18N.html" alt="2N" title="Nux Vomica">
+    <area shape="rect" data-coords="954,465,986,512" href="19N.html" alt="2N" title="Nux Vomica">
+    <area shape="rect" data-coords="620,687,652,734" href="20N.html" alt="2N" title="Nux Vomica">
+    
+  </map>
+
+  <script>
+    function resizeMap() {
+      const img = document.getElementById("mapImage");
+      const map = document.querySelector('map[name="' + img.useMap.substring(1) + '"]');
+      const areas = map.getElementsByTagName("area");
+
+      const originalWidth = img.naturalWidth;
+      const originalHeight = img.naturalHeight;
+
+      const currentWidth = img.clientWidth;
+      const currentHeight = img.clientHeight;
+
+      for (let i = 0; i < areas.length; i++) {
+        const area = areas[i];
+        const coords = area.dataset.coords.split(',').map(Number);
+        const scaledCoords = coords.map((coord, index) => {
+          return index % 2 === 0
+            ? coord * currentWidth / originalWidth
+            : coord * currentHeight / originalHeight;
+        });
+        area.coords = scaledCoords.map(Math.round).join(',');
+      }
+    }
+
+    window.addEventListener('load', resizeMap);
+    window.addEventListener('resize', resizeMap);
+  </script>
+
+</body>
+</html>

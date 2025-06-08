@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jasminum auriculatum</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #E6E6FA, #D8BFD8);
+      color: #4b382a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      background-attachment: fixed;
+    }
+
+    header {
+      background: linear-gradient(135deg, #C3AED6, #B69AD1);
+      color: #ffffff;
+      padding: 30px 20px;
+      text-align: center;
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    header h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2.8em;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 25px;
+      background: rgba(255, 250, 255, 0.9);
+      backdrop-filter: blur(5px);
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      border: 1px solid #e3d4f1;
+      display: flex;
+      gap: 30px;
+    }
+
+    .column {
+      flex: 1;
+      padding: 20px;
+      border-radius: 10px;
+      background: rgba(245, 245, 255, 0.8);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .column img {
+      width: 150px;
+      height: 150px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      color: #7e5ba6;
+      font-family: 'Poppins', sans-serif;
+      font-size: 2em;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    ul {
+      padding-left: 20px;
+      list-style-type: square;
+    }
+
+    .language-selector {
+      margin: 15px;
+      text-align: center;
+    }
+
+    .language-selector button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      background-color: #C3AED6;
+      color: #4b382a;
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .language-selector button:hover {
+      background-color: #B69AD1;
+      color: #ffffff;
+      transform: scale(1.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px 10px;
+      background: linear-gradient(135deg, #C3AED6, #D8BFD8);
+      color: #ffffff;
+      border-top: 5px solid #a06db3;
+      width: 100%;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Jasminum auriculatum</h1>
+  </header>
+
+  <div class="language-selector">
+    <button onclick="changeLanguage('en')">English</button>
+    <button onclick="changeLanguage('hi')">हिंदी</button>
+    <button onclick="changeLanguage('mr')">मराठी</button>
+  </div>
+
+  <div class="container">
+    <div class="column" id="jasminum">
+      <img src="7R.png" alt="Jasminum auriculatum">
+      <h2>Jasminum auriculatum</h2>
+      <div id="jasminum-content"></div>
+    </div>
+  </div>
+
+  <footer>
+    Medicinal Plants Information - MAPA Garden
+  </footer>
+
+  <script>
+    const plantData = {
+      en: {
+        jasminum: {
+          vernacularName: "Wild Jasmine",
+          biologicalSource: "Flowers and leaves of Jasminum auriculatum (family: Oleaceae).",
+          geographicalSource: "Native to India and Sri Lanka.",
+          chemicalClass: "Contains flavonoids, alkaloids, and essential oils.",
+          pharmacologicalUses: ["Used in aromatherapy and for calming effects.", "Anti-inflammatory and antioxidant properties."],
+          ayurvedicPreparations: ["Jasmine Oil", "Jasmine Tea"],
+          therapeuticUses: ["Aids in stress relief and anxiety management.", "Used in skin care for its soothing properties."],
+          precautions: ["May cause skin irritation in some individuals."]
+        }
+      },
+      hi: {
+        jasminum: {
+          vernacularName: "जंगली चमेली",
+          biologicalSource: "जस्मिनम ऑरिक्युलाटम के फूल और पत्तियाँ (परिवार: ओलियासी)।",
+          geographicalSource: "भारत और श्रीलंका का मूल निवासी।",
+          chemicalClass: "फ्लावोनोइड्स, एल्कलॉइड्स और आवश्यक तेलों से भरपूर।",
+          pharmacologicalUses: ["आरोमाथेरेपी और शांत प्रभाव के लिए उपयोगी।", "सूजनरोधी और एंटीऑक्सिडेंट गुण।"],
+          ayurvedicPreparations: ["चमेली का तेल", "चमेली की चाय"],
+          therapeuticUses: ["तनाव राहत और चिंता प्रबंधन में सहायक।", "त्वचा की देखभाल में आरामदायक गुण।"],
+          precautions: ["कुछ व्यक्तियों में त्वचा पर जलन हो सकती है।"]
+        }
+      },
+      mr: {
+        jasminum: {
+          vernacularName: "वाइल्ड जॅस्मिन",
+          biologicalSource: "जस्मिनम ऑरिक्युलाटम चे फूल आणि पाने (कुटुंब: ओलियासी).",
+          geographicalSource: "भारत आणि श्रीलंकेचे मूळ स्थान.",
+          chemicalClass: "फ्लावोनॉइड्स, अल्कलॉइड्स आणि आवश्यक तेल.",
+          pharmacologicalUses: ["आरोमाथेरपीसाठी आणि शांततेसाठी वापरले जाते.", "सूजविरोधी आणि अँटीऑक्सिडन्ट गुणधर्म."],
+          ayurvedicPreparations: ["चमेली तेल", "चमेली चहा"],
+          therapeuticUses: ["तणाव कमी करण्यात आणि चिंता नियंत्रित करण्यात उपयोगी.", "त्वचेसाठी आरामदायक गुणधर्म."],
+          precautions: ["काही व्यक्तींना त्वचेवर जळजळ होऊ शकते."]
+        }
+      }
+    };
+
+    function changeLanguage(lang) {
+      const jasminumData = plantData[lang].jasminum;
+
+      document.getElementById("jasminum-content").innerHTML = `
+        <p><strong>Vernacular Name:</strong> ${jasminumData.vernacularName}</p>
+        <p><strong>Biological Source:</strong> ${jasminumData.biologicalSource}</p>
+        <p><strong>Geographical Source:</strong> ${jasminumData.geographicalSource}</p>
+        <p><strong>Chemical Class:</strong> ${jasminumData.chemicalClass}</p>
+        <h3>Pharmacological Uses:</h3>
+        <ul>${jasminumData.pharmacologicalUses.map(use => `<li>${use}</li>`).join('')}</ul>
+        <h3>Ayurvedic Preparations:</h3>
+        <ul>${jasminumData.ayurvedicPreparations.map(prep => `<li>${prep}</li>`).join('')}</ul>
+        <h3>Therapeutic Uses:</h3>
+        <ul>${jasminumData.therapeuticUses.map(use => `<li>${use}</li>`).join('')}</ul>
+        <h3>Precautions:</h3>
+        <ul>${jasminumData.precautions.map(precaution => `<li>${precaution}</li>`).join('')}</ul>
+      `;
+    }
+
+    window.onload = () => changeLanguage('en');
+  </script>
+</body>
+</html>
