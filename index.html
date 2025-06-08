@@ -14,7 +14,6 @@
       background: #f4f2f8;
     }
 
-    /* Intro animation */
     #intro-screen {
       position: fixed;
       top: 0;
@@ -229,86 +228,62 @@
         transform: scale(1.1);
       }
     }
+
+    footer.credits {
+      background-color: #e6e6fa;
+      color: #3e2a47;
+      text-align: center;
+      padding: 1.5em 1em;
+      font-family: 'Georgia', serif;
+      font-size: 0.95em;
+      border-top: 2px solid #d8bfd8;
+      margin-top: 3em;
+      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    footer.credits p {
+      margin: 0.4em 0;
+    }
   </style>
 </head>
 <body>
   <!-- Intro animation -->
   <div id="intro-screen">
-    <div class="intro-text">Original by Ananya Ajay Mourya</div>
+    <div class="intro-text">Original Website sacntioned by NMPB, AYUSH ministry</div>
   </div>
 
   <!-- Main website content -->
   <div id="main-content" style="display: none;">
     <header>
       <div class="logo">
-        <i class="fas fa-seedling"></i>
-        MAPA - GARDEN
+        <i class="fas fa-seedling"></i> MAPA Garden
       </div>
       <nav>
         <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="game.html">Fun learning </a></li>
-          <li><a href="photo.html">Plants</a></li>
-          <li><a href="list.html">List</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#plants">Plants</a></li>
         </ul>
       </nav>
     </header>
 
-    <section id="hero" class="parallax">
-      <div class="text-box">
-        <h1>Welcome to the MAPA GARDEN</h1>
-        <p>Explore the beauty of nature in a digital space.</p>
-        <a href="plants.html" class="btn">Start Exploring</a>
-      </div>
-    </section>
+    <!-- Add your sections here like #about, #plants etc. -->
 
-    <section id="about">
-      <h2>About Us</h2>
-      <p>Discover the beauty of nature in the digital world. Our virtual garden brings medicinal, aromatic, and decorative plants to life.</p>
-    </section>
-
-    <section id="features">
-      <h2>History</h2>
-      <div class="feature-grid">
-        <div class="feature-card">
-          <a href="charak.html">
-            <i class="fas fa-seedling"></i>
-            <h3>CHARAK</h3>
-          </a>
-        </div>
-        <div class="feature-card">
-          <a href="avicenna.html">
-            <i class="fas fa-seedling"></i>
-            <h3>AVICENNA</h3>
-          </a>
-        </div>
-        <div class="feature-card">
-          <a href="agasthya.html">
-            <i class="fas fa-seedling"></i>
-            <h3>AGASTHYA</h3>
-          </a>
-        </div>
-        <div class="feature-card">
-          <a href="samuel.html">
-            <i class="fas fa-seedling"></i>
-            <h3>SAMUEL</h3>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="plants">
-      <h2>Featured Plants</h2>
-      <p>From ASHWAGANDHA to NEEM, explore a wide variety of flora.</p>
-    </section>
+    <!-- Footer Section -->
+    <footer class="credits">
+      <p>© 2025 Ananya Ajay Mourya. All rights reserved.</p>
+      <p>Developed as part of a project at <strong>Government College of Pharmacy,Amravati</strong></p>
+      <p>Under the guidance of <strong>Dr. Sharada L. Deore and Bhushan A. Baviskar</strong></p>
+    </footer>
   </div>
 
   <script>
     // Show main content after intro
-    setTimeout(() => {
-      document.getElementById("intro-screen").style.display = "none";
-      document.getElementById("main-content").style.display = "block";
-    }, 3500);
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('main-content').style.display = 'block';
+        document.getElementById('intro-screen').style.display = 'none';
+      }, 3500);
+    });
   </script>
 </body>
 </html>
