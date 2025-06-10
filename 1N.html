@@ -2,256 +2,199 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Strychnos nux-vomica (Kuchala)</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nux Vomica – Pharmacognosy Profile</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      font-family: 'Crimson Pro', serif;
-      background: linear-gradient(to right, #e6e6fa, #f3e5f5);
-      color: #4b306a;
-      line-height: 1.7;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to right, #f5e6fa, #ead6f9);
+      color: #4a235a;
+      line-height: 1.8;
       scroll-behavior: smooth;
     }
 
     header {
-      background-color: rgba(102, 51, 153, 0.8);
-      color: #f5f0fa;
-      text-align: center;
+      background-color: #e6ccf2;
       padding: 2rem;
-      border-bottom: 4px double #cba0e3;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     header h1 {
-      font-family: 'Cinzel', serif;
-      font-size: 2.8rem;
+      font-size: 2rem;
       margin: 0;
-      letter-spacing: 2px;
-      text-shadow: 1px 1px 3px #4b306a;
     }
 
-    .container {
-      max-width: 950px;
-      margin: 3rem auto;
-      padding: 2rem;
-      background-color: rgba(255, 255, 255, 0.92);
-      border: 2px solid #d6b3f0;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(102, 51, 153, 0.2);
-      animation: fadeIn 2s ease;
+    header p {
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      font-style: italic;
     }
 
-    .language-selector {
-      text-align: center;
-      margin-bottom: 1.5rem;
+    nav {
+      background-color: #f3e8fd;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.5rem 1rem;
     }
 
-    .language-selector button {
-      font-family: 'Cinzel', serif;
-      padding: 10px 20px;
-      margin: 0 8px;
-      border: 1px solid #9966cc;
-      background-color: #e3d1f7;
-      color: #4b306a;
-      border-radius: 8px;
-      font-size: 16px;
+    nav button {
+      background-color: #c59edc;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
       cursor: pointer;
+      font-size: 1rem;
       transition: background 0.3s ease;
     }
 
-    .language-selector button:hover {
-      background-color: #d1b3f0;
+    nav button:hover {
+      background-color: #a674c0;
     }
 
-    .content-wrapper {
-      display: flex;
-      flex-direction: row;
-      gap: 30px;
-      align-items: flex-start;
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #fdf7ff;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    .plant-image {
-      width: 220px;
-      border: 2px solid #b891d6;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 4px 6px 12px rgba(123, 63, 160, 0.3);
+    .image-section {
+      text-align: center;
+      margin: 2rem 0;
     }
 
-    .plant-image img {
+    .image-section img {
+      max-width: 300px;
       width: 100%;
-      height: auto;
-      display: block;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     h2 {
-      font-family: 'Cinzel', serif;
-      font-size: 1.6rem;
-      color: #5c4080;
-      border-bottom: 2px solid #c29de3;
-      padding-bottom: 4px;
+      border-left: 5px solid #ab47bc;
+      padding-left: 1rem;
+      font-size: 1.5rem;
+      color: #6a1b9a;
       margin-top: 2rem;
     }
 
-    ul {
-      margin-top: 0.5rem;
-      padding-left: 1.2rem;
+    p {
+      text-align: justify;
+      margin: 0.75rem 0;
+      font-size: 1rem;
+    }
+
+    details {
+      margin: 1rem 0;
+      background-color: #f5eaf9;
+      border-radius: 10px;
+      padding: 1rem;
+    }
+
+    summary {
+      font-weight: bold;
+      cursor: pointer;
     }
 
     footer {
-      background-color: rgba(102, 51, 153, 0.9);
-      color: #f0e6f7;
       text-align: center;
       padding: 1rem;
-      font-size: 14px;
-      border-top: 4px double #cba0e3;
-      font-family: 'Cinzel', serif;
+      background-color: #e6ccf2;
+      font-size: 0.95rem;
+      margin-top: 3rem;
     }
 
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(40px);}
-      to {opacity: 1; transform: translateY(0);}
+    .language-section {
+      display: none;
+    }
+
+    .active {
+      display: block;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Strychnos nux-vomica (Kuchala)</h1>
+    <h1>Nux Vomica (Strychnos nux-vomica)</h1>
+    <p>A Pharmacognostical Perspective</p>
   </header>
 
+  <nav>
+    <button onclick="showLang('en')">English</button>
+    <button onclick="showLang('hi')">हिन्दी</button>
+    <button onclick="showLang('mr')">मराठी</button>
+  </nav>
+
   <div class="container">
-    <div class="language-selector">
-      <button onclick="changeLanguage('en')">English</button>
-      <button onclick="changeLanguage('hi')">हिंदी</button>
-      <button onclick="changeLanguage('mr')">मराठी</button>
+    <div class="image-section">
+      <img src="nuxvomica.jpg" alt="Image of Nux Vomica plant">
+      <p><em>Image: Strychnos nux-vomica – Replace with actual illustration</em></p>
     </div>
 
-    <div class="content-wrapper">
-      <div class="content-section" id="content">
-        <!-- Dynamic content loads here -->
-      </div>
-      <div class="plant-image">
-        <img src="1.jpeg" alt="Strychnos nux-vomica Plant">
-      </div>
+    <div id="en" class="language-section active">
+      <h2>Pharmacognostical Information</h2>
+      <p><strong>Botanical Name:</strong> Strychnos nux-vomica</p>
+      <p><strong>Family:</strong> Loganiaceae</p>
+      <p><strong>Common Names:</strong> Nux Vomica, Poison Nut</p>
+      <p><strong>Plant Description:</strong> Nux Vomica is a medium-sized deciduous tree, native to India and Southeast Asia. It typically grows in dry forests and features a short, thick trunk, and dense branches with smooth gray bark.</p>
+      <p><strong>Microscopic Features:</strong> The transverse section of the seed shows the presence of a testa, endosperm, and embryo. The endosperm is hard and made up of stone cells with thick lignified walls.</p>
+      <p><strong>Chemical Constituents:</strong> The major active compounds include alkaloids like strychnine and brucine, which are highly potent and neurotoxic in large doses.</p>
+      <p><strong>Pharmacological Actions:</strong> It acts as a central nervous system stimulant, increases reflex excitability, and is used in controlled doses in homeopathic and traditional medicine systems.</p>
+      <p><strong>Medicinal Uses:</strong> Traditionally, it has been used for stimulating appetite, treating digestive disorders, and improving blood circulation, although caution is necessary due to its toxicity.</p>
+      <p><strong>Adulterants/Substitutes:</strong> Seeds of other Strychnos species are sometimes used as adulterants. Proper morphological and chemical identification is essential.</p>
+      <p><strong>Storage:</strong> The seeds should be stored in airtight containers away from moisture and light to preserve potency and safety.</p>
     </div>
+
+    <div id="hi" class="language-section">
+      <h2>औषधीय जानकारी</h2>
+      <p><strong>वानस्पतिक नाम:</strong> स्ट्रिक्नोस नक्स वोमिका</p>
+      <p><strong>कुल:</strong> लोगेनिएसी</p>
+      <p><strong>सामान्य नाम:</strong> नक्स वोमिका, विष बीज</p>
+      <p><strong>वनस्पति विवरण:</strong> नक्स वोमिका एक मध्यम आकार का पर्णपाती वृक्ष है जो भारत और दक्षिण पूर्व एशिया में पाया जाता है। इसकी छाल चिकनी और भूरे रंग की होती है।</p>
+      <p><strong>सूक्ष्म रचना:</strong> बीज की अनुप्रस्थ काट में टेस्टा, एन्डोस्पर्म और भ्रूण देखा जा सकता है। एन्डोस्पर्म कठोर होता है और इसमें मोटी लिग्निनयुक्त कोशिकाएं होती हैं।</p>
+      <p><strong>रासायनिक घटक:</strong> स्ट्रिक्निन और ब्रुसीन जैसे अल्कलॉइड्स इसके मुख्य सक्रिय घटक हैं जो अत्यधिक जहरीले होते हैं।</p>
+      <p><strong>औषधीय क्रिया:</strong> यह तंत्रिका तंत्र को उत्तेजित करता है और पारंपरिक चिकित्सा में सीमित मात्रा में उपयोग किया जाता है।</p>
+      <p><strong>औषधीय उपयोग:</strong> भूख बढ़ाने, पाचन संबंधी समस्याओं और रक्त परिसंचरण को सुधारने में उपयोग किया जाता है, परंतु यह विषैला होता है इसलिए सावधानी आवश्यक है।</p>
+      <p><strong>मिलावट/विकल्प:</strong> अन्य स्ट्रिक्नोस प्रजातियों के बीज कभी-कभी मिलावट के रूप में उपयोग होते हैं। सही पहचान आवश्यक है।</p>
+      <p><strong>भंडारण:</strong> बीजों को नमी और प्रकाश से दूर, वायुरोधी पात्रों में संग्रहित करना चाहिए।</p>
+    </div>
+
+    <div id="mr" class="language-section">
+      <h2>औषधी वनस्पती माहिती</h2>
+      <p><strong>वनस्पतीचे नाव:</strong> स्ट्रिक्नोस नक्स-वोमिका</p>
+      <p><strong>कुळ:</strong> लोगानिएसी</p>
+      <p><strong>सामान्य नावे:</strong> नक्स वोमिका, विष बीज</p>
+      <p><strong>वनस्पतीचे वर्णन:</strong> नक्स वोमिका हा मध्यम आकाराचा पानगळी वृक्ष असून तो भारत व आग्नेय आशियात आढळतो. याला गडद राखाडी गुळगुळीत साल असते.</p>
+      <p><strong>सूक्ष्म वैशिष्ट्ये:</strong> बीजाच्या अनुप्रस्थ छेदात टेस्टा, एंडोस्पर्म आणि भ्रूण दिसतो. एंडोस्पर्म कठीण असून त्यात जाड लिग्निफाइड पेशी असतात.</p>
+      <p><strong>रासायनिक घटक:</strong> मुख्य अल्कलॉइड्समध्ये स्ट्रिक्निन आणि ब्रुसीन यांचा समावेश होतो, जे अतिशय विषारी असतात.</p>
+      <p><strong>औषधी क्रिया:</strong> हे मध्य मज्जासंस्थेचे उत्तेजक आहे आणि पारंपरिक औषधांमध्ये नियंत्रित प्रमाणात वापरले जाते.</p>
+      <p><strong>औषधी उपयोग:</strong> भूक वाढविण्यास, पचन सुधारण्यासाठी आणि रक्ताभिसरण सुधारण्याकरिता वापरले जाते. याच्या वापरात काळजी आवश्यक आहे.</p>
+      <p><strong>भेसळ/पर्याय:</strong> इतर स्ट्रिक्नोस प्रजातीचे बीज कधी कधी भेसळ म्हणून वापरले जातात. योग्य ओळख महत्त्वाची आहे.</p>
+      <p><strong>साठवण:</strong> बीज हवाबंद डब्यात, आर्द्रता आणि प्रकाशापासून दूर ठेवावे.</p>
+    </div>
+
   </div>
 
   <footer>
-    MAPA Virtual Herbal Garden © Ancient Knowledge Revival
+    &copy; 2025 Pharmacognosy Webpage. All rights reserved.
   </footer>
 
   <script>
-    const plantData = {
-      en: {
-        title: "Strychnos nux-vomica",
-        vernacularName: "Kuchala",
-        biologicalSource: "Strychnos nux-vomica belongs to the family Loganiaceae.",
-        geographicalSource: "Native to India and Southeast Asia. Found in deciduous and semi-evergreen forests.",
-        chemicalClass: "Alkaloids, primarily Strychnine.",
-        pharmacologicalUses: [
-          "Used in debility, paralysis, dyspepsia, dysentery, and chronic rheumatism.",
-          "Also for colic, malarial fever, and hysteria.",
-          "Caution: Highly toxic and can cause convulsions."
-        ],
-        ayurvedicPreparations: [
-          "Kuchala Churna",
-          "Kuchala Taila",
-          "Kuchala Ghrita",
-          "Kuchala Rasayana"
-        ],
-        description: "This sacred plant, though perilous, was purified and employed with deep reverence in ancient Ayurvedic formulations.",
-        therapeuticUses: [
-          "Nervine tonic for nervous disorders.",
-          "Stimulant for hypotension."
-        ],
-        precautions: [
-          "Use under strict supervision.",
-          "Can cause seizures if misused."
-        ]
-      },
-      hi: {
-        title: "स्ट्राइच्नोस नक्स-वोमिका",
-        vernacularName: "कुचला",
-        biologicalSource: "यह पौधा लॉगानिएसी कुल से संबंधित है।",
-        geographicalSource: "भारत और दक्षिण-पूर्व एशिया का मूल निवासी, पतझड़ी और अर्ध-सदाबहार वनों में पाया जाता है।",
-        chemicalClass: "मुख्यतः स्ट्राइच्निन अल्कलॉइड्स।",
-        pharmacologicalUses: [
-          "कमजोरी, लकवा, अपच, पेचिश, और पुराने गठिया में उपयोगी।",
-          "कोलिक, मलेरियल बुखार और हिस्टीरिया में भी प्रयुक्त।",
-          "सावधानी: अधिक मात्रा में सेवन से झटके आ सकते हैं।"
-        ],
-        ayurvedicPreparations: [
-          "कुचला चूर्ण",
-          "कुचला तैल",
-          "कुचला घृत",
-          "कुचला रसायन"
-        ],
-        description: "यह पवित्र परंतु विषैला पौधा प्राचीन आयुर्वेद में विशेष विधियों से शुद्ध कर उपयोग किया जाता था।",
-        therapeuticUses: [
-          "तंत्रिका संबंधी रोगों में टॉनिक के रूप में।",
-          "निम्न रक्तचाप में उत्तेजक।"
-        ],
-        precautions: [
-          "सिर्फ विशेषज्ञ की निगरानी में सेवन करें।",
-          "गलत उपयोग से दौरे पड़ सकते हैं।"
-        ]
-      },
-      mr: {
-        title: "स्ट्रायच्नोस नक्स-वॉमिका",
-        vernacularName: "कुचला",
-        biologicalSource: "हे वनस्पती लॉगानिएसी कुलातील आहे.",
-        geographicalSource: "भारत आणि आग्नेय आशियात आढळणारी, पानगळ होणाऱ्या व अर्ध-सदाहरित जंगलांमध्ये आढळते.",
-        chemicalClass: "मुख्यतः स्ट्रायच्निन अल्कलॉइड्स.",
-        pharmacologicalUses: [
-          "अशक्तपणा, पक्षाघात, अपचन, आमांश, जुनाट संधिवात यामध्ये उपयोगी.",
-          "कोलिक, मलेरिया ताप, हिस्टीरिया मध्येही वापरले जाते.",
-          "सावधगिरी: विषारी असते व चुकीच्या वापराने फिट्स येऊ शकतात."
-        ],
-        ayurvedicPreparations: [
-          "कुचला चूर्ण",
-          "कुचला तेल",
-          "कुचला घृत",
-          "कुचला रसायन"
-        ],
-        description: "या विषारी वनस्पतीचा शुद्धीकरण करून प्राचीन आयुर्वेदात पूजनीय प्रकारे उपयोग करण्यात येत असे.",
-        therapeuticUses: [
-          "मज्जासंस्थेच्या विकारांमध्ये टॉनिक.",
-          "निम्न रक्तदाबात उत्तेजक."
-        ],
-        precautions: [
-          "फक्त वैद्यकीय देखरेखीखाली वापरावे.",
-          "अयोग्य वापराने झटके येऊ शकतात."
-        ]
-      }
-    };
-
-    function changeLanguage(lang) {
-      const data = plantData[lang];
-      const contentDiv = document.getElementById("content");
-
-      contentDiv.innerHTML = `
-        <h2>${data.title}</h2>
-        <p><strong>Vernacular Name:</strong> ${data.vernacularName}</p>
-        <p><strong>Biological Source:</strong> ${data.biologicalSource}</p>
-        <p><strong>Geographical Source:</strong> ${data.geographicalSource}</p>
-        <p><strong>Chemical Class:</strong> ${data.chemicalClass}</p>
-        <h2>Pharmacological Uses</h2>
-        <ul>${data.pharmacologicalUses.map(use => `<li>${use}</li>`).join('')}</ul>
-        <h2>Ayurvedic Preparations</h2>
-        <ul>${data.ayurvedicPreparations.map(prep => `<li>${prep}</li>`).join('')}</ul>
-        <h2>Description</h2>
-        <p>${data.description}</p>
-        <h2>Therapeutic Uses</h2>
-        <ul>${data.therapeuticUses.map(use => `<li>${use}</li>`).join('')}</ul>
-        <h2>Precautions</h2>
-        <ul>${data.precautions.map(item => `<li>${item}</li>`).join('')}</ul>
-      `;
+    function showLang(lang) {
+      document.querySelectorAll('.language-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(lang).classList.add('active');
     }
-
-    // Load English by default
-    window.onload = () => changeLanguage('en');
   </script>
 </body>
 </html>
