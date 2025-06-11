@@ -1,159 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samuel Hahnemann - The Father of Homeopathy</title>
-    <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Samuel Hahnemann – Founder of Homeopathy</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to right, #f5f0ff, #e6ccff);
+      color: #4a235a;
+      line-height: 1.8;
+    }
 
-        /* Body and General Layout */
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background: #f0f0f0;
-            padding: 20px;
-            color: #333;
-        }
+    header {
+      background-color: #d8bfd8;
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
 
-        header {
-            background: #6c757d;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            animation: fadeIn 2s ease-in;
-        }
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0;
+    }
 
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
+    header p {
+      font-size: 1.3rem;
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
 
-        p {
-            font-size: 1.1em;
-            margin-bottom: 20px;
-            line-height: 1.6;
-            animation: slideIn 1.5s ease-in;
-        }
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 2rem 3rem;
+      background: #fcf6ff;
+      border-radius: 20px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
 
-        /* Animation Effects */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
+    .image-section {
+      text-align: center;
+      margin: 2rem 0;
+    }
 
-        @keyframes slideIn {
-            from {
-                transform: translateX(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
+    .image-section img {
+      max-width: 300px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
 
-        /* Section Styling */
-        .section {
-            margin: 30px 0;
-        }
+    h2 {
+      border-left: 5px solid #b57edc;
+      padding-left: 1rem;
+      margin-top: 2.5rem;
+      font-size: 1.8rem;
+      color: #6a1b9a;
+    }
 
-        .section img {
-            width: 100%;
-            max-width: 400px;
-            margin: 20px 0;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
+    p {
+      text-align: justify;
+      margin: 1rem 0;
+    }
 
-        .section img:hover {
-            transform: scale(1.05);
-        }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #d8bfd8;
+      font-size: 0.95rem;
+      margin-top: 3rem;
+    }
 
-        .section .content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
 
-        .content-text {
-            flex: 1;
-            min-width: 250px;
-        }
+      .container {
+        padding: 1rem 1.5rem;
+      }
 
-        .content-img {
-            flex: 1;
-            min-width: 250px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .section .content {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .content-text, .content-img {
-                text-align: center;
-            }
-        }
-    </style>
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Samuel Hahnemann</h1>
+    <p>Pioneer of Homeopathy and Medical Reform</p>
+  </header>
 
-<header>
-    <h1>Samuel Hahnemann - The Father of Homeopathy</h1>
-    <p>A comprehensive exploration of the life and work of Samuel Hahnemann, the pioneer of homeopathy.</p>
-</header>
+  <div class="container">
 
-<section class="section">
-    <div class="content">
-        <div class="content-text">
-            <h2>Introduction</h2>
-            <p>Samuel Hahnemann, born in 1755, was a German physician best known for founding the system of homeopathy. Frustrated with the ineffective and often harmful practices of conventional medicine during his time, Hahnemann developed the principles of homeopathy, which emphasize the body’s ability to heal itself through the use of highly diluted substances.</p>
-            <p>Homeopathy has since become a popular alternative medicine, and Hahnemann’s ideas revolutionized the treatment of illnesses in the 19th century.</p>
-        </div>
-        <div class="content-img">
-            <img src="h1.png" alt="Portrait of Samuel Hahnemann">
-        </div>
+    <div class="image-section">
+      <img src="h1.png" alt="Portrait of Samuel Hahnemann" />
+      <p><em>Dr. Samuel Hahnemann – The Founder of Homeopathy</em></p>
     </div>
-</section>
 
-<section class="section">
-    <div class="content">
-        <div class="content-text">
-            <h2>His Contributions to Medicine</h2>
-            <p>Hahnemann’s contributions to medicine were groundbreaking. He introduced the concept of "like cures like," which is the basis of homeopathy. This means that a substance that causes symptoms in a healthy person can be used in diluted form to treat similar symptoms in a sick person.</p>
-            <p>He also popularized the use of potentization (dilution) in medicines, where remedies are diluted and succussed (shaken vigorously) to enhance their healing properties. This principle continues to be the foundation of homeopathic treatments today.</p>
-        </div>
-        <div class="content-img">
-            <img src="h2.png" alt="Samuel Hahnemann’s Manuscript">
-        </div>
-    </div>
-</section>
+    <h2>🧬 Early Life and Education</h2>
+    <p>Samuel Hahnemann was born on April 10, 1755, in Meissen, Saxony (now in Germany). A brilliant student from a young age, he was well-versed in languages, science, and medicine. He studied medicine at the University of Leipzig and later in Vienna. However, he became disillusioned with the practices of conventional medicine at the time, which relied heavily on bloodletting, purging, and the use of toxic substances like mercury.</p>
+    <p>His early frustrations with the harsh and often ineffective treatments of 18th-century medicine led him to search for a more gentle, rational, and humane system of healing. This intellectual rebellion laid the foundation for the birth of homeopathy — a system that would revolutionize how illness was understood and treated.</p>
 
-<section class="section">
-    <div class="content">
-        <div class="content-text">
-            <h2>Legacy and Influence</h2>
-            <p>Hahnemann’s work laid the foundation for the development of homeopathy as a distinct medical system. Although it faced criticism from traditional medical professionals, homeopathy gained popularity worldwide and has millions of adherents to this day.</p>
-            <p>Hahnemann’s writings and teachings have inspired generations of practitioners who believe in treating patients holistically and with individualized care. His work continues to influence alternative medicine practices across the globe.</p>
-        </div>
-    </div>
-</section>
+    <h2>💊 Discovery of Homeopathy</h2>
+    <p>Hahnemann’s defining moment came while translating William Cullen’s “Materia Medica.” He questioned the theory that cinchona bark cured malaria because it was astringent. To test it, he took small doses of the bark himself and noticed it produced symptoms similar to malaria. This led him to propose a radical theory: **“Like cures like”** — a substance causing symptoms in a healthy person can be used to treat similar symptoms in a sick person.</p>
+    <p>This principle, known as *Similia Similibus Curentur*, became the cornerstone of homeopathy. Hahnemann began experimenting with other substances, conducting “provings” to document how different remedies affected healthy individuals. He observed that ultra-dilutions, when shaken vigorously (succussion), retained therapeutic effects while eliminating toxicity. These discoveries formed the basis of his homeopathic methodology.</p>
 
+    <h2>📘 The Organon of Medicine</h2>
+    <p>In 1810, Hahnemann published *The Organon of the Rational Art of Healing*, later revised as *The Organon of Medicine*, a systematic explanation of homeopathy. In it, he emphasized the importance of treating the whole patient — mind, body, and emotions — and not just the symptoms. He argued that true healing must come from stimulating the body’s own vital force using highly diluted, specific remedies.</p>
+    <p>His approach was holistic, patient-centered, and scientific for its time. The *Organon* laid out his rules for case-taking, remedy selection, and disease classification. It also promoted the concept of miasms — underlying causes of chronic disease. The book is still studied by homeopaths worldwide and remains a central text in the discipline.</p>
+
+    <h2>🌍 Influence and Controversy</h2>
+    <p>Hahnemann’s work attracted both admiration and criticism. During his lifetime, he faced backlash from the medical establishment for challenging orthodox practices. Despite this, he gained many followers across Europe. By the mid-19th century, homeopathy had spread to America, India, and beyond. Homeopathic colleges, hospitals, and pharmacies were established, and the system grew into a global movement.</p>
+    <p>While homeopathy remains controversial in modern medicine due to its high dilutions and lack of conventional scientific explanation, Hahnemann’s legacy endures. He emphasized humane care, careful observation, and respect for the patient — values still relevant today. In India, homeopathy is officially recognized and widely practiced, and Hahnemann’s birth anniversary is celebrated as World Homeopathy Day.</p>
+
+    <h2>🏛️ Legacy</h2>
+    <p>Samuel Hahnemann died in 1843 in Paris, where he had a thriving medical practice until his last days. He is buried in the Père Lachaise Cemetery, where his grave remains a site of homage for his admirers. His impact on alternative medicine, medical ethics, and the development of a gentler form of healing cannot be overstated.</p>
+    <p>Institutions across the world honor his name — including Hahnemann University Hospital in Philadelphia and numerous homeopathic schools globally. His life continues to inspire holistic health practitioners and those who believe in the gentle power of natural healing. Samuel Hahnemann’s contributions established an entirely new paradigm of healthcare — one grounded in empathy, observation, and individualization.</p>
+
+    <footer>
+      © Tribute to Samuel Hahnemann | Designed with lavender hues and holistic respect
+    </footer>
+  </div>
 </body>
 </html>
