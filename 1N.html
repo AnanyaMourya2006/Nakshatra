@@ -1,200 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nux Vomica – Pharmacognosy Profile</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAPA Garden - Nakshatra Van</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Georgia&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
       margin: 0;
+      font-family: 'Roboto', 'Arial', sans-serif;
+      color: #3e2a47;
+      background: #f4f2f8;
+    }
+
+    body.intro-active {
+      overflow: hidden;
+    }
+
+    #intro-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #3e2a47;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      animation: fadeOut 3.5s forwards;
+    }
+
+    .intro-text {
       font-family: 'Georgia', serif;
-      background: linear-gradient(to right, #f5e6fa, #ead6f9);
-      color: #4a235a;
-      line-height: 1.8;
-      scroll-behavior: smooth;
+      font-size: 2em;
+      color: #fff;
+      text-align: center;
+      animation: fadeInOut 3s ease-in-out;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; }
+      25% { opacity: 1; }
+      75% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 0; display: none; }
+    }
+
+    #main-content {
+      display: none;
+      position: relative;
+      z-index: 0;
     }
 
     header {
-      background-color: #e6ccf2;
-      padding: 2rem;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 2em;
+      background: #c1a3d1;
+      color: #fff;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
-    header h1 {
-      font-size: 2rem;
-      margin: 0;
+    header .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #fff;
     }
 
-    header p {
-      font-size: 1rem;
-      margin-top: 0.5rem;
-      font-style: italic;
+    header nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5em;
     }
 
-    nav {
-      background-color: #f3e8fd;
+    header nav ul li a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .parallax {
+      background: url('background2.png') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
       display: flex;
       justify-content: center;
-      gap: 1rem;
-      padding: 0.5rem 1rem;
+      align-items: center;
+      position: relative;
     }
 
-    nav button {
-      background-color: #c59edc;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background 0.3s ease;
+    #hero h1, #hero p, #hero .btn {
+      z-index: 2;
+      position: relative;
     }
 
-    nav button:hover {
-      background-color: #a674c0;
+    #hero h1 {
+      font-size: 3em;
+      font-family: 'Georgia', serif;
+      color: #fff;
     }
 
-    .container {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: #fdf7ff;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    #hero p {
+      font-size: 1.5em;
+      font-family: 'Georgia', serif;
+      color: #fff;
     }
 
-    .image-section {
-      text-align: center;
-      margin: 2rem 0;
-    }
-
-    .image-section img {
-      max-width: 300px;
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-      border-left: 5px solid #ab47bc;
-      padding-left: 1rem;
-      font-size: 1.5rem;
-      color: #6a1b9a;
-      margin-top: 2rem;
-    }
-
-    p {
-      text-align: justify;
-      margin: 0.75rem 0;
-      font-size: 1rem;
-    }
-
-    details {
-      margin: 1rem 0;
-      background-color: #f5eaf9;
+    .text-box {
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 2em;
       border-radius: 10px;
-      padding: 1rem;
-    }
-
-    summary {
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    footer {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       text-align: center;
-      padding: 1rem;
-      background-color: #e6ccf2;
-      font-size: 0.95rem;
-      margin-top: 3rem;
     }
 
-    .language-section {
+    .btn {
+      background: #a79cda;
+      color: #fff;
+      padding: 0.8em 2em;
+      border-radius: 50px;
+      text-decoration: none;
+      animation: pulse 1.5s infinite;
+      font-family: 'Georgia', serif;
+    }
+
+    section {
+      padding: 3em 2em;
+    }
+
+    #about {
+      background: #fff;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    .feature-grid {
+      display: flex;
+      gap: 1.5em;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .feature-card {
+      background: #f1e6f1;
+      padding: 2em;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 100%;
+      max-width: 250px;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .feature-card i {
+      color: #a79cda;
+      font-size: 3em;
+    }
+
+    .feature-card h3 {
+      color: #3e2a47;
+    }
+
+    .feature-card p {
+      color: #5e4f63;
+    }
+
+    #plants {
+      background: #f1e6f1;
+      color: #3e2a47;
+      text-align: center;
+      padding: 3em 2em;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    #plants h2 {
+      font-size: 2.5em;
+      color: #2a1a34;
+    }
+
+    #plants p {
+      font-size: 1.5em;
+      color: #5e4f63;
+    }
+
+    .modal {
       display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
     }
 
-    .active {
-      display: block;
+    .modal-content {
+      background: #fff;
+      padding: 2em;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 1.5em;
+      cursor: pointer;
+      color: #333;
+    }
+
+    footer.credits {
+      background-color: #e6e6fa;
+      color: #3e2a47;
+      text-align: center;
+      padding: 1.5em;
+      font-family: 'Georgia', serif;
+      font-size: 0.95em;
+      border-top: 2px solid #d8bfd8;
+      margin-top: 3em;
+      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    footer.credits p {
+      margin: 0.4em 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
     }
   </style>
 </head>
-<body>
-  <header>
-    <h1>Nux Vomica (Strychnos nux-vomica)</h1>
-    <p>A Pharmacognostical Perspective</p>
-  </header>
-
-  <nav>
-    <button onclick="showLang('en')">English</button>
-    <button onclick="showLang('hi')">हिन्दी</button>
-    <button onclick="showLang('mr')">मराठी</button>
-  </nav>
-
-  <div class="container">
-    <div class="image-section">
-      <img src="1.jpeg" alt="Image of Nux Vomica plant">
-      <p><em>Image: Strychnos nux-vomica – Replace with actual illustration</em></p>
-    </div>
-
-    <div id="en" class="language-section active">
-      <h2>Pharmacognostical Information</h2>
-      <p><strong>Botanical Name:</strong> Strychnos nux-vomica</p>
-      <p><strong>Family:</strong> Loganiaceae</p>
-      <p><strong>Common Names:</strong> Nux Vomica, Poison Nut</p>
-      <p><strong>Plant Description:</strong> Nux Vomica is a medium-sized deciduous tree, native to India and Southeast Asia. It typically grows in dry forests and features a short, thick trunk, and dense branches with smooth gray bark.</p>
-      <p><strong>Microscopic Features:</strong> The transverse section of the seed shows the presence of a testa, endosperm, and embryo. The endosperm is hard and made up of stone cells with thick lignified walls.</p>
-      <p><strong>Chemical Constituents:</strong> The major active compounds include alkaloids like strychnine and brucine, which are highly potent and neurotoxic in large doses.</p>
-      <p><strong>Pharmacological Actions:</strong> It acts as a central nervous system stimulant, increases reflex excitability, and is used in controlled doses in homeopathic and traditional medicine systems.</p>
-      <p><strong>Medicinal Uses:</strong> Traditionally, it has been used for stimulating appetite, treating digestive disorders, and improving blood circulation, although caution is necessary due to its toxicity.</p>
-      <p><strong>Adulterants/Substitutes:</strong> Seeds of other Strychnos species are sometimes used as adulterants. Proper morphological and chemical identification is essential.</p>
-      <p><strong>Storage:</strong> The seeds should be stored in airtight containers away from moisture and light to preserve potency and safety.</p>
-    </div>
-
-    <div id="hi" class="language-section">
-      <h2>औषधीय जानकारी</h2>
-      <p><strong>वानस्पतिक नाम:</strong> स्ट्रिक्नोस नक्स वोमिका</p>
-      <p><strong>कुल:</strong> लोगेनिएसी</p>
-      <p><strong>सामान्य नाम:</strong> नक्स वोमिका, विष बीज</p>
-      <p><strong>वनस्पति विवरण:</strong> नक्स वोमिका एक मध्यम आकार का पर्णपाती वृक्ष है जो भारत और दक्षिण पूर्व एशिया में पाया जाता है। इसकी छाल चिकनी और भूरे रंग की होती है।</p>
-      <p><strong>सूक्ष्म रचना:</strong> बीज की अनुप्रस्थ काट में टेस्टा, एन्डोस्पर्म और भ्रूण देखा जा सकता है। एन्डोस्पर्म कठोर होता है और इसमें मोटी लिग्निनयुक्त कोशिकाएं होती हैं।</p>
-      <p><strong>रासायनिक घटक:</strong> स्ट्रिक्निन और ब्रुसीन जैसे अल्कलॉइड्स इसके मुख्य सक्रिय घटक हैं जो अत्यधिक जहरीले होते हैं।</p>
-      <p><strong>औषधीय क्रिया:</strong> यह तंत्रिका तंत्र को उत्तेजित करता है और पारंपरिक चिकित्सा में सीमित मात्रा में उपयोग किया जाता है।</p>
-      <p><strong>औषधीय उपयोग:</strong> भूख बढ़ाने, पाचन संबंधी समस्याओं और रक्त परिसंचरण को सुधारने में उपयोग किया जाता है, परंतु यह विषैला होता है इसलिए सावधानी आवश्यक है।</p>
-      <p><strong>मिलावट/विकल्प:</strong> अन्य स्ट्रिक्नोस प्रजातियों के बीज कभी-कभी मिलावट के रूप में उपयोग होते हैं। सही पहचान आवश्यक है।</p>
-      <p><strong>भंडारण:</strong> बीजों को नमी और प्रकाश से दूर, वायुरोधी पात्रों में संग्रहित करना चाहिए।</p>
-    </div>
-
-    <div id="mr" class="language-section">
-      <h2>औषधी वनस्पती माहिती</h2>
-      <p><strong>वनस्पतीचे नाव:</strong> स्ट्रिक्नोस नक्स-वोमिका</p>
-      <p><strong>कुळ:</strong> लोगानिएसी</p>
-      <p><strong>सामान्य नावे:</strong> नक्स वोमिका, विष बीज</p>
-      <p><strong>वनस्पतीचे वर्णन:</strong> नक्स वोमिका हा मध्यम आकाराचा पानगळी वृक्ष असून तो भारत व आग्नेय आशियात आढळतो. याला गडद राखाडी गुळगुळीत साल असते.</p>
-      <p><strong>सूक्ष्म वैशिष्ट्ये:</strong> बीजाच्या अनुप्रस्थ छेदात टेस्टा, एंडोस्पर्म आणि भ्रूण दिसतो. एंडोस्पर्म कठीण असून त्यात जाड लिग्निफाइड पेशी असतात.</p>
-      <p><strong>रासायनिक घटक:</strong> मुख्य अल्कलॉइड्समध्ये स्ट्रिक्निन आणि ब्रुसीन यांचा समावेश होतो, जे अतिशय विषारी असतात.</p>
-      <p><strong>औषधी क्रिया:</strong> हे मध्य मज्जासंस्थेचे उत्तेजक आहे आणि पारंपरिक औषधांमध्ये नियंत्रित प्रमाणात वापरले जाते.</p>
-      <p><strong>औषधी उपयोग:</strong> भूक वाढविण्यास, पचन सुधारण्यासाठी आणि रक्ताभिसरण सुधारण्याकरिता वापरले जाते. याच्या वापरात काळजी आवश्यक आहे.</p>
-      <p><strong>भेसळ/पर्याय:</strong> इतर स्ट्रिक्नोस प्रजातीचे बीज कधी कधी भेसळ म्हणून वापरले जातात. योग्य ओळख महत्त्वाची आहे.</p>
-      <p><strong>साठवण:</strong> बीज हवाबंद डब्यात, आर्द्रता आणि प्रकाशापासून दूर ठेवावे.</p>
-    </div>
-
+<body class="intro-active">
+  <!-- Intro animation -->
+  <div id="intro-screen">
+    <div class="intro-text"><b>Original website sanctioned by NMPB, AYUSH MINISTRY</b></div>
   </div>
 
-  <footer>
-    &copy; 2025 Pharmacognosy Webpage. All rights reserved.
-  </footer>
+  <!-- Main website content -->
+  <div id="main-content">
+    <header>
+      <div class="logo">
+        <i class="fas fa-seedling"></i>
+        MAPA - GARDEN
+      </div>
+      <nav>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="game.html">Fun learning </a></li>
+          <li><a href="photo.html">Plants</a></li>
+          <li><a href="list.html">List</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="hero" class="parallax">
+      <div class="text-box">
+        <h1>Welcome to the MAPA GARDEN</h1>
+        <p>Explore the beauty of nature in a digital space.</p>
+        <a href="plants.html" class="btn">Start Exploring</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Discover the beauty of nature in the digital world. Our virtual garden brings medicinal, aromatic, and decorative plants to life.</p>
+    </section>
+
+    <section id="features">
+      <h2>History</h2>
+      <div class="feature-grid">
+        <div class="feature-card"><a href="charak.html"><i class="fas fa-seedling"></i><h3>CHARAK</h3></a></div>
+        <div class="feature-card"><a href="avicenna.html"><i class="fas fa-seedling"></i><h3>AVICENNA</h3></a></div>
+        <div class="feature-card"><a href="agasthya.html"><i class="fas fa-seedling"></i><h3>AGASTHYA</h3></a></div>
+        <div class="feature-card"><a href="samuel.html"><i class="fas fa-seedling"></i><h3>SAMUEL</h3></a></div>
+      </div>
+    </section>
+
+    <section id="plants">
+      <h2>Featured Plants</h2>
+      <p>From ASHWAGANDHA to NEEM, explore a wide variety of flora.</p>
+    </section>
+
+    <footer class="credits">
+      <p>© 2025 Ananya Ajay Mourya. All rights reserved.</p>
+      <p>Developed as part of a project at <strong>Government College of Pharmacy, Amravati</strong></p>
+      <p>Under the guidance of <strong>Dr. Sharada L. Deore and Dr. Bhushan A. Baviskar</strong></p>
+    </footer>
+  </div>
 
   <script>
-    function showLang(lang) {
-      document.querySelectorAll('.language-section').forEach(section => {
-        section.classList.remove('active');
-      });
-      document.getElementById(lang).classList.add('active');
-    }
+    setTimeout(() => {
+      document.getElementById("intro-screen").style.display = "none";
+      document.getElementById("main-content").style.display = "block";
+      document.body.classList.remove("intro-active");
+    }, 3500);
   </script>
 </body>
 </html>
