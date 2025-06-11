@@ -1,196 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agasthya: The Sage</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agasthya – The Father of Siddha Medicine</title>
   <style>
-    /* General Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      background: linear-gradient(135deg, #f7f0fa, #e4d8f3);
-      overflow-x: hidden;
-      color: #333;
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to right, #f5f0ff, #e6ccff);
+      color: #4a235a;
+      line-height: 1.8;
     }
 
-    /* Header */
     header {
-      background: linear-gradient(to right, #5e35b1, #7e57c2);
-      color: white;
-      padding: 20px 10%;
+      background-color: #d8bfd8;
+      padding: 2.5rem;
       text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     header h1 {
-      font-size: 2.5rem;
-      animation: slideIn 1.5s ease-in-out;
+      font-size: 2.8rem;
+      margin: 0;
     }
 
     header p {
-      font-size: 1.2rem;
-      opacity: 0.8;
-    }
-
-    @keyframes slideIn {
-      from {
-        transform: translateY(-50px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    /* Main Section */
-    .main {
-      padding: 40px 10%;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
-
-    .main h2 {
-      font-size: 2rem;
-      color: #5e35b1;
-      position: relative;
-    }
-
-    .main h2::after {
-      content: '';
-      width: 100px;
-      height: 3px;
-      background: #5e35b1;
-      display: block;
-      margin-top: 10px;
-    }
-
-    .section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      align-items: center;
-    }
-
-    .section img {
-      max-width: 100%;
-      border-radius: 15px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-      transition: transform 0.5s;
-    }
-
-    .section img:hover {
-      transform: scale(1.05);
-    }
-
-    .section-content {
-      flex: 1;
-      min-width: 300px;
-      max-width: 600px;
-    }
-
-    .section-content p {
-      margin-bottom: 15px;
-      text-align: justify;
-    }
-
-    .quote {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
+      margin-top: 0.5rem;
       font-style: italic;
-      color: #7e57c2;
-      margin-top: 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 2rem 3rem;
+      background: #fcf6ff;
+      border-radius: 20px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    .image-section {
       text-align: center;
-      animation: fadeIn 2s infinite alternate;
+      margin: 2rem 0;
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0.5;
-      }
-      to {
-        opacity: 1;
-      }
+    .image-section img {
+      max-width: 300px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
 
-    /* Footer */
+    h2 {
+      border-left: 5px solid #b57edc;
+      padding-left: 1rem;
+      margin-top: 2.5rem;
+      font-size: 1.8rem;
+      color: #6a1b9a;
+    }
+
+    p {
+      text-align: justify;
+      margin: 1rem 0;
+    }
+
     footer {
-      background: #5e35b1;
-      color: white;
       text-align: center;
-      padding: 20px;
-      margin-top: 50px;
-      font-size: 0.9rem;
+      padding: 1.5rem;
+      background-color: #d8bfd8;
+      font-size: 0.95rem;
+      margin-top: 3rem;
     }
 
-    footer a {
-      color: #ffcc80;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
+    @media (max-width: 600px) {
       header h1 {
         font-size: 2rem;
       }
 
-      .section {
-        flex-direction: column;
+      .container {
+        padding: 1rem 1.5rem;
       }
 
-      .section img {
-        max-width: 80%;
-        margin: 0 auto;
+      h2 {
+        font-size: 1.5rem;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Agasthya: The Sage of Wisdom</h1>
-    <p>Discover the life, contributions, and teachings of the legendary rishi.</p>
+    <h1>Agasthya</h1>
+    <p>The Sage of the South and Father of Siddha Medicine</p>
   </header>
 
-  <main class="main">
-    <section class="section">
-      <div class="section-content">
-        <h2>Who Was Agasthya?</h2>
-        <p>Agasthya is one of the most revered sages in Indian tradition, known for his vast knowledge and contributions to medicine, philosophy, and spirituality. He is credited with composing several hymns in the Rigveda and pioneering Ayurveda.</p>
-        <p>The sage's life is a beacon of wisdom, selflessness, and dedication to the well-being of humanity.</p>
-      </div>
-      <img src="A1.png" alt="Statue of Sage Agasthya">
-    </section>
+  <div class="container">
 
-    <section class="section">
-      <img src="A2.png" alt="Ancient Vedic Scriptures">
-      <div class="section-content">
-        <h2>His Contributions</h2>
-        <p>Agasthya's works span a wide range of subjects, including linguistics, medicine, and ethics. His teachings emphasize balance in life and harmony with nature.</p>
-        <p>The sage is believed to have introduced Tamil grammar and is revered in South India as one of the progenitors of Tamil culture.</p>
-      </div>
-    </section>
+    <div class="image-section">
+      <img src="A1.png" alt="Portrait of Agasthya" />
+      <p><em>Sage Agasthya – A revered figure in Indian healing traditions</em></p>
+    </div>
 
-    <section>
-      <h2>Teachings to Remember</h2>
-      <p class="quote">"Control your desires, conquer your mind, and you shall attain eternal wisdom."</p>
-      <p class="quote">"Health and harmony are the true wealth of life."</p>
-    </section>
-  </main>
+    <h2>🌿 Mythical Origins</h2>
+    <p>Agasthya, also known as Agastya or Agathiyar in Tamil, is one of the most venerated sages in Hindu lore. He is considered a seer of immense wisdom and is said to be born from a pot (kumbha), hence also known as Kumbhayoni. Legend holds that he was sent by the gods to the southern part of India to balance the earth’s weight when it tilted due to the congregation of sages in the north. This act marked the beginning of his deep association with southern India and its spiritual and medicinal traditions.</p>
+    <p>Agasthya is credited with bringing Vedic knowledge to the Dravidian south. His name is mentioned in numerous ancient texts including the Rigveda, and he is often regarded as a bridge between Sanskrit and Tamil traditions. He is also revered in Buddhist and Jain traditions, and is believed to have composed several hymns and medicinal treatises that influenced South Indian healing systems profoundly.</p>
 
-  
+    <h2>🧪 Contributions to Siddha Medicine</h2>
+    <p>Agasthya is universally acknowledged as the founding father of Siddha medicine, one of the oldest traditional systems of healing. Siddha, derived from the word "Siddhi" (perfection), believes that health is the result of a harmonious balance of body, mind, and spirit. Agasthya's treatises formed the basis of this holistic science. He is said to have authored hundreds of texts on medicine, alchemy, surgery, yoga, and even martial arts.</p>
+    <p>The Siddha system pioneered the use of herbs, minerals, and metals for curing diseases. Agasthya introduced techniques such as kaya kalpa (rejuvenation therapy), pulse diagnosis, and intricate methods of preparing herbal concoctions. His emphasis on lifestyle, food habits, and spiritual discipline made Siddha more than just a medicinal practice—it became a way of life. His works are preserved and passed down through palm-leaf manuscripts and traditional practitioners in Tamil Nadu.</p>
+
+    <h2>🕉️ Spiritual Teachings</h2>
+    <p>In addition to his medical knowledge, Agasthya was a towering spiritual figure. He was a master of yoga and tantric sciences. He taught methods of kundalini awakening and internal purification, which were crucial to healing both body and soul. He is credited with composing the Tamil grammar "Agattiyam" and is said to have established numerous temples and hermitages across South India. Many believe he taught the Tamil language to Lord Murugan himself.</p>
+    <p>His teachings emphasized humility, discipline, and harmony with nature. He advocated for a life of service, meditation, and non-violence. Agasthya's spiritual legacy is still honored in rituals across India, especially in Tamil and Kerala traditions. He is often invoked during healing ceremonies and yogic practices. His image is commonly found in Siddha clinics and traditional healing centers.</p>
+
+    <h2>🏞️ Pilgrimage and Cultural Impact</h2>
+    <p>Agasthya's impact is not confined to medicine or mythology; it is deeply embedded in India's cultural fabric. The Agasthyamala hills in Kerala and Tamil Nadu are named after him and are believed to be his spiritual abode. Pilgrims often trek these mountains to pay homage at his shrine. The sage is also connected with several rivers and natural sites, believed to have emerged due to his divine interventions.</p>
+    <p>His legacy is preserved in the practices of countless Siddha doctors (vaidyas) and yogis who see him as their spiritual forefather. Traditional Tamil homes still honor him with daily prayers. He is a recurring figure in folk tales, classical dance, literature, and temple iconography. His image as a wise, humble sage with immense healing power continues to inspire reverence across generations and regions.</p>
+
+    <footer>
+      © Tribute to Sage Agasthya | Designed with lavender hues and ancient gratitude
+    </footer>
+  </div>
 </body>
 </html>
