@@ -1,159 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avicenna - The Father of Modern Medicine</title>
-    <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Avicenna – The Polymath of Persia</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to right, #f5f0ff, #e6ccff);
+      color: #4a235a;
+      line-height: 1.8;
+    }
 
-        /* Body and General Layout */
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background: #f0f0f0;
-            padding: 20px;
-            color: #333;
-        }
+    header {
+      background-color: #d8bfd8;
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
 
-        header {
-            background: #4e73df;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            animation: fadeIn 2s ease-in;
-        }
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0;
+    }
 
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
+    header p {
+      font-size: 1.3rem;
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
 
-        p {
-            font-size: 1.1em;
-            margin-bottom: 20px;
-            line-height: 1.6;
-            animation: slideIn 1.5s ease-in;
-        }
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 2rem 3rem;
+      background: #fcf6ff;
+      border-radius: 20px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
 
-        /* Animation Effects */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
+    .image-section {
+      text-align: center;
+      margin: 2rem 0;
+    }
 
-        @keyframes slideIn {
-            from {
-                transform: translateX(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
+    .image-section img {
+      max-width: 300px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
 
-        /* Section Styling */
-        .section {
-            margin: 30px 0;
-        }
+    h2 {
+      border-left: 5px solid #b57edc;
+      padding-left: 1rem;
+      margin-top: 2.5rem;
+      font-size: 1.8rem;
+      color: #6a1b9a;
+    }
 
-        .section img {
-            width: 100%;
-            max-width: 400px;
-            margin: 20px 0;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
+    p {
+      text-align: justify;
+      margin: 1rem 0;
+    }
 
-        .section img:hover {
-            transform: scale(1.05);
-        }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #d8bfd8;
+      font-size: 0.95rem;
+      margin-top: 3rem;
+    }
 
-        .section .content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
 
-        .content-text {
-            flex: 1;
-            min-width: 250px;
-        }
+      .container {
+        padding: 1rem 1.5rem;
+      }
 
-        .content-img {
-            flex: 1;
-            min-width: 250px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .section .content {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .content-text, .content-img {
-                text-align: center;
-            }
-        }
-    </style>
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Avicenna (Ibn Sina)</h1>
+    <p>A Legendary Scholar of Medicine, Metaphysics, and Philosophy</p>
+  </header>
 
-<header>
-    <h1>Avicenna - The Father of Modern Medicine</h1>
-    <p>An in-depth look at the life and works of the great philosopher and physician, Avicenna.</p>
-</header>
+  <div class="container">
 
-<section class="section">
-    <div class="content">
-        <div class="content-text">
-            <h2>Introduction</h2>
-            <p>Avicenna, also known as Ibn Sina, was a Persian polymath who made significant contributions to medicine, philosophy, and various other sciences. His most notable work, the "Canon of Medicine," became the standard medical textbook in Europe and the Islamic world for centuries.</p>
-            <p>He is considered one of the greatest physicians of all time, and his works influenced the development of medical practices and philosophy in both the East and the West.</p>
-        </div>
-        <div class="content-img">
-            <img src="av1.png" alt="Portrait of Avicenna">
-        </div>
+    <div class="image-section">
+      <img src="av1.png" alt="Portrait of Avicenna" />
+      <p><em>Image of Avicenna – replace with actual image or illustration as needed</em></p>
     </div>
-</section>
 
-<section class="section">
-    <div class="content">
-        <div class="content-text">
-            <h2>His Contributions to Medicine</h2>
-            <p>Avicenna's contributions to medicine include groundbreaking insights in pharmacology, surgery, and anatomy. He was among the first to write about the circulatory system, and his work laid the foundation for modern pharmacology.</p>
-            <p>His "Canon of Medicine" was an encyclopedic work that compiled knowledge from various cultures and traditions, including Greek, Roman, Persian, and Indian sources. It outlined methods of diagnosis, treatment, and prevention of diseases.</p>
-        </div>
-        <div class="content-img">
-            <img src="av2.png" alt="Avicenna Manuscript">
-        </div>
-    </div>
-</section>
+    <h2>🌸 Early Life</h2>
+    <p>Avicenna, born in 980 CE in Afshana near Bukhara (modern Uzbekistan), grew up in a culturally rich Persian environment. His father, an official in the Samanid court, ensured that he received a comprehensive education. By the age of 10, Avicenna had memorized the Quran and was already moving on to more advanced texts. He was particularly fascinated by Greek philosophy and eagerly absorbed the works of Aristotle, Plato, and Galen.</p>
+    <p>At a very young age, he began studying mathematics, logic, and astronomy. When he turned 16, he pursued medicine not just academically but practically, quickly gaining fame for his diagnostic abilities. By 18, he was already a court physician, having successfully treated a Samanid ruler. This achievement gave him access to an expansive royal library, where he read rare manuscripts that fueled his lifelong thirst for knowledge. His intellectual development was so rapid that by 21, he had authored multiple texts across disciplines. His early life not only shaped his scholastic future but also positioned him as a symbol of the Islamic Golden Age’s intellectual brilliance.</p>
 
-<section class="section">
-    <div class="content">
-        <div class="content-text">
-            <h2>Legacy and Influence</h2>
-            <p>Avicenna's influence extends beyond medicine. His works on logic, ethics, and metaphysics significantly shaped medieval philosophy, especially in the Latin West. His ideas were central to the scholastic tradition and influenced figures such as Thomas Aquinas.</p>
-            <p>Today, Avicenna is remembered as one of the most important intellectual figures of the Islamic Golden Age and a pioneer in various fields of knowledge.</p>
-        </div>
-    </div>
-</section>
+    <h2>📖 Major Contributions</h2>
+    <p>Avicenna's literary output includes around 450 works, of which approximately 240 are extant. His most celebrated work is "The Canon of Medicine" (Al-Qanun fi al-Tibb), a five-volume encyclopedic medical text. The Canon was used in Islamic and European medical schools well into the 17th century. It introduced methods of clinical testing, the role of hygiene in health, and a systematic classification of over 700 drugs. Notably, Avicenna emphasized evidence-based medicine long before the term existed.</p>
+    <p>His second monumental contribution was "The Book of Healing" (Kitab al-Shifa), which, despite its title, is more philosophical than medical. It covers logic, metaphysics, psychology, and natural sciences. He integrated Aristotelian thought with Islamic theology in ways that influenced both East and West. His writing style combined clarity with depth, making complex ideas accessible. Many later philosophers, such as Averroes and Thomas Aquinas, engaged with his work. His impact stretched beyond science and philosophy, influencing medieval ethics, epistemology, and theology. He laid the groundwork for rationalist approaches in both Islamic and Christian traditions. His texts served as foundational references for centuries, making him one of the most enduring intellectual figures in world history.</p>
 
+    <h2>🧮 Philosophy</h2>
+    <p>Avicenna's philosophical thought was a fusion of Aristotelian logic and Neoplatonic metaphysics, integrated within an Islamic worldview. He argued for the existence of a necessary being—God—who is the source of all existence. One of his famous philosophical contributions is the distinction between essence and existence, an idea that would later influence Scholastic philosophers in Europe. His "floating man" thought experiment is considered one of the earliest examples of phenomenological consciousness.</p>
+    <p>He believed that reason and revelation are complementary paths to truth and should not contradict each other. His cosmological views proposed a hierarchy of beings emanating from the One, drawing heavily from Neoplatonism. He also advanced ideas in epistemology, proposing that human knowledge begins with sensory experience but is perfected by rational abstraction. His influence can be found in both Islamic philosophical theology (kalam) and the later Western Enlightenment thinkers. Despite some resistance from religious orthodoxy, his rationalist approach was pivotal in developing Islamic and European intellectual traditions. He was instrumental in preserving and transforming Greek philosophy for future generations.</p>
+
+    <h2>🏰 Legacy and Influence</h2>
+    <p>Avicenna's legacy spans centuries and continents. In the Islamic world, he is revered as Shaykh al-Ra'is (The Master and Head) and considered a foundational figure in the development of medieval Islamic science and philosophy. His Canon of Medicine became a standard text in European universities like Montpellier and Padua for over 600 years. Latin translations of his works helped bridge ancient knowledge into the Renaissance.</p>
+    <p>In the West, Avicenna’s ideas contributed to the development of early modern medicine and philosophy. He influenced luminaries such as Albertus Magnus and Thomas Aquinas. In Iran, his birthday is commemorated as National Doctor’s Day, and his tomb in Hamadan remains a place of scholarly pilgrimage. Modern discussions on metaphysics, consciousness, and medical ethics often trace their roots to his pioneering ideas. Museums, schools, and hospitals worldwide bear his name as a tribute. His vision of harmonizing faith with reason remains influential in contemporary Islamic thought. Avicenna’s multi-disciplinary genius continues to inspire generations of scientists, philosophers, and healers around the world.</p>
+
+    <footer>
+      © 2025 Tribute to Avicenna | Designed with lavender hues and admiration
+    </footer>
+  </div>
 </body>
 </html>
