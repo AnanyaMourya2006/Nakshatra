@@ -1,160 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charaka - Father of Ayurveda</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(to bottom, #f5f5dc, #d0e0d0);
-            color: #333;
-            overflow-x: hidden;
-        }
-        header {
-            background: #2a7c4f;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            animation: fadeIn 2s;
-        }
-        header p {
-            margin: 5px 0 0;
-            font-size: 1.2em;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .content {
-            padding: 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
-        .section {
-            margin-bottom: 40px;
-        }
-        .section h2 {
-            font-size: 2em;
-            color: #2a7c4f;
-            border-bottom: 2px solid #d0e0d0;
-            display: inline-block;
-        }
-        .section p {
-            line-height: 1.6;
-            margin: 15px 0;
-        }
-        .timeline {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 20px;
-        }
-        .timeline-item {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            padding: 15px;
-            width: 280px;
-            transition: transform 0.3s;
-        }
-        .timeline-item:hover {
-            transform: scale(1.05);
-        }
-        .timeline-item h3 {
-            margin: 0;
-            color: #2a7c4f;
-            font-size: 1.2em;
-        }
-        .timeline-item p {
-            margin: 10px 0 0;
-            font-size: 0.9em;
-        }
-        .images {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        .images img {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
-        }
-        .images img:hover {
-            transform: scale(1.1);
-        }
-        footer {
-            background: #2a7c4f;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: relative;
-        }
-        footer p {
-            margin: 0;
-            font-size: 0.9em;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Charaka – The Father of Indian Medicine</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to right, #f5f0ff, #e6ccff);
+      color: #4a235a;
+      line-height: 1.8;
+    }
+
+    header {
+      background-color: #d8bfd8;
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 2rem 3rem;
+      background: #fcf6ff;
+      border-radius: 20px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    .image-section {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .image-section img {
+      max-width: 300px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    h2 {
+      border-left: 5px solid #b57edc;
+      padding-left: 1rem;
+      margin-top: 2.5rem;
+      font-size: 1.8rem;
+      color: #6a1b9a;
+    }
+
+    p {
+      text-align: justify;
+      margin: 1rem 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #d8bfd8;
+      font-size: 0.95rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .container {
+        padding: 1rem 1.5rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Charaka</h1>
+    <p>Pioneer of Ayurveda and Indian Medical Science</p>
+  </header>
 
-<header>
-    <h1>Charaka: The Father of Ayurveda</h1>
-    <p>Exploring the life, teachings, and legacy of a pioneer in ancient medicine.</p>
-</header>
+  <div class="container">
 
-<div class="content">
-    <section class="section">
-        <h2>Introduction</h2>
-        <p>Charaka, an ancient Indian physician, is considered the father of Ayurveda. His seminal work, the Charaka Samhita, forms the foundation of Ayurvedic medicine and provides a comprehensive understanding of health, disease, and treatment practices.</p>
-    </section>
+    <div class="image-section">
+      <img src="charaka.png" alt="Portrait of Charaka" />
+      <p><em>Sage Charaka – Author of the Charaka Samhita</em></p>
+    </div>
 
-    <section class="section">
-        <h2>Historical Background</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <h3>1st Century BCE</h3>
-                <p>Charaka is believed to have lived and practiced medicine during this period.</p>
-            </div>
-            <div class="timeline-item">
-                <h3>Charaka Samhita</h3>
-                <p>His most famous text, a compilation of medical knowledge and practices, was written.</p>
-            </div>
-            <div class="timeline-item">
-                <h3>Legacy</h3>
-                <p>Charaka's teachings influenced not just Indian medicine but also ancient Greek and Roman practices.</p>
-            </div>
-        </div>
-    </section>
+    <h2>📜 Early Life</h2>
+    <p>Charaka is believed to have lived around the 1st to 2nd century CE. Although his exact birth details are debated, he is thought to have originated from Kashmir or possibly Gandhara. Charaka was a wandering physician and scholar who dedicated his life to understanding the human body and the causes of disease. He is often regarded as a disciple of the sage Atreya and was part of the ancient school of physicians who believed in holistic healing.</p>
+    <p>From an early age, Charaka showed a deep curiosity in the working of nature, particularly in healing. His journey as a healer took him to forests, villages, and royal courts. He absorbed knowledge from nature, ancient texts, and observation. This lifelong commitment to medicine laid the groundwork for what would become one of the most enduring contributions to Indian and global medicine — the Charaka Samhita.</p>
 
-    <section class="section">
-        <h2>Teachings and Manuscripts</h2>
-        <p>Charaka emphasized the importance of balance in the body and mind. His manuscripts cover various topics, including anatomy, physiology, diagnosis, treatment, and ethics in medical practice. The Charaka Samhita is divided into eight sections, each focusing on a unique aspect of health and disease, such as general medicine (Kayachikitsa), pathology (Nidana), and pharmacology (Dravyaguna).</p>
-        <p>One of Charaka's notable teachings is the emphasis on prevention of disease through proper diet, lifestyle, and mental well-being. He highlighted the role of environmental factors, seasons, and individual constitution in health management.</p>
-        <p>The ethical principles outlined by Charaka, such as compassion, honesty, and diligence, remain relevant and inspiring for modern healthcare practitioners.</p>
-    </section>
+    <h2>📚 Charaka Samhita</h2>
+    <p>The Charaka Samhita is a foundational text of Ayurveda, composed of over 8,000 verses covering pathology, diagnosis, treatment, and prevention. It presents the tri-dosha theory — Vata, Pitta, and Kapha — as the basis of health. Charaka emphasized internal medicine (Kayachikitsa), with detailed explanations of digestion, immunity, and mental well-being. His text integrates herbal medicine, surgery, and psychological therapy in a cohesive system.</p>
+    <p>What sets the Charaka Samhita apart is its scientific rigor and ethical focus. Charaka advocated for observation, experimentation, and reasoning — a proto-scientific approach centuries ahead of its time. He also emphasized the physician’s moral conduct and compassion. The Samhita remained a medical authority for over a millennium and still influences modern Ayurvedic education. It was translated into Arabic and Persian, spreading Indian medical knowledge across civilizations.</p>
 
-    <section class="section">
-        <h2>Visuals and Artifacts</h2>
-        <div class="images">
-            <img src="charak.png" alt="Ancient Manuscript of Charaka">
-            <img src="charak2.png" alt="Statue of Charaka">
-        </div>
-    </section>
-</div>
+    <h2>🧠 Medical Philosophy</h2>
+    <p>Charaka viewed health as a balance between the body, mind, senses, and soul. He believed that diseases arise from imbalances, improper diet, and negative emotions. His emphasis on prevention through lifestyle, diet, and seasonal routines was revolutionary. He promoted purification therapies (Panchakarma), therapeutic vomiting, enemas, and rejuvenation treatments. His theories also explored genetics and embryology, recognizing hereditary factors in diseases.</p>
+    <p>He insisted that a good doctor must be wise, skilled, ethical, and calm — comparing a physician’s role to that of a spiritual guide. Charaka emphasized patient-centric care, customizing treatments according to the individual’s constitution (Prakriti). His belief in the body's innate capacity to heal with the help of nature has made his work timeless. Even today, his holistic vision is echoed in integrative health approaches worldwide.</p>
 
-<footer>
-    <p>&copy; 2024 Virtual Garden - All about Medicinal Plants and Ayurveda</p>
-</footer>
+    <h2>🏺 Legacy and Impact</h2>
+    <p>Charaka’s influence extends far beyond the borders of India. The Charaka Samhita was translated into Arabic as “Sharaka,” influencing Unani medicine and medieval Islamic physicians. In India, Charaka is still honored in Ayurvedic universities, research centers, and clinics. Statues and institutions bear his name, symbolizing a return to nature and balance. His legacy is a testament to India's rich scientific and philosophical past.</p>
+    <p>Modern science is now validating many principles that Charaka laid out thousands of years ago — from gut health to psychosomatic disorders. His integration of mind, body, and spirit continues to inspire wellness movements globally. His thoughts on medical ethics remain relevant in contemporary bioethics discussions. As the father of Indian medicine, Charaka remains a beacon of knowledge, compassion, and holistic healing.</p>
 
+    <footer>
+      © Tribute to Charaka | Designed with lavender hues and ancient reverence
+    </footer>
+  </div>
 </body>
 </html>
