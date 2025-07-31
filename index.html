@@ -14,7 +14,6 @@
       background: #f4f2f8;
     }
 
-    /* Intro animation */
     #intro-screen {
       position: fixed;
       top: 0;
@@ -191,68 +190,42 @@
       color: #5e4f63;
     }
 
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-content {
-      background: #fff;
-      padding: 2em;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 400px;
+    #recommender {
+      background: #fff0f5;
+      padding: 3em 2em;
       text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin: 2em;
     }
+
     footer.credits {
-  background-color: #e6e6fa; /* Soft lavender */
-  color: #3e2a47;
-  text-align: center;
-  padding: 1.5em;
-  font-family: 'Georgia', serif;
-  font-size: 0.95em;
-  border-top: 2px solid #d8bfd8;
-  margin-top: 3em;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
-}
+      background-color: #e6e6fa;
+      color: #3e2a47;
+      text-align: center;
+      padding: 1.5em;
+      font-family: 'Georgia', serif;
+      font-size: 0.95em;
+      border-top: 2px solid #d8bfd8;
+      margin-top: 3em;
+      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    }
 
-footer.credits p {
-  margin: 0.4em 0;
-}
-
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 1.5em;
-      cursor: pointer;
-      color: #333;
+    footer.credits p {
+      margin: 0.4em 0;
     }
 
     @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.1);
-      }
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
     }
   </style>
 </head>
 <body>
-  <!-- Intro animation -->
   <div id="intro-screen">
-    <div class="intro-text"><b>Original website sactioned by NMPB, AYUSH MINISTRY</b></div>
+    <div class="intro-text"><b>Original website sanctioned by NMPB, AYUSH MINISTRY</b></div>
   </div>
 
-  <!-- Main website content -->
   <div id="main-content" style="display: none;">
     <header>
       <div class="logo">
@@ -262,7 +235,7 @@ footer.credits p {
       <nav>
         <ul>
           <li><a href="about.html">About</a></li>
-          <li><a href="game.html">Fun learning </a></li>
+          <li><a href="game.html">Fun learning</a></li>
           <li><a href="photo.html">Plants</a></li>
           <li><a href="list.html">List</a></li>
         </ul>
@@ -285,30 +258,10 @@ footer.credits p {
     <section id="features">
       <h2>History</h2>
       <div class="feature-grid">
-        <div class="feature-card">
-          <a href="charak.html">
-            <i class="fas fa-seedling"></i>
-            <h3>CHARAK</h3>
-          </a>
-        </div>
-        <div class="feature-card">
-          <a href="avicenna.html">
-            <i class="fas fa-seedling"></i>
-            <h3>AVICENNA</h3>
-          </a>
-        </div>
-        <div class="feature-card">
-          <a href="agasthya.html">
-            <i class="fas fa-seedling"></i>
-            <h3>AGASTHYA</h3>
-          </a>
-        </div>
-        <div class="feature-card">
-          <a href="samuel.html">
-            <i class="fas fa-seedling"></i>
-            <h3>SAMUEL</h3>
-          </a>
-        </div>
+        <div class="feature-card"><a href="charak.html"><i class="fas fa-seedling"></i><h3>CHARAK</h3></a></div>
+        <div class="feature-card"><a href="avicenna.html"><i class="fas fa-seedling"></i><h3>AVICENNA</h3></a></div>
+        <div class="feature-card"><a href="agasthya.html"><i class="fas fa-seedling"></i><h3>AGASTHYA</h3></a></div>
+        <div class="feature-card"><a href="samuel.html"><i class="fas fa-seedling"></i><h3>SAMUEL</h3></a></div>
       </div>
     </section>
 
@@ -316,13 +269,23 @@ footer.credits p {
       <h2>Featured Plants</h2>
       <p>From ASHWAGANDHA to NEEM, explore a wide variety of flora.</p>
     </section>
+
+    <section id="recommender">
+      <h2>Find Your Personal Rashi Plant</h2>
+      <p>Enter your birth date to discover your recommended medicinal plants according to your Rashi.</p>
+      <form id="rashiForm" style="margin-top: 2em;">
+        <input type="date" id="dob" required style="padding: 0.7em; border-radius: 8px; border: 1px solid #aaa;">
+        <button type="submit" class="btn" style="margin-left: 1em;">Find My Plant</button>
+      </form>
+      <div id="result" style="margin-top: 2em; font-size: 1.2em; color: #4b2d4b;"></div>
+    </section>
+
     <footer class="credits">
-  <p>© 2025 Ananya Ajay Mourya. All rights reserved.</p>
-  <p>Developed as part of a project at <strong>Govenment College of Pharmacy, Amravati</strong></p>
-  <p>Under the guidance of <strong>Dr. Sharada L. Deore and Dr. Bhushan A. Baviskar</strong></p>
-</footer>
+      <p>© 2025 Ananya Ajay Mourya. All rights reserved.</p>
+      <p>Developed as part of a project at <strong>Government College of Pharmacy, Amravati</strong></p>
+      <p>Under the guidance of <strong>Dr. Sharada L. Deore and Dr. Bhushan A. Baviskar</strong></p>
+    </footer>
   </div>
- 
 
   <script>
     // Show main content after intro
@@ -330,6 +293,51 @@ footer.credits p {
       document.getElementById("intro-screen").style.display = "none";
       document.getElementById("main-content").style.display = "block";
     }, 3500);
+
+    // Rashi recommender logic
+    const plantData = {
+      Aries: ["Ashwagandha", "Guggul"],
+      Taurus: ["Tulsi", "Shatavari"],
+      Gemini: ["Brahmi", "Vacha"],
+      Cancer: ["Neem", "Aloe Vera"],
+      Leo: ["Arjuna", "Haritaki"],
+      Virgo: ["Mandukaparni", "Vasaka"],
+      Libra: ["Nagarmotha", "Manjistha"],
+      Scorpio: ["Guduchi", "Kalonji"],
+      Sagittarius: ["Bhringraj", "Babul"],
+      Capricorn: ["Punarnava", "Shankhpushpi"],
+      Aquarius: ["Chitrak", "Devdaru"],
+      Pisces: ["Khus", "Jatamansi"]
+    };
+
+    function getRashi(dob) {
+      const date = new Date(dob);
+      const day = date.getDate();
+      const month = date.getMonth() + 1;
+
+      if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) return "Aries";
+      if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) return "Taurus";
+      if ((month === 5 && day >= 21) || (month === 6 && day <= 20)) return "Gemini";
+      if ((month === 6 && day >= 21) || (month === 7 && day <= 22)) return "Cancer";
+      if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) return "Leo";
+      if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) return "Virgo";
+      if ((month === 9 && day >= 23) || (month === 10 && day <= 22)) return "Libra";
+      if ((month === 10 && day >= 23) || (month === 11 && day <= 21)) return "Scorpio";
+      if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) return "Sagittarius";
+      if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) return "Capricorn";
+      if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) return "Aquarius";
+      if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) return "Pisces";
+      return "Unknown";
+    }
+
+    document.getElementById("rashiForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const dob = document.getElementById("dob").value;
+      const rashi = getRashi(dob);
+      const plants = plantData[rashi] || [];
+      document.getElementById("result").innerHTML =
+        `<h3>Your Rashi: ${rashi}</h3><p>Recommended Plants: <b>${plants.join(", ")}</b></p>`;
+    });
   </script>
 </body>
 </html>
