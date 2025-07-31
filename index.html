@@ -13,6 +13,42 @@
       color: #3e2a47;
       background: #f4f2f8;
     }
+
+    #intro-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #3e2a47;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      animation: fadeOut 3.5s forwards;
+    }
+
+    .intro-text {
+      font-family: 'Georgia', serif;
+      font-size: 2em;
+      color: #fff;
+      text-align: center;
+      animation: fadeInOut 3s ease-in-out;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; }
+      25% { opacity: 1; }
+      75% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { opacity: 0; display: none; }
+    }
+
     header {
       display: flex;
       justify-content: space-between;
@@ -24,39 +60,83 @@
       top: 0;
       z-index: 1000;
     }
+
     header .logo {
       font-size: 1.5em;
       font-weight: bold;
       color: #fff;
     }
+
     header nav ul {
       display: flex;
       list-style: none;
       gap: 1.5em;
     }
+
     header nav ul li a {
       text-decoration: none;
       color: #fff;
     }
-    section {
-      padding: 3em 2em;
+
+    .parallax {
+      background: url('background2.png') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
     }
+
+    #hero h1, #hero p, #hero .btn {
+      z-index: 2;
+      position: relative;
+    }
+
+    #hero h1 {
+      font-size: 3em;
+      font-family: 'Georgia', serif;
+      color: #fff;
+    }
+
+    #hero p {
+      font-size: 1.5em;
+      font-family: 'Georgia', serif;
+      color: #fff;
+    }
+
+    .text-box {
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
     .btn {
       background: #a79cda;
       color: #fff;
       padding: 0.8em 2em;
       border-radius: 50px;
       text-decoration: none;
+      animation: pulse 1.5s infinite;
       font-family: 'Georgia', serif;
     }
-    #recommender, #nakshatra, #ailments {
-      background: #fff0f5;
+
+    section {
       padding: 3em 2em;
-      text-align: center;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      margin: 2em;
     }
+
+    #nakshatra, #recommender, #ailments {
+      background: #e8dcf4;
+      padding: 2em;
+      border-radius: 10px;
+      margin: 2em;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
     footer.credits {
       background-color: #e6e6fa;
       color: #3e2a47;
@@ -68,99 +148,97 @@
       margin-top: 3em;
       box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
     }
-    footer.credits p {
-      margin: 0.4em 0;
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <i class="fas fa-seedling"></i>
-      MAPA - GARDEN
-    </div>
-    <nav>
-      <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="game.html">Fun learning</a></li>
-        <li><a href="photo.html">Plants</a></li>
-        <li><a href="list.html">List</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div id="intro-screen">
+    <div class="intro-text"><b>Original website sanctioned by NMPB, AYUSH MINISTRY</b></div>
+  </div>
 
-  <section id="recommender">
-    <h2>Find Your Rashi Plant</h2>
-    <p>Enter your birth date to get your zodiac medicinal plant suggestion.</p>
-    <form id="rashiForm">
-      <input type="date" id="dob" required>
-      <button type="submit" class="btn">Find My Plant</button>
-    </form>
-    <div id="rashi-result"></div>
-  </section>
+  <div id="main-content" style="display: none;">
+    <header>
+      <div class="logo">
+        <i class="fas fa-seedling"></i>
+        MAPA - GARDEN
+      </div>
+      <nav>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="game.html">Fun learning</a></li>
+          <li><a href="photo.html">Plants</a></li>
+          <li><a href="list.html">List</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <section id="nakshatra">
-    <h2>Nakshatra-Based Plant Finder</h2>
-    <p>Select your Nakshatra to see your spiritually aligned plant.</p>
-    <select id="nakshatraSelect">
-      <option>--Select Nakshatra--</option>
-      <option value="Ashwini">Ashwini</option>
-      <option value="Bharani">Bharani</option>
-      <option value="Krittika">Krittika</option>
-      <option value="Rohini">Rohini</option>
-      <!-- Add more Nakshatras as needed -->
-    </select>
-    <div id="nakshatra-result" style="margin-top:1em"></div>
-  </section>
+    <section id="hero" class="parallax">
+      <div class="text-box">
+        <h1>Welcome to the MAPA GARDEN</h1>
+        <p>Explore the beauty of nature in a digital space.</p>
+        <a href="plants.html" class="btn">Start Exploring</a>
+      </div>
+    </section>
 
-  <section id="ailments">
-    <h2>Find Plant by Ailment</h2>
-    <p>Select a health issue to discover suitable herbal plants.</p>
-    <select id="ailmentSelect">
-      <option>--Select Ailment--</option>
-      <option value="Digestive Issues">Digestive Issues</option>
-      <option value="Diabetes">Diabetes</option>
-      <option value="Skin Disorders">Skin Disorders</option>
-      <!-- Add more ailments as needed -->
-    </select>
-    <div id="ailment-result" style="margin-top:1em"></div>
-  </section>
+    <section id="nakshatra">
+      <h2>Today's Nakshatra Plant</h2>
+      <p id="nakshatra-plant">Loading...</p>
+    </section>
 
-  <footer class="credits">
-    <p>© 2025 Ananya Ajay Mourya. All rights reserved.</p>
-    <p>Developed at <strong>Government College of Pharmacy, Amravati</strong></p>
-    <p>Under the guidance of <strong>Dr. Sharada L. Deore and Dr. Bhushan A. Baviskar</strong></p>
-  </footer>
+    <section id="recommender">
+      <h2>Rashi-Based Plant Recommender</h2>
+      <input type="date" id="dob" />
+      <button onclick="recommendPlant()" class="btn">Get My Plant</button>
+      <p id="rashi-result"></p>
+    </section>
+
+    <section id="ailments">
+      <h2>Ailment-Based Plant Suggestions</h2>
+      <select id="ailment-select">
+        <option value="">Select an Ailment</option>
+        <option value="Cough">Cough</option>
+        <option value="Fever">Fever</option>
+        <option value="Diabetes">Diabetes</option>
+      </select>
+      <button onclick="suggestPlants()" class="btn">Suggest Plants</button>
+      <p id="ailment-result"></p>
+    </section>
+
+    <footer class="credits">
+      <p>© 2025 Ananya Ajay Mourya. All rights reserved.</p>
+      <p>Developed as part of a project at <strong>Government College of Pharmacy, Amravati</strong></p>
+      <p>Under the guidance of <strong>Dr. Sharada L. Deore and Dr. Bhushan A. Baviskar</strong></p>
+    </footer>
+  </div>
 
   <script>
-    const plantData = {
-      Aries: ["Ashwagandha", "Guggul"],
-      Taurus: ["Tulsi", "Shatavari"],
-      Gemini: ["Brahmi", "Vacha"],
-      Cancer: ["Neem", "Aloe Vera"],
-      Leo: ["Arjuna", "Haritaki"],
-      Virgo: ["Mandukaparni", "Vasaka"],
-      Libra: ["Nagarmotha", "Manjistha"],
-      Scorpio: ["Guduchi", "Kalonji"],
-      Sagittarius: ["Bhringraj", "Babul"],
-      Capricorn: ["Punarnava", "Shankhpushpi"],
-      Aquarius: ["Chitrak", "Devdaru"],
-      Pisces: ["Khus", "Jatamansi"]
-    };
+    setTimeout(() => {
+      document.getElementById("intro-screen").style.display = "none";
+      document.getElementById("main-content").style.display = "block";
+    }, 3500);
 
-    const nakshatraData = {
-      Ashwini: "Ashwagandha",
-      Bharani: "Neem",
-      Krittika: "Arjuna",
-      Rohini: "Tulsi"
-      // Add more mappings
-    };
+    const nakshatraPlants = ["Ashoka", "Banyan", "Peepal", "Bilva", "Palash", "Rudraksha", "Neem", "Amla", "Kadam", "Shami", "Tulsi", "Arjuna", "Baheda", "Harad", "Chandan", "Devdaru", "Aparajita", "Agastya", "Amaltas", "Karanj", "Ber", "Gular", "Kachnar", "Belpatra", "Kalpavriksha", "Khirni", "Kadamba", "Kusum"];
+    const today = new Date();
+    const index = today.getDate() % nakshatraPlants.length;
+    document.getElementById("nakshatra-plant").textContent = `According to today's Nakshatra, your plant is: ${nakshatraPlants[index]}`;
 
-    const ailmentData = {
-      "Digestive Issues": ["Aegle marmelos", "Cassia fistula", "Nux vomica"],
-      "Diabetes": ["Syzygium cumini", "Ficus racemosa", "Azadirachta indica"],
-      "Skin Disorders": ["Calotropis gigantea", "Bombax ceiba", "Acacia chundra"]
-      // Add more mappings
+    const rashiPlants = {
+      Aries: "Ashwagandha",
+      Taurus: "Tulsi",
+      Gemini: "Brahmi",
+      Cancer: "Neem",
+      Leo: "Arjuna",
+      Virgo: "Vasaka",
+      Libra: "Nagarmotha",
+      Scorpio: "Guduchi",
+      Sagittarius: "Bhringraj",
+      Capricorn: "Punarnava",
+      Aquarius: "Chitrak",
+      Pisces: "Khus"
     };
 
     function getRashi(dob) {
@@ -179,30 +257,28 @@
       if ((m === 12 && d >= 22) || (m === 1 && d <= 19)) return "Capricorn";
       if ((m === 1 && d >= 20) || (m === 2 && d <= 18)) return "Aquarius";
       if ((m === 2 && d >= 19) || (m === 3 && d <= 20)) return "Pisces";
-      return "Unknown";
     }
 
-    document.getElementById("rashiForm").addEventListener("submit", function(e) {
-      e.preventDefault();
+    function recommendPlant() {
       const dob = document.getElementById("dob").value;
       const rashi = getRashi(dob);
-      const plants = plantData[rashi] || [];
-      document.getElementById("rashi-result").innerHTML = `<h3>Your Rashi: ${rashi}</h3><p>Recommended Plants: <b>${plants.join(", ")}</b></p>`;
-    });
+      document.getElementById("rashi-result").textContent = `Your Rashi is ${rashi} and recommended plant is ${rashiPlants[rashi]}`;
+    }
 
-    document.getElementById("nakshatraSelect").addEventListener("change", function () {
-      const nakshatra = this.value;
-      const plant = nakshatraData[nakshatra];
-      document.getElementById("nakshatra-result").innerHTML = plant
-        ? `<p>Associated Plant: <b>${plant}</b></p>`
-        : `<p>No plant mapped yet.</p>`;
-    });
+    const ailmentPlants = {
+      Cough: ["Vasaka", "Tulsi", "Licorice"],
+      Fever: ["Neem", "Guduchi", "Chirayata"],
+      Diabetes: ["Jamun", "Amla", "Karela"]
+    };
 
-    document.getElementById("ailmentSelect").addEventListener("change", function () {
-      const ailment = this.value;
-      const plantList = ailmentData[ailment] || [];
-      document.getElementById("ailment-result").innerHTML = `<p>Recommended Plants: <b>${plantList.join(", ")}</b></p>`;
-    });
+    function suggestPlants() {
+      const ailment = document.getElementById("ailment-select").value;
+      if (ailmentPlants[ailment]) {
+        document.getElementById("ailment-result").textContent = `Plants recommended for ${ailment}: ${ailmentPlants[ailment].join(", ")}`;
+      } else {
+        document.getElementById("ailment-result").textContent = "Please select an ailment.";
+      }
+    }
   </script>
 </body>
 </html>
