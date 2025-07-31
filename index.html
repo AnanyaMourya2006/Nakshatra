@@ -167,10 +167,6 @@
       color: #3e2a47;
     }
 
-    .feature-card p {
-      color: #5e4f63;
-    }
-
     #plants {
       background: #f1e6f1;
       color: #3e2a47;
@@ -190,7 +186,7 @@
       color: #5e4f63;
     }
 
-    #recommender {
+    #recommender, #nakshatra-today {
       background: #fff0f5;
       padding: 3em 2em;
       text-align: center;
@@ -280,6 +276,12 @@
       <div id="result" style="margin-top: 2em; font-size: 1.2em; color: #4b2d4b;"></div>
     </section>
 
+    <section id="nakshatra-today">
+      <h2>🌙 Today’s Nakshatra Plant</h2>
+      <p>Based on the traditional Panchang calendar.</p>
+      <div id="nakshatraDisplay" style="margin-top:1.5em; font-size:1.2em; color:#4b2d4b;"></div>
+    </section>
+
     <footer class="credits">
       <p>© 2025 Ananya Ajay Mourya. All rights reserved.</p>
       <p>Developed as part of a project at <strong>Government College of Pharmacy, Amravati</strong></p>
@@ -288,7 +290,7 @@
   </div>
 
   <script>
-    // Show main content after intro
+    // Intro animation
     setTimeout(() => {
       document.getElementById("intro-screen").style.display = "none";
       document.getElementById("main-content").style.display = "block";
@@ -338,6 +340,42 @@
       document.getElementById("result").innerHTML =
         `<h3>Your Rashi: ${rashi}</h3><p>Recommended Plants: <b>${plants.join(", ")}</b></p>`;
     });
+
+    // Nakshatra logic
+    const nakshatraList = [
+      "Ashwini", "Bharani", "Krittika", "Rohini", "Mrigashira", "Ardra", "Punarvasu", "Pushya",
+      "Ashlesha", "Magha", "Purva Phalguni", "Uttara Phalguni", "Hasta", "Chitra", "Swati", "Vishakha",
+      "Anuradha", "Jyeshtha", "Mula", "Purva Ashadha", "Uttara Ashadha", "Shravana", "Dhanishta",
+      "Shatabhisha", "Purva Bhadrapada", "Uttara Bhadrapada", "Revati"
+    ];
+
+    const nakshatraPlants = {
+      "Ashwini": "Ashwagandha 🌿", "Bharani": "Neem 🌿", "Krittika": "Amla 🌿",
+      "Rohini": "Palash 🌿", "Mrigashira": "Vacha 🌿", "Ardra": "Brahmi 🌿",
+      "Punarvasu": "Guduchi 🌿", "Pushya": "Shatavari 🌿", "Ashlesha": "Nagarmotha 🌿",
+      "Magha": "Mandukaparni 🌿", "Purva Phalguni": "Tulsi 🌿", "Uttara Phalguni": "Aloe Vera 🌿",
+      "Hasta": "Turmeric 🌿", "Chitra": "Manjistha 🌿", "Swati": "Devdaru 🌿",
+      "Vishakha": "Chitrak 🌿", "Anuradha": "Punarnava 🌿", "Jyeshtha": "Haritaki 🌿",
+      "Mula": "Guggul 🌿", "Purva Ashadha": "Vasaka 🌿", "Uttara Ashadha": "Jatamansi 🌿",
+      "Shravana": "Arjuna 🌿", "Dhanishta": "Khus 🌿", "Shatabhisha": "Shankhpushpi 🌿",
+      "Purva Bhadrapada": "Vacha 🌿", "Uttara Bhadrapada": "Bhringraj 🌿", "Revati": "Babul 🌿"
+    };
+
+    function getTodayNakshatra() {
+      const baseDate = new Date("2024-01-01");
+      const today = new Date();
+      const diff = Math.floor((today - baseDate) / (1000 * 60 * 60 * 24));
+      const index = diff % 27;
+      return nakshatraList[index];
+    }
+
+    const todayNakshatra = getTodayNakshatra();
+    const plant = nakshatraPlants[todayNakshatra];
+
+    document.getElementById("nakshatraDisplay").innerHTML = `
+      <strong>Nakshatra:</strong> ${todayNakshatra} <br>
+      <strong>Recommended Plant:</strong> ${plant}
+    `;
   </script>
 </body>
 </html>
