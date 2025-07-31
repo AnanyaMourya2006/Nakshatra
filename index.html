@@ -13,7 +13,6 @@
       color: #3e2a47;
       background: #f4f2f8;
     }
-
     #intro-screen {
       position: fixed;
       top: 0;
@@ -27,7 +26,6 @@
       z-index: 2000;
       animation: fadeOut 3.5s forwards;
     }
-
     .intro-text {
       font-family: 'Georgia', serif;
       font-size: 2em;
@@ -35,20 +33,17 @@
       text-align: center;
       animation: fadeInOut 3s ease-in-out;
     }
-
     @keyframes fadeInOut {
       0% { opacity: 0; }
       25% { opacity: 1; }
       75% { opacity: 1; }
       100% { opacity: 0; }
     }
-
     @keyframes fadeOut {
       0% { opacity: 1; }
       90% { opacity: 1; }
       100% { opacity: 0; display: none; }
     }
-
     header {
       display: flex;
       justify-content: space-between;
@@ -60,24 +55,20 @@
       top: 0;
       z-index: 1000;
     }
-
     header .logo {
       font-size: 1.5em;
       font-weight: bold;
       color: #fff;
     }
-
     header nav ul {
       display: flex;
       list-style: none;
       gap: 1.5em;
     }
-
     header nav ul li a {
       text-decoration: none;
       color: #fff;
     }
-
     .parallax {
       background: url('background2.png') no-repeat center center fixed;
       background-size: cover;
@@ -87,24 +78,20 @@
       align-items: center;
       position: relative;
     }
-
     #hero h1, #hero p, #hero .btn {
       z-index: 2;
       position: relative;
     }
-
     #hero h1 {
       font-size: 3em;
       font-family: 'Georgia', serif;
       color: #fff;
     }
-
     #hero p {
       font-size: 1.5em;
       font-family: 'Georgia', serif;
       color: #fff;
     }
-
     .text-box {
       background: rgba(0, 0, 0, 0.6);
       color: #fff;
@@ -113,7 +100,6 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       text-align: center;
     }
-
     .btn {
       background: #a79cda;
       color: #fff;
@@ -123,25 +109,23 @@
       animation: pulse 1.5s infinite;
       font-family: 'Georgia', serif;
     }
-
     section {
       padding: 3em 2em;
     }
-
-    #about {
+    #about, #recommender, #ailment-recommender {
       background: #fff;
       text-align: center;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
+      margin: 2em auto;
+      max-width: 90%;
     }
-
     .feature-grid {
       display: flex;
       gap: 1.5em;
       justify-content: center;
       flex-wrap: wrap;
     }
-
     .feature-card {
       background: #f1e6f1;
       padding: 2em;
@@ -152,21 +136,17 @@
       width: 100%;
       max-width: 250px;
     }
-
     .feature-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
-
     .feature-card i {
       color: #a79cda;
       font-size: 3em;
     }
-
     .feature-card h3 {
       color: #3e2a47;
     }
-
     #plants {
       background: #f1e6f1;
       color: #3e2a47;
@@ -175,26 +155,6 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
     }
-
-    #plants h2 {
-      font-size: 2.5em;
-      color: #2a1a34;
-    }
-
-    #plants p {
-      font-size: 1.5em;
-      color: #5e4f63;
-    }
-
-    #recommender, #nakshatra-today {
-      background: #fff0f5;
-      padding: 3em 2em;
-      text-align: center;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      margin: 2em;
-    }
-
     footer.credits {
       background-color: #e6e6fa;
       color: #3e2a47;
@@ -206,11 +166,6 @@
       margin-top: 3em;
       box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
     }
-
-    footer.credits p {
-      margin: 0.4em 0;
-    }
-
     @keyframes pulse {
       0%, 100% { transform: scale(1); }
       50% { transform: scale(1.1); }
@@ -221,7 +176,6 @@
   <div id="intro-screen">
     <div class="intro-text"><b>Original website sanctioned by NMPB, AYUSH MINISTRY</b></div>
   </div>
-
   <div id="main-content" style="display: none;">
     <header>
       <div class="logo">
@@ -237,7 +191,6 @@
         </ul>
       </nav>
     </header>
-
     <section id="hero" class="parallax">
       <div class="text-box">
         <h1>Welcome to the MAPA GARDEN</h1>
@@ -245,27 +198,10 @@
         <a href="plants.html" class="btn">Start Exploring</a>
       </div>
     </section>
-
     <section id="about">
       <h2>About Us</h2>
       <p>Discover the beauty of nature in the digital world. Our virtual garden brings medicinal, aromatic, and decorative plants to life.</p>
     </section>
-
-    <section id="features">
-      <h2>History</h2>
-      <div class="feature-grid">
-        <div class="feature-card"><a href="charak.html"><i class="fas fa-seedling"></i><h3>CHARAK</h3></a></div>
-        <div class="feature-card"><a href="avicenna.html"><i class="fas fa-seedling"></i><h3>AVICENNA</h3></a></div>
-        <div class="feature-card"><a href="agasthya.html"><i class="fas fa-seedling"></i><h3>AGASTHYA</h3></a></div>
-        <div class="feature-card"><a href="samuel.html"><i class="fas fa-seedling"></i><h3>SAMUEL</h3></a></div>
-      </div>
-    </section>
-
-    <section id="plants">
-      <h2>Featured Plants</h2>
-      <p>From ASHWAGANDHA to NEEM, explore a wide variety of flora.</p>
-    </section>
-
     <section id="recommender">
       <h2>Find Your Personal Rashi Plant</h2>
       <p>Enter your birth date to discover your recommended medicinal plants according to your Rashi.</p>
@@ -275,28 +211,34 @@
       </form>
       <div id="result" style="margin-top: 2em; font-size: 1.2em; color: #4b2d4b;"></div>
     </section>
-
-    <section id="nakshatra-today">
-      <h2>🌙 Today’s Nakshatra Plant</h2>
-      <p>Based on the traditional Panchang calendar.</p>
-      <div id="nakshatraDisplay" style="margin-top:1.5em; font-size:1.2em; color:#4b2d4b;"></div>
+    <section id="ailment-recommender">
+      <h2>Step 3: Find Plants by Ailment</h2>
+      <p>Select a common ailment to discover helpful medicinal plants from MAPA Garden.</p>
+      <form id="ailmentForm" style="margin-top: 1.5em;">
+        <select id="ailment" required style="padding: 0.7em; border-radius: 8px; border: 1px solid #aaa;">
+          <option value="">-- Select Ailment --</option>
+          <option value="digestive">Digestive Issues</option>
+          <option value="diabetes">Diabetes</option>
+          <option value="respiratory">Respiratory Problems</option>
+          <option value="skin">Skin Conditions</option>
+          <option value="fever">Fever</option>
+          <option value="pain">Pain Relief</option>
+        </select>
+        <button type="submit" class="btn" style="margin-left: 1em;">Find Plants</button>
+      </form>
+      <div id="ailment-result" style="margin-top: 2em; font-size: 1.2em; color: #4b2d4b;"></div>
     </section>
-
     <footer class="credits">
       <p>© 2025 Ananya Ajay Mourya. All rights reserved.</p>
       <p>Developed as part of a project at <strong>Government College of Pharmacy, Amravati</strong></p>
       <p>Under the guidance of <strong>Dr. Sharada L. Deore and Dr. Bhushan A. Baviskar</strong></p>
     </footer>
   </div>
-
   <script>
-    // Intro animation
     setTimeout(() => {
       document.getElementById("intro-screen").style.display = "none";
       document.getElementById("main-content").style.display = "block";
     }, 3500);
-
-    // Rashi recommender logic
     const plantData = {
       Aries: ["Ashwagandha", "Guggul"],
       Taurus: ["Tulsi", "Shatavari"],
@@ -311,12 +253,10 @@
       Aquarius: ["Chitrak", "Devdaru"],
       Pisces: ["Khus", "Jatamansi"]
     };
-
     function getRashi(dob) {
       const date = new Date(dob);
       const day = date.getDate();
       const month = date.getMonth() + 1;
-
       if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) return "Aries";
       if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) return "Taurus";
       if ((month === 5 && day >= 21) || (month === 6 && day <= 20)) return "Gemini";
@@ -331,7 +271,6 @@
       if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) return "Pisces";
       return "Unknown";
     }
-
     document.getElementById("rashiForm").addEventListener("submit", function(e) {
       e.preventDefault();
       const dob = document.getElementById("dob").value;
@@ -341,41 +280,21 @@
         `<h3>Your Rashi: ${rashi}</h3><p>Recommended Plants: <b>${plants.join(", ")}</b></p>`;
     });
 
-    // Nakshatra logic
-    const nakshatraList = [
-      "Ashwini", "Bharani", "Krittika", "Rohini", "Mrigashira", "Ardra", "Punarvasu", "Pushya",
-      "Ashlesha", "Magha", "Purva Phalguni", "Uttara Phalguni", "Hasta", "Chitra", "Swati", "Vishakha",
-      "Anuradha", "Jyeshtha", "Mula", "Purva Ashadha", "Uttara Ashadha", "Shravana", "Dhanishta",
-      "Shatabhisha", "Purva Bhadrapada", "Uttara Bhadrapada", "Revati"
-    ];
-
-    const nakshatraPlants = {
-      "Ashwini": "Ashwagandha 🌿", "Bharani": "Neem 🌿", "Krittika": "Amla 🌿",
-      "Rohini": "Palash 🌿", "Mrigashira": "Vacha 🌿", "Ardra": "Brahmi 🌿",
-      "Punarvasu": "Guduchi 🌿", "Pushya": "Shatavari 🌿", "Ashlesha": "Nagarmotha 🌿",
-      "Magha": "Mandukaparni 🌿", "Purva Phalguni": "Tulsi 🌿", "Uttara Phalguni": "Aloe Vera 🌿",
-      "Hasta": "Turmeric 🌿", "Chitra": "Manjistha 🌿", "Swati": "Devdaru 🌿",
-      "Vishakha": "Chitrak 🌿", "Anuradha": "Punarnava 🌿", "Jyeshtha": "Haritaki 🌿",
-      "Mula": "Guggul 🌿", "Purva Ashadha": "Vasaka 🌿", "Uttara Ashadha": "Jatamansi 🌿",
-      "Shravana": "Arjuna 🌿", "Dhanishta": "Khus 🌿", "Shatabhisha": "Shankhpushpi 🌿",
-      "Purva Bhadrapada": "Vacha 🌿", "Uttara Bhadrapada": "Bhringraj 🌿", "Revati": "Babul 🌿"
+    const ailmentPlants = {
+      digestive: ["Aegle marmelos", "Mimusops elengi", "Feronia elephantum", "Mangifera indica"],
+      diabetes: ["Syzygium cumini", "Azadirachta indica", "Madhuca longifolia"],
+      respiratory: ["Calotropis gigantea", "Mesua ferrea", "Bambusa arundinaceae"],
+      skin: ["Cassia fistula", "Bombax ceiba", "Butea monosperma", "Ficus racemosa"],
+      fever: ["Nux vomica", "Spondias pinnata", "Ficus religiosa", "Elaeocarpus ganitrus"],
+      pain: ["Arjuna", "Calamus rotang", "Acacia chundra", "Aquilaria agalocha"]
     };
-
-    function getTodayNakshatra() {
-      const baseDate = new Date("2024-01-01");
-      const today = new Date();
-      const diff = Math.floor((today - baseDate) / (1000 * 60 * 60 * 24));
-      const index = diff % 27;
-      return nakshatraList[index];
-    }
-
-    const todayNakshatra = getTodayNakshatra();
-    const plant = nakshatraPlants[todayNakshatra];
-
-    document.getElementById("nakshatraDisplay").innerHTML = `
-      <strong>Nakshatra:</strong> ${todayNakshatra} <br>
-      <strong>Recommended Plant:</strong> ${plant}
-    `;
+    document.getElementById("ailmentForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const ailment = document.getElementById("ailment").value;
+      const suggestions = ailmentPlants[ailment] || [];
+      document.getElementById("ailment-result").innerHTML =
+        `<p>Recommended Plants for <b>${ailment.charAt(0).toUpperCase() + ailment.slice(1)}:</b><br>${suggestions.join(", ")}</p>`;
+    });
   </script>
 </body>
 </html>
